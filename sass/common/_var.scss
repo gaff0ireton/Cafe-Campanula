@@ -1,0 +1,46 @@
+$mainColor: #00fe91;
+$subColor: #317055;
+
+@font-face {
+    font-family: "kalibers";
+    src: url("../font/kalibers.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "hologen";
+    src: url("../font/HalogenbyPixelSurplus-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "glitchGothic";
+    src: url("../font/瀞ノグリッチ黒体H1.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Melete";
+    src: url("../font/Melete-UltraLight.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Melete";
+    font-weight: bold;
+    src: url("../font/Melete-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Melete";
+    font-weight: lighter;
+    src: url("../font/Melete-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Melete";
+    font-weight: medium;
+    src: url("../font/Melete-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Melete";
+    font-weight: normal;
+    src: url("../font/Melete-Regular.otf") format("opentype");
+}

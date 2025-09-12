@@ -19,6 +19,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"> <!-- swiper  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="sass/style.css"> <!-- css -->
+    <link rel="stylesheet" href="css/style.css"> <!-- css -->
+
+    <script>
+  (function(d) {
+    var config = {
+      kitId: 'bag0fsb',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
 
 </head>
 
@@ -168,17 +180,9 @@
                 <div class="swiper">
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
-                        <!-- Slides -->
                         <div class="swiper-slide">
                             <video class="video" src="video/shark02.mp4" loop muted autoplay playsinline></video>
-                        </div>
-                        <div class="swiper-slide">
-                            <video class="video" src="video/shark01.mp4" loop muted autoplay playsinline></video>
-                        </div>
-                        <div class="swiper-slide">
-                            <video class="video" src="video/shark03.mp4" loop muted autoplay playsinline></video>
-                        </div>
-                    </div>
+                        </div></div>
                     <!-- If we need pagination -->
 
                 </div>
@@ -206,7 +210,7 @@
             <div class="mainwrap">
 
 
-                <section id="caption">
+                <section id="caption" class="captionSection">
                     <div class="capBox">
 
                         <h2>
@@ -226,7 +230,7 @@
                         </div>
                     </div>
                 </section>
-                <section id="news">
+                <section id="news" class="newsSection">
                     <div class="newsBox">
 
                         <h2>
@@ -246,11 +250,19 @@
                         </p>
                     </div>
                 </section>
-                <section id="menu">
-                    <h2>
+                <section id="menu" class="menuSection">
+
+                    <div class="menuSection__bg">
+                        <div class="menuSection__bg-movie">
+                        <video src="video/bgMovie.mp4" loop muted autoplay playsinline></video>
+                    </div>
+                    </div>
+
+                    <div class="menuSection__contents">
+                        <h2>
                         MENU
                     </h2>
-                    <div id="menubox01">
+                    <div>
                         <div class="menu01Item">
                             <div class="menu01Photo">
                                 <img class="photo" src="img/menu_1.jpg" alt="タルト">
@@ -263,20 +275,6 @@
                                     ¥1,520
                                 </h4>
                             </div>
-                            <p class="menuText">
-                                サメちゃんたちが楽しいパーティーを開催中！サメちゃんの形をした可愛らしいマカロンが、
-                                フルーツタルトの上にキュートに乗っています。
-                                <br>
-                                サメちゃんの背中には、いちごやブルーベリー、
-                                キウイなど、新鮮で甘いフルーツがたっぷりと盛り付けられ、
-                                まるで海の中でフルーツパラダイスを見つけたような楽しいタルトです。
-                                <br>
-                                サメちゃんのヒレは、やわらかいクリームで表現され、見た目も美味しさも楽しめる一品。
-                                海の冒険気分を味わいながら、ハッピーなひとときをお楽しみください！
-                                <br>
-                                なおスターゲイジーパイと発言をした人カスには、バックヤードへ来てもらいます。
-                                覚悟の準備をしておいてください。
-                            </p>
                         </div>
                         <div class="menu01Item">
                             <div class="menu01Photo">
@@ -290,18 +288,6 @@
                                     ¥1,380
                                 </h4>
                             </div>
-                            <p class="menuText">
-                                大海原からやってきた愛らしいサメちゃんのパンケーキが、あなたを幸せな時間に招待します！
-                                <br>
-                                サメちゃんの形をしたもちもち生地に、ふんわり焼き上げられ、
-                                その上には楽しさいっぱいのトッピングが広がっています。
-                                <br>
-                                いちごやバナナ、チョコペンでサメちゃんの愛らしい表情をイメージ。
-                                メイプルシロップが、まるで波立つ海のような甘さを添えます。
-                                <br>
-                                このサメちゃんパンケーキで、
-                                可愛さと美味しさをたっぷりと味わって、素敵な1日を！
-                            </p>
                         </div>
                     </div>
                     <div id="menubox02">
@@ -317,13 +303,6 @@
                                 <h4>
                                     ¥1,380
                                 </h4>
-                                <p class="menuText">
-                                    海のかわいい住人の形をしたマカロン！そのまるで本物のサメのような形状で、
-                                    甘くてやわらかなマカロンに仕上げられています。稀に現れるメガロドンちゃんマカロンは、
-                                    割ると中から子サメちゃんマカロンがたくさん出てくるギミック付き！
-                                    口に入れると、ほんのりとした甘さとサクサクとした食感が楽しめる、
-                                    まさに海からやってきたかわいいスイーツです！
-                                </p>
                             </div>
                         </div>
                         <div class="menu02Item">
@@ -337,13 +316,6 @@
                                 <h4>
                                     ¥1,380
                                 </h4>
-                                <p class="menuText">
-                                    愛らしいサメちゃんが泳ぐサンデー！サメちゃんマカロンが泳ぐアイスクリームに、
-                                    甘酸っぱいフルーツシロップがふんだんにかかっています。
-                                    このサメちゃんサンデーはまるで海の中に飛び込んだような楽しい味わい。
-                                    涼しさと可愛らしさを一緒に楽しんでみてください！
-                                    余談ですが、パフェではなく、サンデーにした理由はサメちゃんサンデーのほうが可愛いからデス！
-                                </p>
                             </div>
                         </div>
                         <div class="menu02Item">
@@ -357,13 +329,6 @@
                                 <h4>
                                     ¥1,380
                                 </h4>
-                                <p class="menuText">
-                                    海辺からやってきた可愛いサメちゃんクッキーのトッピングしたアイス！
-                                    その愛らしい見た目に魅了されること間違いなしデス！
-                                    ビタミンたっぷりのフルーツ風味や、バニラのやさしい風味、
-                                    チョコレートの楽しい風味など、さまざまな味わいが揃っています。
-                                    サメちゃん好きなあなたにぴったりの涼やかで可愛いアイス、ぜひお楽しみください！
-                                </p>
                             </div>
                         </div>
                     </div>
@@ -403,6 +368,7 @@
                             </div>
                         </div>
                     </div>
+                    </div>
                 </section>
 
                 <section id="goods">
@@ -421,12 +387,6 @@
                                 <h4>
                                     ¥500
                                 </h4>
-                                <p class="goodsP">
-                                    大海原からやってきた、かわいいサメちゃんたちがガチャガチャの中に！
-                                    手のひらサイズのサメちゃんのミニチュアフィギュアが登場！
-                                    カラフルで楽しいサメちゃんたちが、あなたの元へやってきます。
-                                    一度のガチャでどのサメちゃんが出るかはお楽しみ♪
-                                </p>
                             </div>
                         </div>
                         <div class="goodsItem">
@@ -440,12 +400,6 @@
                                 <h4>
                                     ¥1,380
                                 </h4>
-                                <p class="goodsP">
-                                    大海原のかわいい住人のぬいぐるみです！
-                                    やわらかな素材で作られたこのぬいぐるみは、愛らしい笑顔ともふもふ触り心地が特徴。
-                                    サメちゃんのデザインはリアルでありながらも、優しい表情がほっこりします。
-                                    抱きしめるとほっとする安心感。ベッドやソファに飾るもよし、抱き枕としても最適。
-                                    サメちゃんがあなたをずっと見守ってくれます！
                             </div>
                         </div>
                         <div class="goodsItem">
@@ -459,12 +413,6 @@
                                 <h4>
                                     ¥1,380
                                 </h4>
-                                <p class="goodsP">
-                                    可愛いサメちゃんたちが、推し活必需品になって登場！
-                                    コンパクトで立体感のあるスタンドは、いつもあなたのそばで精神安定をサポートします！
-                                    小さなサイズなので、デスクやお気に入りのスペースに飾れば、
-                                    海の中の楽しい気分がぐっと身近に感じられるカモ！
-                                </p>
                             </div>
                         </div>
                     </div>

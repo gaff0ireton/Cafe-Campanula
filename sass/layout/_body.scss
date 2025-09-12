@@ -1,0 +1,24 @@
+// ① math モジュール
+@use "sass:math";
+
+// ② common/_index.scss を読み込む（mixin が使える）
+@use "../common" as *;
+
+/* ページ全体のスタイル */
+
+.mainwrap{
+    max-width: 500px;
+    padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: "nitalago-rera", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+p,li{
+    font-family: "nitalago-rera", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}

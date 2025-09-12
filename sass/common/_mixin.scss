@@ -1,0 +1,27 @@
+@use "sass:math";
+
+@function getVwSp($fontsize, $viewport: 750) {
+  $rate: 100 / $viewport;
+  @return $rate * $fontsize * 1vw;
+}
+
+@function getVwPc($fontsize, $viewport: 1920) {
+  $rate: 100 / $viewport;
+  @return $rate * $fontsize * 1vw;
+}
+
+@mixin vw($fontsize) {
+  font-size: getVwPC($fontsize);
+}
+
+@mixin sp(){
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
+@mixin pc(){
+  @media screen and (min-width: 750px) {
+    @content;
+  }
+}

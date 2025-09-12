@@ -1,0 +1,106 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "kalibers";
+  src: url("../font/kalibers.ttf") format("truetype");
+}
+@font-face {
+  font-family: "hologen";
+  src: url("../font/HalogenbyPixelSurplus-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "glitchGothic";
+  src: url("../font/瀞ノグリッチ黒体H1.otf") format("opentype");
+}
+@font-face {
+  font-family: "Melete";
+  src: url("../font/Melete-UltraLight.otf") format("opentype");
+}
+@font-face {
+  font-family: "Melete";
+  font-weight: bold;
+  src: url("../font/Melete-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Melete";
+  font-weight: lighter;
+  src: url("../font/Melete-Light.otf") format("opentype");
+}
+@font-face {
+  font-family: "Melete";
+  font-weight: medium;
+  src: url("../font/Melete-Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: "Melete";
+  font-weight: normal;
+  src: url("../font/Melete-Regular.otf") format("opentype");
+}
+/* ページ全体のスタイル */
+.mainwrap {
+  max-width: 500px;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "nitalago-rera", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+p, li {
+  font-family: "nitalago-rera", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.menuSection {
+  position: relative;
+  z-index: 1;
+  height: 110lvh;
+}
+.menuSection__bg {
+  position: absolute;
+  top: -9.3333333333vw;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  background-color: #fff;
+  mask-image: url("../img/wave.svg"), linear-gradient(#fff, #fff);
+  mask-size: 1000px 46.6666666667px, 100% calc(100% - 45.3333333333px);
+  mask-repeat: repeat-x;
+  overflow: hidden;
+  animation: wave 5s var(--mh--easing04) infinite both;
+}
+.menuSection__bg-movie {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.menuSection__bg-movie video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.menuSection__contents {
+  position: relative;
+  z-index: 10;
+}
+.menuSection__contents h2 {
+  color: #fff;
+}
+
+@keyframes wave {
+  0% {
+    mask-position: 0% top, center bottom;
+  }
+  100% {
+    mask-position: 100% top, center bottom;
+  }
+}
+:root {
+  --mh--easing04: cubic-bezier(0.22, 0.5, 0.7, 0.5);
+}

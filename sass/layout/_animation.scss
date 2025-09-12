@@ -1,0 +1,18 @@
+// ① math モジュール
+@use "sass:math";
+
+// ② common/_index.scss を読み込む（mixin が使える）
+@use "../common" as *;
+
+@keyframes wave{
+    0% {
+    mask-position: 0% top, center bottom;
+    }
+    100% {
+    mask-position: 100% top, center bottom;
+    }
+}
+
+:root{
+    --mh--easing04: cubic-bezier(0.22, 0.5, 0.7, 0.5);
+}

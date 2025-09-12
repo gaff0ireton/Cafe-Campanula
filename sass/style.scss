@@ -1,0 +1,4 @@
+@charset "utf-8";
+// sass/style.scss
+@use "common"         as *;  // → common/_index.scss を読んで mixin を全開放
+@use "layout/index";         // → layout/_index.scss をエントリに
