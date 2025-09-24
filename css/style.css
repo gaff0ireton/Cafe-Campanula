@@ -1,40 +1,22 @@
 @charset "UTF-8";
-@font-face {
-  font-family: "kalibers";
-  src: url("../font/kalibers.ttf") format("truetype");
+.swiper, .menuSection__contents .swiperFood, .menuSection__contents .swiperDrink, .newsSection .swiper {
+  padding: 0px 25px;
+  overflow: hidden;
 }
-@font-face {
-  font-family: "hologen";
-  src: url("../font/HalogenbyPixelSurplus-Regular.otf") format("opentype");
+
+.swiper__img, .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide img, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide img, .newsSection .swiper-wrapper .swiper-slide img {
+  width: 400px;
+  border-radius: 50px;
+  overflow: hidden;
+  margin: 0 auto;
+  display: block;
 }
-@font-face {
-  font-family: "glitchGothic";
-  src: url("../font/瀞ノグリッチ黒体H1.otf") format("opentype");
+
+.swiper__txt, .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide p, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide p, .newsSection .swiper-wrapper .swiper-slide p {
+  width: 400px;
+  margin: 0 auto;
 }
-@font-face {
-  font-family: "Melete";
-  src: url("../font/Melete-UltraLight.otf") format("opentype");
-}
-@font-face {
-  font-family: "Melete";
-  font-weight: bold;
-  src: url("../font/Melete-Bold.otf") format("opentype");
-}
-@font-face {
-  font-family: "Melete";
-  font-weight: lighter;
-  src: url("../font/Melete-Light.otf") format("opentype");
-}
-@font-face {
-  font-family: "Melete";
-  font-weight: medium;
-  src: url("../font/Melete-Medium.otf") format("opentype");
-}
-@font-face {
-  font-family: "Melete";
-  font-weight: normal;
-  src: url("../font/Melete-Regular.otf") format("opentype");
-}
+
 /* ページ全体のスタイル */
 .mainwrap {
   max-width: 500px;
@@ -106,29 +88,10 @@ p, li {
   object-fit: cover;
 }
 
-.newsSection .swiper {
-  padding: 0px 25px;
-}
-@media screen and (max-width: 750px) {
-  .newsSection .swiper {
-    padding: 0 5vw;
-  }
-}
-.newsSection .swiper-wrapper .swiper-slide img {
-  width: 400px;
-  border-radius: 50px;
-  overflow: hidden;
-  margin: 0 auto;
-  display: block;
-}
 @media screen and (max-width: 750px) {
   .newsSection .swiper-wrapper .swiper-slide img {
     width: 80vw;
   }
-}
-.newsSection .swiper-wrapper .swiper-slide p {
-  width: 400px;
-  margin: 0 auto;
 }
 @media screen and (max-width: 750px) {
   .newsSection .swiper-wrapper .swiper-slide p {
@@ -136,12 +99,15 @@ p, li {
   }
 }
 
-.menforwordction {
+.menuSection {
   position: relative;
   z-index: 1;
   margin-top: 64px;
 }
-.menforwordction__bg {
+.menuSection p {
+  color: #fff;
+}
+.menuSection__bg {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -155,26 +121,45 @@ p, li {
   overflow: hidden;
   animation: wave 5s var(--mh--easing04) infinite both;
 }
-.menforwordction__bg-movie {
+.menuSection__bg-movie {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
 }
-.menforwordction__bg-movie video {
+.menuSection__bg-movie video {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.menforwordction__contents {
+.menuSection__contents {
   position: relative;
-  z-index: 10;
   padding-top: 64px;
 }
-.menforwordction__contents h2 {
+.menuSection__contents h2 {
   color: #fff;
+}
+@media screen and (max-width: 750px) {
+  .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide img {
+    width: 80vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide p {
+    width: 80vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide img {
+    width: 80vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide p {
+    width: 80vw;
+  }
 }
 
 @keyframes wave {

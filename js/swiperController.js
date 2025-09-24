@@ -5,6 +5,20 @@ const swiper = new Swiper(".swiper", {
     autoplay: false, // 最初は自動再生を無効
 });
 
+const swiperFood = new Swiper(".swiperFood", {
+    // スライダーのオプションを設定
+    loop: false, // スライダーをループさせる
+    speed: 1500, // スライドの切り替え速度（デフォルトは300）
+    autoplay: false, // 最初は自動再生を無効
+});
+
+const swiperDrink = new Swiper(".swiperDrink", {
+    // スライダーのオプションを設定
+    loop: false, // スライダーをループさせる
+    speed: 1500, // スライドの切り替え速度（デフォルトは300）
+    autoplay: false, // 最初は自動再生を無効
+});
+
 
 // // スクロールイベントを検知
 // window.addEventListener("scroll", function () {

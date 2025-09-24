@@ -15,22 +15,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet"> <!-- font -->
-    <link rel="icon" href="img/moforword.svg"> <!-- moforwordCursor -->
+    <link rel="icon" href="img/mouse.png"> <!-- moforwordCursor -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"> <!-- swiper  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="sass/style.css"> <!-- css -->
     <link rel="stylesheet" href="css/style.css"> <!-- css -->
 
-    <script>
-        (function (d) {
-            var config = {
-                kitId: 'bag0fsb',
-                scriptTimeout: 3000,
-                async: true
-            },
-                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://forword.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
-        })(document);
-    </script>
+        <script>
+  (function(d) {
+    var config = {
+      kitId: 'bag0fsb',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
 
 </head>
 
@@ -254,123 +254,50 @@
                         </p>
                     </div>
                 </section>
-                <section id="menu" class="menforwordction">
+                <section id="menu" class="menuSection">
 
-                    <div class="menforwordction__bg">
-                        <div class="menforwordction__bg-movie">
+                    <div class="menuSection__bg">
+                        <div class="menuSection__bg-movie">
                             <video src="video/bgMovie.mp4" loop muted autoplay playsinline></video>
                         </div>
                     </div>
 
-                    <div class="menforwordction__contents">
+                    <div class="menuSection__contents">
                         <h2>
                             MENU
                         </h2>
-                        <div>
-                            <div class="menu01Item">
-                                <div class="menu01Photo">
-                                    <img class="photo" src="img/menu_1.jpg" alt="タルト">
-                                </div>
-                                <div>
-                                    <h3>
-                                        サメちゃんタルト
-                                    </h3>
-                                    <h4>
-                                        ¥1,520
-                                    </h4>
-                                </div>
+                        <div class="swiperFood">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide"><img src="img/img_food_01.jpg" alt="" ><p>2025-9-24 : 伝説の大人気の等身大ジンベエザメぬいぐるみ再入荷！ 大人気の等身大ジンベエザメぬいぐるみが再び店頭に並びました！ 14mが入る一室のあるクソデカハウスを購入して、ジンベエザメちゃんをお迎えしましょう！</p></div>
+                                <div class="swiper-slide"><img src="img/img_food_02.jpg" alt="" ><p>2025-9-24 : 伝説の大人気の等身大ジンベエザメぬいぐるみ再入荷！ 大人気の等身大ジンベエザメぬいぐるみが再び店頭に並びました！ 14mが入る一室のあるクソデカハウスを購入して、ジンベエザメちゃんをお迎えしましょう！</p></div>
+                                <div class="swiper-slide"><img src="img/img_food_03.jpg" alt="" ><p>2025-9-24 : 伝説の大人気の等身大ジンベエザメぬいぐるみ再入荷！ 大人気の等身大ジンベエザメぬいぐるみが再び店頭に並びました！ 14mが入る一室のあるクソデカハウスを購入して、ジンベエザメちゃんをお迎えしましょう！</p></div>
                             </div>
-                            <div class="menu01Item">
-                                <div class="menu01Photo">
-                                    <img class="photo" src="img/menu_2.jpg" alt="パンケーキ">
-                                </div>
-                                <div>
-                                    <h3>
-                                        サメちゃんパンケーキ
-                                    </h3>
-                                    <h4>
-                                        ¥1,380
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="menubox02">
-                            <div class="menu02Item">
-                                <div class="menu02Photo">
+                            <!-- If we need pagination -->
+                            <div class="swiper-pagination"></div>
 
-                                    <img class="photo" src="img/menu_3.jpg" alt="マカロン">
-                                </div>
-                                <div class="menu02Text">
-                                    <h3>
-                                        サメちゃんマカロン
-                                    </h3>
-                                    <h4>
-                                        ¥1,380
-                                    </h4>
-                                </div>
-                            </div>
-                            <div class="menu02Item">
-                                <div class="menu02Photo">
-                                    <img class="photo" src="img/menu_4.png" alt="サンデー">
-                                </div>
-                                <div class="menu02Text">
-                                    <h3>
-                                        サメちゃんサンデー
-                                    </h3>
-                                    <h4>
-                                        ¥1,380
-                                    </h4>
-                                </div>
-                            </div>
-                            <div class="menu02Item">
-                                <div class="menu02Photo">
-                                    <img class="photo" src="img/menu_5.png" alt="アイス">
-                                </div>
-                                <div class="menu02Text">
-                                    <h3>
-                                        サメちゃんアイス
-                                    </h3>
-                                    <h4>
-                                        ¥1,380
-                                    </h4>
-                                </div>
-                            </div>
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
                         </div>
-                        <div>
-                            <div>
-
-                                <div class="drinkBox">
-                                    <div class="drinkItem">
-                                        <h3>
-                                            DRINK MENU
-                                        </h3>
-                                        <div class="drinkExp">
-                                            <h3>
-                                                FREE
-                                            </h3>
-                                            <h3 class="sameD">
-                                                SHARK
-                                            </h3>
-                                            <h3>
-                                                DRINK
-                                            </h3>
-                                        </div>
-                                        <h3 class="sameD">
-                                            ¥500
-                                        </h3>
-                                        <p class="menuText">
-                                            ホットコーヒー / アイスコーヒー / ホットミルク / ホットココア / カフェラテ / アイスカフェラテ / カフェモカ / アイスカフェモカ /
-                                            ソフトドリンク各種
-                                        </p>
-                                        <p class="menuBackNone">
-                                            お持ち帰りメニューもあります！
-                                        </p>
-                                    </div>
-                                    <div class="drinkPhoto">
-                                        <img class="photo" src="img/drinkmenu.jpg" alt="ドリンク">
-                                    </div>
-                                </div>
+                        <div class="swiperDrink">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide"><img src="img/img_drink_01.jpg" alt="" ><p>サメちゃんメロンフロート</p></div>
+                                <div class="swiper-slide"><img src="img/img_drink_02.jpg" alt="" ><p>サメちゃんディープブルー</p></div>
+                                <div class="swiper-slide"><img src="img/img_drink_03.jpg" alt="" ><p>サメちゃんベリーフラッペ</p></div>
+                                <div class="swiper-slide"><img src="img/img_drink_04.jpg" alt="" ><p>サメちゃんロストバケーション</p></div>
+                                <div class="swiper-slide"><img src="img/img_drink_05.jpg" alt="" ><p>サメちゃんアイスフロート</p></div>
+                                <div class="swiper-slide"><img src="img/img_drink_06.jpg" alt="" ><p>サメちゃんネード</p></div>
                             </div>
+                            <!-- If we need pagination -->
+                            <div class="swiper-pagination"></div>
+
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
                         </div>
                     </div>
                 </section>

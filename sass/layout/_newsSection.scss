@@ -6,20 +6,12 @@
 
 .newsSection{
     .swiper{
-        padding: 0px 25px;
-
-        @include sp() {
-            padding: 0 getVwSp(25);
-        }
+        @extend .swiper;
 
         &-wrapper{
             .swiper-slide{
                 img{
-                    width: 400px;
-                    border-radius: 50px;
-                    overflow: hidden;
-                    margin: 0 auto;
-                    display: block;
+                    @extend .swiper__img;
 
                     @include sp() {
                         width: getVwSp(400);
@@ -27,8 +19,7 @@
                 }
 
                 p{
-                    width: 400px;
-                    margin: 0 auto;
+                    @extend .swiper__txt;
 
                     @include sp() {
                         width: getVwSp(400);
