@@ -19,6 +19,7 @@ $('.loading_bg').ripples({
     dropRadius: 20,
     perturbance: 0.04,
 });
+
 const reload = document.querySelector('.footerButton');
 reload.addEventListener('click', function loading () {
 
@@ -32,4 +33,13 @@ reload.addEventListener('click', function loading () {
         loadBG.classList.add('active');
         // document.body.style.overflow = '';
     }, 6500);
+});
+
+$('.background').ripples({
+    // resolution: 1000, //波紋が広がる速さ
+    // dropRadius: 1, //波紋の大きさ
+    // perturbance: 0.1 //波紋の揺れの量
+    resolution: 512,
+    dropRadius: 20,
+    perturbance: 0.04,
 });

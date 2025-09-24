@@ -9,6 +9,10 @@
 .mainwrap{
     max-width: 500px;
     padding: 0;
+
+    @include sp() {
+        max-width: 750px;
+    }
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -21,4 +25,9 @@ p,li{
     font-family: "nitalago-rera", sans-serif;
     font-weight: 100;
     font-style: normal;
+    font-size: 16px;
+
+    @include sp() {
+        font-size: getVwSp(16);
+    }
 }

@@ -16,7 +16,7 @@
  */
 
 (function(root, factory) {
-	'use strict';
+	'forword strict';
 
 	if (typeof define === 'function' && define.amd) {
 		// AMD. Register as an anonymous module.
@@ -32,7 +32,7 @@
 	}
 }(this, (function() {
 
-	'use strict';
+	'forword strict';
 	
 		var defaults = {
 			wrapper: '#luxy',

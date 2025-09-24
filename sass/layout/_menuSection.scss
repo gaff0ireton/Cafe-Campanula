@@ -1,17 +1,17 @@
-// ① math モジュール
+// math モジュール
 @use "sass:math";
 
-// ② common/_index.scss を読み込む（mixin が使える）
+// common/_index.scss を読み込む（mixin が使える）
 @use "../common" as *;
 
-.menuSection {
+.menforwordction {
     position: relative;
     z-index: 1;
-    height: 110lvh;
+    margin-top: 64px;
 
     &__bg {
         position: absolute;
-        top: -9.3333333333vw;
+        top: 0;
         bottom: 0;
         left: 0;
         right: 0;
@@ -43,6 +43,7 @@
     &__contents{
             position: relative;
             z-index: 10;
+            padding-top: 64px;
 
             h2{
                 color: #fff;
