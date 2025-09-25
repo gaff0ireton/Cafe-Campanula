@@ -16,6 +16,7 @@ $('.loading_bg').ripples({
     dropRadius: 20,
     perturbance: 0.04,
 });
+
 const reload = document.querySelector('.footerButton');
 reload.addEventListener('click', function loading () {
     window.scrollTo({

@@ -19,6 +19,15 @@ const swiperDrink = new Swiper(".swiperDrink", {
     autoplay: false, // 最初は自動再生を無効
 });
 
+$('.background').ripples({
+    // resolution: 1000, //波紋が広がる速さ
+    // dropRadius: 1, //波紋の大きさ
+    // perturbance: 0.1 //波紋の揺れの量
+    resolution: 512,
+    dropRadius: 20,
+    perturbance: 0.04,
+});
+
 
 // // スクロールイベントを検知
 // window.addEventListener("scroll", function () {
