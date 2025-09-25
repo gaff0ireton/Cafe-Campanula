@@ -7,6 +7,10 @@
 .newsSection{
     .swiper{
         @extend .swiper;
+        
+        @include sp() {
+            padding: 0px getVwSp(25)
+        }
 
         &-wrapper{
             .swiper-slide{
