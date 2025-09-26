@@ -5,6 +5,8 @@
 @use "../common" as *;
 
 .mainvisualSection {
+    position: relative;
+    z-index: 1;
     height: 100vh;
 
     &__deco {
