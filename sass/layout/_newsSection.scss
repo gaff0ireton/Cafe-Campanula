@@ -14,7 +14,7 @@
         @extend .swiper;
         
         @include sp() {
-            padding: 0 getVwSp(25);
+            @include swiper-sp;
         }
 
         &-wrapper{
@@ -23,8 +23,7 @@
                     @extend .swiper__img;
 
                     @include sp() {
-                        width: getVwSp(400);
-                        // @extend %swiper__img-sp;
+                        @include swiper__img-sp;
                     }
                 }
 
@@ -32,8 +31,7 @@
                     @extend .swiper__txt;
 
                     @include sp() {
-                        width: getVwSp(400);
-                        // @extend %swiper__txt-sp;
+                        @include swiper__txt-sp;
                     }
                 }
             }

@@ -55,6 +55,10 @@
         .swiperFood {
             @extend .swiper;
 
+            @include sp(){
+                @include swiper-sp;
+            }
+
             .swiper-wrapper {
                 .swiper-slide {
                     img {
@@ -78,6 +82,10 @@
 
         .swiperDrink {
             @extend .swiper;
+
+            @include sp(){
+                @include swiper-sp;
+            }
 
             .swiper-wrapper {
                 .swiper-slide {

@@ -166,7 +166,7 @@ p, li {
 }
 @media screen and (max-width: 750px) {
   .newsSection .swiper {
-    padding: 0 5vw;
+    padding: 0px 5vw;
   }
 }
 @media screen and (max-width: 750px) {
@@ -223,6 +223,11 @@ p, li {
   color: #fff;
 }
 @media screen and (max-width: 750px) {
+  .menuSection__contents .swiperFood {
+    padding: 0px 5vw;
+  }
+}
+@media screen and (max-width: 750px) {
   .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide img {
     width: 80vw;
   }
@@ -230,6 +235,11 @@ p, li {
 @media screen and (max-width: 750px) {
   .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide p {
     width: 80vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .menuSection__contents .swiperDrink {
+    padding: 0px 5vw;
   }
 }
 @media screen and (max-width: 750px) {
