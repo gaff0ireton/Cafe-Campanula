@@ -15,7 +15,7 @@
 .swiper__txt, .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide p, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide p, .newsSection .swiper-wrapper .swiper-slide p {
   width: 400px;
   margin: 0 auto;
-  padding: 20px 10px 10px;
+  padding: 20px 10px;
 }
 
 /* ページ全体のスタイル */
@@ -76,6 +76,14 @@ p, li {
 
 .swiper-pagination {
   position: relative;
+}
+.swiper-pagination-bullet {
+  background-color: #646464;
+  opacity: 0.5;
+}
+.swiper-pagination-bullet-active {
+  background-color: #0080FF;
+  opacity: 1;
 }
 
 @media screen and (min-width: 750px) {
@@ -233,6 +241,30 @@ p, li {
   .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide p {
     width: 80vw;
   }
+}
+
+.accessSection {
+  position: relative;
+  z-index: 1;
+  margin-top: -32px;
+}
+.accessSection__bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  background-color: #FFFFCC;
+  mask-image: url("../img/wave.svg"), linear-gradient(#fff, #fff);
+  mask-size: 1000px 46.6666666667px, 100% calc(100% - 45.3333333333px);
+  mask-repeat: repeat-x;
+  overflow: hidden;
+  animation: wave 5s var(--mh--easing04) infinite both;
+}
+.accessSection__contents {
+  position: relative;
+  padding: 64px 0;
 }
 
 @keyframes wave {

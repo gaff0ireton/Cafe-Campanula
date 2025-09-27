@@ -62,6 +62,15 @@ p,li{
 
 .swiper-pagination{
     position: relative;
+    &-bullet{
+        background-color: $txtColor;
+        opacity: .5;
+
+        &-active{
+            background-color: $mainColor;
+            opacity: 1;
+        }
+    }
 }
 
 .spOnly{

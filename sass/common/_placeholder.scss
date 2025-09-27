@@ -2,7 +2,7 @@
 @use "sass:math";
 
 // common/_index.scss を読み込む（mixin が使える）
-@use 'mixin';
+@use 'mixin' as *;
 
 .swiper {
     padding: 0px 25px;
@@ -20,17 +20,17 @@
 .swiper__txt {
     width: 400px;
     margin: 0 auto;
-    padding: 20px 10px 10px;
+    padding: 20px 10px;
 }
 
-    %swiper-sp {
-        padding: 0px getVwSp(25);
-    }
+@mixin swiper-sp {
+    padding: 0px getVwSp(25);
+}
 
-    %swiper__img-sp {
-        width: getVwSp(400);
-    }
+@mixin swiper__img-sp {
+    width: getVwSp(400);
+}
 
-    %swiper__txt-sp {
-        width: getVwSp(400);
-    }
+@mixin swiper__txt-sp {
+    width: getVwSp(400);
+}
