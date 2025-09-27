@@ -5,11 +5,16 @@
 @use "../common" as *;
 
 .newsSection{
+    h3,p{
+        text-align: left;
+        padding: 0 20px;
+    }
+    
     .swiper{
         @extend .swiper;
         
         @include sp() {
-            padding: 0px getVwSp(25)
+            padding: 0 getVwSp(25);
         }
 
         &-wrapper{
@@ -19,6 +24,7 @@
 
                     @include sp() {
                         width: getVwSp(400);
+                        // @extend %swiper__img-sp;
                     }
                 }
 
@@ -27,6 +33,7 @@
 
                     @include sp() {
                         width: getVwSp(400);
+                        // @extend %swiper__txt-sp;
                     }
                 }
             }

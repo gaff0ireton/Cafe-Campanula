@@ -1,10 +1,11 @@
-$mainColor: #0080FF;
-$subColor: #FFB300;
-$bgColor: #FFFFCC;
-$txtColor: #646464;
-
 // math モジュール
 @use "sass:math";
 
 // common/_index.scss を読み込む（mixin が使える）
-@use 'mixin';
+@use "../common" as *;
+
+.captionSection{
+    p{
+        padding: 0 25px;
+    }
+}

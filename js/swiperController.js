@@ -3,6 +3,9 @@ const swiper = new Swiper(".swiper", {
     loop: false, // スライダーをループさせる
     speed: 1500, // スライドの切り替え速度（デフォルトは300）
     autoplay: false, // 最初は自動再生を無効
+    pagination: {
+    el: '.swiper-pagination',
+  },
 });
 
 const swiperFood = new Swiper(".swiperFood", {
@@ -10,6 +13,9 @@ const swiperFood = new Swiper(".swiperFood", {
     loop: false, // スライダーをループさせる
     speed: 1500, // スライドの切り替え速度（デフォルトは300）
     autoplay: false, // 最初は自動再生を無効
+    pagination: {
+    el: '.swiper-pagination',
+  },
 });
 
 const swiperDrink = new Swiper(".swiperDrink", {
@@ -17,6 +23,9 @@ const swiperDrink = new Swiper(".swiperDrink", {
     loop: false, // スライダーをループさせる
     speed: 1500, // スライドの切り替え速度（デフォルトは300）
     autoplay: false, // 最初は自動再生を無効
+    pagination: {
+    el: '.swiper-pagination',
+  },
 });
 
 $('.background').ripples({

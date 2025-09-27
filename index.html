@@ -21,16 +21,16 @@
     <link rel="stylesheet" href="sass/style.css"> <!-- css -->
     <link rel="stylesheet" href="css/style.css"> <!-- css -->
 
-        <script>
-  (function(d) {
-    var config = {
-      kitId: 'bag0fsb',
-      scriptTimeout: 3000,
-      async: true
-    },
-    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-  })(document);
-</script>
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'bag0fsb',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
 
 </head>
 
@@ -124,49 +124,43 @@
             </div>
         </div>
 
-        <header>
-            <div class="header"></div>
+        <header class="spOnly">
+            <button class="toggleButton">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-            <div class="headerNav">
+            <nav id="drawerMenu">
+                <ul>
+                    <li>
+                        <a href="#caption">
+                            CAPTION
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#news">
 
-                <button class="toggleButton">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
-                <nav id="drawerMenu">
-                    <ul>
-                        <li>
-                            <a href="#caption">
-                                CAPTION
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#news">
-
-                                NEWS
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#menu">
-                                MENU
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#goods">
-                                GOODS
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#access">
-                                ACCESS
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-
+                            NEWS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#menu">
+                            MENU
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#goods">
+                            GOODS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#access">
+                            ACCESS
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </header>
 
         <main>
@@ -183,70 +177,61 @@
 
 
             <div class="background"></div>
-            <!-- <div class="box">
-
-
-                <div class="backLogo">
-                    <img class="backLogoWrap" src="img/backLogo.svg" alt="">
-                </div> -->
 
             <div class="mainwrap">
-
-
                 <section id="caption" class="captionSection">
-                    <div class="capBox">
-
-                        <h2>
-                            CONCEPT
-                        </h2>
-                        <h3 class="capH3">
-                            サメとの魔法のひととき
-                        </h3>
-                        <p class="capText">
-                            神戸北野に店舗を構えるカフェ「Campanula (カムパネルラ)」。
-                            ここでは、サメとの魔法のひとときが待っています。
-                            私たちのカフェは、海の奇妙な美しさをイメージした空間と、可愛らしいサメたちが舞台です。ここでは、サメとの不思議なひとときを楽しむことができます。
-                            サメとの触れ合い、美味しくユニークなお料理、そして新しい友達との出会いが、あなたを夢中にさせるでしょう。私たちの目標は、サメについて学び、彼らの保護に貢献すること。サメとのふれあいが魔法のような思い出に変わる瞬間です。サメたちとともに、新たな冒険が始まります。
-                        </p>
-                        <div class="capPhoto">
-                            <img class="photo" src="img/view.jpg" alt="外観">
-                        </div>
+                    <h2>
+                        CONCEPT
+                    </h2>
+                    <h3>
+                        サメとの魔法のひととき
+                    </h3>
+                    <p>
+                        神戸北野に店舗を構えるカフェ「Campanula (カムパネルラ)」。
+                        ここでは、サメとの魔法のひとときが待っています。
+                        私たちのカフェは、海の奇妙な美しさをイメージした空間と、可愛らしいサメたちが舞台です。ここでは、サメとの不思議なひとときを楽しむことができます。
+                        サメとの触れ合い、美味しくユニークなお料理、そして新しい友達との出会いが、あなたを夢中にさせるでしょう。私たちの目標は、サメについて学び、彼らの保護に貢献すること。サメとのふれあいが魔法のような思い出に変わる瞬間です。サメたちとともに、新たな冒険が始まります。
+                    </p>
+                    <div>
+                        <img class="photo" src="img/view.jpg" alt="外観">
                     </div>
                 </section>
                 <section id="news" class="newsSection">
-                    <div class="newsBox">
-
-                        <h2>
-                            NEWS
-                        </h2>
-                        <p id="date">
-                            <!-- ここに日付が入る -->
-                        </p>
-                        <h3>
-                            営業時間のお知らせ
-                        </h3>
-                        <div class="swiper">
-                            <!-- Additional required wrapper -->
-                            <div class="swiper-wrapper">
-                                <!-- Slides -->
-                                <div class="swiper-slide"><img src="img/img_news_01.jpg" alt="" ><p>2025-9-24 : 伝説の大人気の等身大ジンベエザメぬいぐるみ再入荷！ 大人気の等身大ジンベエザメぬいぐるみが再び店頭に並びました！ 14mが入る一室のあるクソデカハウスを購入して、ジンベエザメちゃんをお迎えしましょう！</p></div>
-                                <div class="swiper-slide"><img src="img/img_news_02.jpg" alt="" ><p>2025-9-24 : 伝説の大人気の等身大ジンベエザメぬいぐるみ再入荷！ 大人気の等身大ジンベエザメぬいぐるみが再び店頭に並びました！ 14mが入る一室のあるクソデカハウスを購入して、ジンベエザメちゃんをお迎えしましょう！</p></div>
-                                <div class="swiper-slide"><img src="img/img_news_03.jpg" alt="" ><p>2025-9-24 : 伝説の大人気の等身大ジンベエザメぬいぐるみ再入荷！ 大人気の等身大ジンベエザメぬいぐるみが再び店頭に並びました！ 14mが入る一室のあるクソデカハウスを購入して、ジンベエザメちゃんをお迎えしましょう！</p></div>
+                    <h2>
+                        NEWS
+                    </h2>
+                    <p id="date">
+                        <!-- ここに日付が入る -->
+                    </p>
+                    <h3>
+                        営業時間のお知らせ
+                    </h3>
+                    <div class="swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide"><img src="img/img_news_01.jpg" alt="">
+                                <p>2025-9-24 : 伝説の大人気の等身大ジンベエザメぬいぐるみ再入荷！ 大人気の等身大ジンベエザメぬいぐるみが再び店頭に並びました！
+                                    14mが入る一室のあるクソデカハウスを購入して、ジンベエザメちゃんをお迎えしましょう！</p>
                             </div>
-                            <!-- If we need pagination -->
-                            <div class="swiper-pagination"></div>
-
-                            <!-- If we need navigation buttons -->
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
+                            <div class="swiper-slide"><img src="img/img_news_02.jpg" alt="">
+                                <p>2025-9-24 : 伝説の大人気の等身大ジンベエザメぬいぐるみ再入荷！ 大人気の等身大ジンベエザメぬいぐるみが再び店頭に並びました！
+                                    14mが入る一室のあるクソデカハウスを購入して、ジンベエザメちゃんをお迎えしましょう！</p>
+                            </div>
+                            <div class="swiper-slide"><img src="img/img_news_03.jpg" alt="">
+                                <p>2025-9-24 : 伝説の大人気の等身大ジンベエザメぬいぐるみ再入荷！ 大人気の等身大ジンベエザメぬいぐるみが再び店頭に並びました！
+                                    14mが入る一室のあるクソデカハウスを購入して、ジンベエザメちゃんをお迎えしましょう！</p>
+                            </div>
                         </div>
-                        <p id="newsText01">
-                            <!-- ここにニュース文章が入る -->
-                        </p>
-                        <p id="newsText02">
-                            <!-- ここにニュース文章が入る -->
-                        </p>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
                     </div>
+                    <p id="newsText01">
+                        <!-- ここにニュース文章が入る -->
+                    </p>
+                    <p id="newsText02">
+                        <!-- ここにニュース文章が入る -->
+                    </p>
                 </section>
                 <section id="menu" class="menuSection">
 
@@ -264,84 +249,51 @@
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
-                                <div class="swiper-slide"><img src="img/img_food_01.jpg" alt="" ><p>2025-9-24 : 伝説の大人気の等身大ジンベエザメぬいぐるみ再入荷！ 大人気の等身大ジンベエザメぬいぐるみが再び店頭に並びました！ 14mが入る一室のあるクソデカハウスを購入して、ジンベエザメちゃんをお迎えしましょう！</p></div>
-                                <div class="swiper-slide"><img src="img/img_food_02.jpg" alt="" ><p>2025-9-24 : 伝説の大人気の等身大ジンベエザメぬいぐるみ再入荷！ 大人気の等身大ジンベエザメぬいぐるみが再び店頭に並びました！ 14mが入る一室のあるクソデカハウスを購入して、ジンベエザメちゃんをお迎えしましょう！</p></div>
-                                <div class="swiper-slide"><img src="img/img_food_03.jpg" alt="" ><p>2025-9-24 : 伝説の大人気の等身大ジンベエザメぬいぐるみ再入荷！ 大人気の等身大ジンベエザメぬいぐるみが再び店頭に並びました！ 14mが入る一室のあるクソデカハウスを購入して、ジンベエザメちゃんをお迎えしましょう！</p></div>
+                                <div class="swiper-slide"><img src="img/img_food_01.jpg" alt="">
+                                    <p>2025-9-24 : 伝説の大人気の等身大ジンベエザメぬいぐるみ再入荷！ 大人気の等身大ジンベエザメぬいぐるみが再び店頭に並びました！
+                                        14mが入る一室のあるクソデカハウスを購入して、ジンベエザメちゃんをお迎えしましょう！</p>
+                                </div>
+                                <div class="swiper-slide"><img src="img/img_food_02.jpg" alt="">
+                                    <p>2025-9-24 : 伝説の大人気の等身大ジンベエザメぬいぐるみ再入荷！ 大人気の等身大ジンベエザメぬいぐるみが再び店頭に並びました！
+                                        14mが入る一室のあるクソデカハウスを購入して、ジンベエザメちゃんをお迎えしましょう！</p>
+                                </div>
+                                <div class="swiper-slide"><img src="img/img_food_03.jpg" alt="">
+                                    <p>2025-9-24 : 伝説の大人気の等身大ジンベエザメぬいぐるみ再入荷！ 大人気の等身大ジンベエザメぬいぐるみが再び店頭に並びました！
+                                        14mが入る一室のあるクソデカハウスを購入して、ジンベエザメちゃんをお迎えしましょう！</p>
+                                </div>
                             </div>
                             <!-- If we need pagination -->
                             <div class="swiper-pagination"></div>
-
-                            <!-- If we need navigation buttons -->
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
                         </div>
                         <div class="swiperDrink">
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
-                                <div class="swiper-slide"><img src="img/img_drink_01.jpg" alt="" ><p>サメちゃんメロンフロート</p></div>
-                                <div class="swiper-slide"><img src="img/img_drink_02.jpg" alt="" ><p>サメちゃんディープブルー</p></div>
-                                <div class="swiper-slide"><img src="img/img_drink_03.jpg" alt="" ><p>サメちゃんベリーフラッペ</p></div>
-                                <div class="swiper-slide"><img src="img/img_drink_04.jpg" alt="" ><p>サメちゃんロストバケーション</p></div>
-                                <div class="swiper-slide"><img src="img/img_drink_05.jpg" alt="" ><p>サメちゃんアイスフロート</p></div>
-                                <div class="swiper-slide"><img src="img/img_drink_06.jpg" alt="" ><p>サメちゃんネード</p></div>
+                                <div class="swiper-slide"><img src="img/img_drink_01.jpg" alt="">
+                                    <p>サメちゃんメロンフロート</p>
+                                </div>
+                                <div class="swiper-slide"><img src="img/img_drink_02.jpg" alt="">
+                                    <p>サメちゃんディープブルー</p>
+                                </div>
+                                <div class="swiper-slide"><img src="img/img_drink_03.jpg" alt="">
+                                    <p>サメちゃんベリーフラッペ</p>
+                                </div>
+                                <div class="swiper-slide"><img src="img/img_drink_04.jpg" alt="">
+                                    <p>サメちゃんロストバケーション</p>
+                                </div>
+                                <div class="swiper-slide"><img src="img/img_drink_05.jpg" alt="">
+                                    <p>サメちゃんアイスフロート</p>
+                                </div>
+                                <div class="swiper-slide"><img src="img/img_drink_06.jpg" alt="">
+                                    <p>サメちゃんネード</p>
+                                </div>
                             </div>
                             <!-- If we need pagination -->
                             <div class="swiper-pagination"></div>
-
-                            <!-- If we need navigation buttons -->
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
                         </div>
                     </div>
                 </section>
 
-                <section id="goods">
-                    <h2>
-                        GOODS
-                    </h2>
-                    <div id="goodsBox">
-                        <div class="goodsItem">
-                            <div class="goodsPhoto">
-                                <img class="photo" src="img/goods_1.jpg" alt="がちゃぽん">
-                            </div>
-                            <div class="goodsText">
-                                <h3>
-                                    がちゃぽん
-                                </h3>
-                                <h4>
-                                    ¥500
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="goodsItem">
-                            <div class="goodsPhoto">
-                                <img class="photo" src="img/goods_2.jpg" alt="ぬいぐるみ">
-                            </div>
-                            <div class="goodsText">
-                                <h3>
-                                    ぬいぐるみ
-                                </h3>
-                                <h4>
-                                    ¥1,380
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="goodsItem">
-                            <div class="goodsPhoto">
-                                <img class="photo" src="img/goods_3.jpg" alt="アクリルスタンド">
-                            </div>
-                            <div class="goodsText">
-                                <h3>
-                                    アクリルスタンド
-                                </h3>
-                                <h4>
-                                    ¥1,380
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                </section>
                 <section id="access">
                     <div>
                         <h2>

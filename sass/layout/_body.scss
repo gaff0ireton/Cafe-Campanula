@@ -37,6 +37,15 @@ h1,h2,h3,h4,h5,h6{
     font-family: "nitalago-rera", sans-serif;
     font-weight: 600;
     font-style: normal;
+    text-align: center;
+}
+
+h2{
+    color: $mainColor;
+}
+
+h3{
+    color: $subColor;
 }
 
 p,li{
@@ -44,8 +53,31 @@ p,li{
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
+    color: $txtColor;
 
     @include sp() {
         font-size: getVwSp(16);
+    }
+}
+
+.swiper-pagination{
+    position: relative;
+}
+
+.spOnly{
+    @include pc(){
+        display: none;
+    }
+    @include sp(){
+        display: block;
+    }
+}
+
+.pcOnly{
+    @include pc(){
+        display: block;
+    }
+    @include sp(){
+        display: none;
     }
 }

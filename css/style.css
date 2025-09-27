@@ -15,6 +15,7 @@
 .swiper__txt, .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide p, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide p, .newsSection .swiper-wrapper .swiper-slide p {
   width: 400px;
   margin: 0 auto;
+  padding: 20px 10px 10px;
 }
 
 /* ページ全体のスタイル */
@@ -49,6 +50,15 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "nitalago-rera", sans-serif;
   font-weight: 600;
   font-style: normal;
+  text-align: center;
+}
+
+h2 {
+  color: #0080FF;
+}
+
+h3 {
+  color: #FFB300;
 }
 
 p, li {
@@ -56,10 +66,37 @@ p, li {
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
+  color: #646464;
 }
 @media screen and (max-width: 750px) {
   p, li {
     font-size: 3.2vw;
+  }
+}
+
+.swiper-pagination {
+  position: relative;
+}
+
+@media screen and (min-width: 750px) {
+  .spOnly {
+    display: none;
+  }
+}
+@media screen and (max-width: 750px) {
+  .spOnly {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .pcOnly {
+    display: block;
+  }
+}
+@media screen and (max-width: 750px) {
+  .pcOnly {
+    display: none;
   }
 }
 
@@ -111,9 +148,17 @@ p, li {
   object-fit: cover;
 }
 
+.captionSection p {
+  padding: 0 25px;
+}
+
+.newsSection h3, .newsSection p {
+  text-align: left;
+  padding: 0 20px;
+}
 @media screen and (max-width: 750px) {
   .newsSection .swiper {
-    padding: 0px 5vw;
+    padding: 0 5vw;
   }
 }
 @media screen and (max-width: 750px) {
@@ -164,7 +209,7 @@ p, li {
 }
 .menuSection__contents {
   position: relative;
-  padding-top: 64px;
+  padding: 64px 0;
 }
 .menuSection__contents h2 {
   color: #fff;
