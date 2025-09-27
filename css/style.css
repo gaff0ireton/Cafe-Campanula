@@ -1,10 +1,10 @@
 @charset "UTF-8";
-.swiper, .menuSection__contents .swiperFood, .menuSection__contents .swiperDrink, .newsSection .swiper {
-  padding: 0px 25px;
+.swiper, .menuSection__contents .swiperFood, .menuSection__contents .swiperDrink, .menuSection__contents .swiperTakeOut, .newsSection .swiper {
+  padding: 0px 25px 20px;
   overflow: hidden;
 }
 
-.swiper__img, .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide img, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide img, .newsSection .swiper-wrapper .swiper-slide img {
+.swiper__img, .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide img, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide img, .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide img, .newsSection .swiper-wrapper .swiper-slide img {
   width: 400px;
   border-radius: 50px;
   overflow: hidden;
@@ -12,13 +12,35 @@
   display: block;
 }
 
-.swiper__txt, .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide p, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide p, .newsSection .swiper-wrapper .swiper-slide p {
+.swiper__txt, .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide p, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide p, .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide p, .newsSection .swiper-wrapper .swiper-slide p {
   width: 400px;
   margin: 0 auto;
   padding: 20px 10px;
 }
 
 /* ページ全体のスタイル */
+@media screen and (min-width: 750px) {
+  .spOnly {
+    display: none;
+  }
+}
+@media screen and (max-width: 750px) {
+  .spOnly {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .pcOnly {
+    display: block;
+  }
+}
+@media screen and (max-width: 750px) {
+  .pcOnly {
+    display: none;
+  }
+}
+
 .background {
   background-image: url("/img/img_bg.jpg");
   background-size: auto;
@@ -32,6 +54,41 @@
 }
 .background::after {
   display: none;
+}
+
+.left, .right {
+  position: fixed;
+  top: 0;
+  width: calc((100vw - 500px) / 2);
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.left__logo {
+  width: 500px;
+}
+
+.right {
+  right: 0;
+}
+.right nav {
+  width: 250px;
+  margin: 0 auto;
+}
+.right nav ul li {
+  color: #0080FF;
+  font-size: 26px;
+  opacity: 0.5;
+}
+.right nav ul li:nth-child(n+2) {
+  margin-top: 20px;
+}
+.right nav ul .is-current {
+  opacity: 1;
 }
 
 .mainwrap {
@@ -51,14 +108,31 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   font-style: normal;
   text-align: center;
+  text-transform: uppercase;
 }
 
 h2 {
   color: #0080FF;
+  font-size: 32px;
+  padding-bottom: 32px;
+}
+@media screen and (max-width: 750px) {
+  h2 {
+    font-size: 6.4vw;
+    padding-bottom: 6.4vw;
+  }
 }
 
 h3 {
   color: #FFB300;
+  font-size: 24px;
+  padding-bottom: 24px;
+}
+@media screen and (max-width: 750px) {
+  h3 {
+    font-size: 4.8vw;
+    padding-bottom: 4.8vw;
+  }
 }
 
 p, li {
@@ -78,34 +152,20 @@ p, li {
   position: relative;
 }
 .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
   background-color: #646464;
   opacity: 0.5;
+}
+@media screen and (max-width: 750px) {
+  .swiper-pagination-bullet {
+    width: 2vw;
+    height: 2vw;
+  }
 }
 .swiper-pagination-bullet-active {
   background-color: #0080FF;
   opacity: 1;
-}
-
-@media screen and (min-width: 750px) {
-  .spOnly {
-    display: none;
-  }
-}
-@media screen and (max-width: 750px) {
-  .spOnly {
-    display: block;
-  }
-}
-
-@media screen and (min-width: 750px) {
-  .pcOnly {
-    display: block;
-  }
-}
-@media screen and (max-width: 750px) {
-  .pcOnly {
-    display: none;
-  }
 }
 
 .mainvisualSection {
@@ -166,7 +226,7 @@ p, li {
 }
 @media screen and (max-width: 750px) {
   .newsSection .swiper {
-    padding: 0px 5vw;
+    padding: 0px 5vw 4vw;
   }
 }
 @media screen and (max-width: 750px) {
@@ -219,12 +279,12 @@ p, li {
   position: relative;
   padding: 64px 0;
 }
-.menuSection__contents h2 {
+.menuSection__contents h2, .menuSection__contents h3 {
   color: #fff;
 }
 @media screen and (max-width: 750px) {
   .menuSection__contents .swiperFood {
-    padding: 0px 5vw;
+    padding: 0px 5vw 4vw;
   }
 }
 @media screen and (max-width: 750px) {
@@ -239,7 +299,7 @@ p, li {
 }
 @media screen and (max-width: 750px) {
   .menuSection__contents .swiperDrink {
-    padding: 0px 5vw;
+    padding: 0px 5vw 4vw;
   }
 }
 @media screen and (max-width: 750px) {
@@ -251,6 +311,32 @@ p, li {
   .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide p {
     width: 80vw;
   }
+}
+@media screen and (max-width: 750px) {
+  .menuSection__contents .swiperTakeOut {
+    padding: 0px 5vw 4vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide img {
+    width: 80vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide p {
+    width: 80vw;
+  }
+}
+.menuSection__contents .swiper-pagination {
+  position: relative;
+}
+.menuSection__contents .swiper-pagination-bullet {
+  background-color: #fff;
+  opacity: 0.5;
+}
+.menuSection__contents .swiper-pagination-bullet-active {
+  background-color: #0080FF;
+  opacity: 1;
 }
 
 .accessSection {

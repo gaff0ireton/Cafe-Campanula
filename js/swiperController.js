@@ -1,6 +1,6 @@
 const swiper = new Swiper(".swiper", {
     // スライダーのオプションを設定
-    loop: false, // スライダーをループさせる
+    loop: true, // スライダーをループさせる
     speed: 1500, // スライドの切り替え速度（デフォルトは300）
     autoplay: false, // 最初は自動再生を無効
     pagination: {
@@ -10,7 +10,7 @@ const swiper = new Swiper(".swiper", {
 
 const swiperFood = new Swiper(".swiperFood", {
     // スライダーのオプションを設定
-    loop: false, // スライダーをループさせる
+    loop: true, // スライダーをループさせる
     speed: 1500, // スライドの切り替え速度（デフォルトは300）
     autoplay: false, // 最初は自動再生を無効
     pagination: {
@@ -20,7 +20,7 @@ const swiperFood = new Swiper(".swiperFood", {
 
 const swiperDrink = new Swiper(".swiperDrink", {
     // スライダーのオプションを設定
-    loop: false, // スライダーをループさせる
+    loop: true, // スライダーをループさせる
     speed: 1500, // スライドの切り替え速度（デフォルトは300）
     autoplay: false, // 最初は自動再生を無効
     pagination: {
@@ -28,13 +28,14 @@ const swiperDrink = new Swiper(".swiperDrink", {
   },
 });
 
-$('.background').ripples({
-    // resolution: 1000, //波紋が広がる速さ
-    // dropRadius: 1, //波紋の大きさ
-    // perturbance: 0.1 //波紋の揺れの量
-    resolution: 512,
-    dropRadius: 20,
-    perturbance: 0.04,
+const swiperTakeOut = new Swiper(".swiperTakeOut", {
+    // スライダーのオプションを設定
+    loop: true, // スライダーをループさせる
+    speed: 1500, // スライドの切り替え速度（デフォルトは300）
+    autoplay: false, // 最初は自動再生を無効
+    pagination: {
+    el: '.swiper-pagination',
+  },
 });
 
 

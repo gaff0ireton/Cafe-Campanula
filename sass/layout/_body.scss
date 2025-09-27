@@ -6,6 +6,24 @@
 
 /* ページ全体のスタイル */
 
+.spOnly{
+    @include pc(){
+        display: none;
+    }
+    @include sp(){
+        display: block;
+    }
+}
+
+.pcOnly{
+    @include pc(){
+        display: block;
+    }
+    @include sp(){
+        display: none;
+    }
+}
+
 .background{
     background-image: url('/img/img_bg.jpg');
     background-size: auto;
@@ -19,6 +37,47 @@
 
     &::after{
         display: none;
+    }
+}
+
+.left, .right{
+    position: fixed;
+    top: 0;
+    width: calc((100vw - 500px) / 2);
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.left{
+    &__logo{
+        width: 500px;
+    }
+}
+
+.right{
+    right: 0;
+    nav{
+        width: 250px;
+        margin: 0 auto;
+        ul{
+            li{
+                color: $mainColor;
+                font-size: 26px;
+                opacity: .5;
+
+                &:nth-child(n+2){
+                    margin-top: 20px;
+                }
+            }
+
+            .is-current{
+                opacity: 1;
+            }
+        }
     }
 }
 
@@ -38,14 +97,29 @@ h1,h2,h3,h4,h5,h6{
     font-weight: 600;
     font-style: normal;
     text-align: center;
+    text-transform: uppercase;
 }
 
 h2{
     color: $mainColor;
+    font-size: 32px;
+    padding-bottom: 32px;
+
+    @include sp(){
+        font-size: getVwSp(32);
+        padding-bottom: getVwSp(32);
+    }
 }
 
 h3{
     color: $subColor;
+    font-size: 24px;
+    padding-bottom: 24px;
+
+    @include sp(){
+        font-size: getVwSp(24);
+        padding-bottom: getVwSp(24);
+    }
 }
 
 p,li{
@@ -63,30 +137,19 @@ p,li{
 .swiper-pagination{
     position: relative;
     &-bullet{
+        width: 10px;
+        height: 10px;
         background-color: $txtColor;
         opacity: .5;
+
+        @include sp(){
+            width: getVwSp(10);
+            height: getVwSp(10);
+        }
 
         &-active{
             background-color: $mainColor;
             opacity: 1;
         }
-    }
-}
-
-.spOnly{
-    @include pc(){
-        display: none;
-    }
-    @include sp(){
-        display: block;
-    }
-}
-
-.pcOnly{
-    @include pc(){
-        display: block;
-    }
-    @include sp(){
-        display: none;
     }
 }

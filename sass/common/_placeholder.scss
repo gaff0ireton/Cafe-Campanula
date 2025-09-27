@@ -5,7 +5,7 @@
 @use 'mixin' as *;
 
 .swiper {
-    padding: 0px 25px;
+    padding: 0px 25px 20px;
     overflow: hidden;
 }
 
@@ -24,7 +24,7 @@
 }
 
 @mixin swiper-sp {
-    padding: 0px getVwSp(25);
+    padding: 0px getVwSp(25) getVwSp(20);
 }
 
 @mixin swiper__img-sp {

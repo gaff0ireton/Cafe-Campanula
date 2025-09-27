@@ -9,7 +9,7 @@
     z-index: 1;
     margin-top: 64px;
 
-    p{
+    p {
         color: #fff;
     }
 
@@ -48,14 +48,14 @@
         position: relative;
         padding: 64px 0;
 
-        h2 {
+        h2, h3 {
             color: #fff;
         }
 
         .swiperFood {
             @extend .swiper;
 
-            @include sp(){
+            @include sp() {
                 @include swiper-sp;
             }
 
@@ -83,7 +83,7 @@
         .swiperDrink {
             @extend .swiper;
 
-            @include sp(){
+            @include sp() {
                 @include swiper-sp;
             }
 
@@ -104,6 +104,48 @@
                             @include swiper__txt-sp;
                         }
                     }
+                }
+            }
+        }
+
+        .swiperTakeOut {
+            @extend .swiper;
+
+            @include sp() {
+                @include swiper-sp;
+            }
+
+            .swiper-wrapper {
+                .swiper-slide {
+                    img {
+                        @extend .swiper__img;
+
+                        @include sp() {
+                            @include swiper__img-sp;
+                        }
+                    }
+
+                    p {
+                        @extend .swiper__txt;
+
+                        @include sp() {
+                            @include swiper__txt-sp;
+                        }
+                    }
+                }
+            }
+        }
+
+        .swiper-pagination {
+            position: relative;
+
+            &-bullet {
+                background-color: #fff;
+                opacity: .5;
+
+                &-active {
+                    background-color: $mainColor;
+                    opacity: 1;
                 }
             }
         }
