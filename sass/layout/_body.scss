@@ -6,25 +6,27 @@
 
 /* ページ全体のスタイル */
 
-.spOnly{
-    @include pc(){
+.spOnly {
+    @include pc() {
         display: none;
     }
-    @include sp(){
+
+    @include sp() {
         display: block;
     }
 }
 
-.pcOnly{
-    @include pc(){
+.pcOnly {
+    @include pc() {
         display: block;
     }
-    @include sp(){
+
+    @include sp() {
         display: none;
     }
 }
 
-.background{
+.background {
     background-image: url(../img/img_bg.jpg);
     background-size: auto;
     background-repeat: no-repeat;
@@ -35,12 +37,13 @@
     bottom: 0;
     z-index: 0;
 
-    &::after{
+    &::after {
         display: none;
     }
 }
 
-.left, .right{
+.left,
+.right {
     position: fixed;
     top: 0;
     width: calc((100vw - 500px) / 2);
@@ -52,36 +55,58 @@
     pointer-events: none;
 }
 
-.left{
-    &__logo{
+.left {
+    &__logo {
         width: 500px;
     }
 }
 
-.right{
+.right {
     right: 0;
-    nav{
+
+    nav {
         width: 250px;
         margin: 0 auto;
-        ul{
-            li{
+
+        ul {
+            li {
                 color: $mainColor;
                 font-size: 26px;
                 opacity: .5;
+                transition: opacity .3s;
+                pointer-events: auto;
+                position: relative;
+                padding-left: 36px;
 
-                &:nth-child(n+2){
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-image: url(../img/icn.svg);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    width: 32px;
+                    height: 32px;
+                }
+
+                &:nth-child(n+2) {
                     margin-top: 20px;
+                }
+
+                &:hover {
+                    opacity: 1;
                 }
             }
 
-            .is-current{
+            .is-current {
                 opacity: 1;
             }
         }
     }
 }
 
-.mainwrap{
+.mainwrap {
     max-width: 500px;
     padding: 0;
     position: relative;
@@ -92,7 +117,12 @@
     }
 }
 
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "nitalago-rera", sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -100,29 +130,30 @@ h1,h2,h3,h4,h5,h6{
     text-transform: uppercase;
 }
 
-h2{
+h2 {
     color: $mainColor;
     font-size: 32px;
     padding-bottom: 32px;
 
-    @include sp(){
+    @include sp() {
         font-size: getVwSp(32);
         padding-bottom: getVwSp(32);
     }
 }
 
-h3{
+h3 {
     color: $subColor;
     font-size: 24px;
     padding-bottom: 24px;
 
-    @include sp(){
+    @include sp() {
         font-size: getVwSp(24);
         padding-bottom: getVwSp(24);
     }
 }
 
-p,li{
+p,
+li {
     font-family: "nitalago-rera", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -134,22 +165,85 @@ p,li{
     }
 }
 
-.swiper-pagination{
+.swiper-pagination {
     position: relative;
-    &-bullet{
+
+    &-bullet {
         width: 10px;
         height: 10px;
         background-color: $txtColor;
         opacity: .5;
 
-        @include sp(){
+        @include sp() {
             width: getVwSp(10);
             height: getVwSp(10);
         }
 
-        &-active{
+        &-active {
             background-color: $mainColor;
             opacity: 1;
         }
     }
+}
+
+.load {
+    background-image: url(../img/img_load_pc.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+
+    @include sp(){
+        background-image: url(../img/img_load_sp.jpg);
+    }
+
+    &__animation {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        svg{
+            width: 300px;
+            height: 300px;
+        }
+
+        .svg-elem-1 {
+            animation: animate-svg-stroke-1 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+        }
+
+        .svg-elem-2 {
+            animation: animate-svg-stroke-2 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+        }
+
+        .svg-elem-3 {
+            animation: animate-svg-stroke-3 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+        }
+
+        .svg-elem-4 {
+            animation: animate-svg-stroke-4 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+        }
+
+        .svg-elem-5 {
+            animation: animate-svg-stroke-5 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+        }
+
+        .svg-elem-6 {
+            animation: animate-svg-stroke-6 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+        }
+
+        .svg-elem-7 {
+            animation: animate-svg-stroke-7 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+        }
+
+        .svg-elem-8 {
+            animation: animate-svg-stroke-8 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+        }
+    }
+
+
 }

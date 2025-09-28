@@ -210,9 +210,6 @@
 }
 
 .header {
-  height: 10vh;
-  background-color: rgba(0, 128, 255, 0.5);
-  mix-blend-mode: multiply;
   /* 透明度を調整 */
   color: white;
   position: relative;

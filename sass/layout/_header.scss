@@ -1,0 +1,38 @@
+// ① math モジュール
+@use "sass:math";
+
+// ② common/_index.scss を読み込む（mixin が使える）
+@use "../common" as *;
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    padding: 20px;
+    
+    @include sp(){
+        padding: getVwSp(10);
+    }
+
+    &__logo {
+        width: 300px;
+        height: auto;
+
+        @include sp(){
+            width: getVwSp(200);
+        }
+
+        img {
+            transition: opacity .3s;
+
+            &:hover {
+                opacity: .5;
+            }
+        }
+    }
+
+    &__nav{
+        display: none;
+    }
+}

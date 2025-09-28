@@ -1,5 +1,5 @@
 window.addEventListener('load', loading);
-const loadBG = document.querySelector('.loading_bg');
+const loadBG = document.querySelector('.load');
 function loading() {
     // setTimeout(function(){
     // document.body.style.overflow = 'hidden';
@@ -22,7 +22,7 @@ reload.addEventListener('click', function loading () {
     }, 6500);
 });
 
-$('.loading_bg').ripples({
+$('.load').ripples({
     // resolution: 1000, //波紋が広がる速さ
     // dropRadius: 1, //波紋の大きさ
     // perturbance: 0.1 //波紋の揺れの量

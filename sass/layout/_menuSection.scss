@@ -48,7 +48,11 @@
         position: relative;
         padding: 64px 0;
 
-        h2, h3 {
+        h2{
+            color: $bgColor;
+        }
+
+        h3 {
             color: #fff;
         }
 
