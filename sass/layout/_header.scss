@@ -10,29 +10,49 @@
     left: 0;
     z-index: 2;
     padding: 20px;
-    
-    @include sp(){
+    pointer-events: none;
+
+    @include sp() {
         padding: getVwSp(10);
     }
 
     &__logo {
         width: 300px;
         height: auto;
+        pointer-events: auto;
 
-        @include sp(){
+        @include sp() {
             width: getVwSp(200);
         }
 
-        img {
+        svg {
             transition: opacity .3s;
 
             &:hover {
                 opacity: .5;
             }
+
+            .cls-1 {
+                fill: #fff;
+            }
         }
     }
 
-    &__nav{
+    &__nav {
         display: none;
+    }
+}
+
+body {
+    &.bar {
+        .header {
+            &__logo {
+                svg {
+                    .cls-1 {
+                        fill: #000;
+                    }
+                }
+            }
+        }
     }
 }

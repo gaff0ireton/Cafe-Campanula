@@ -35,9 +35,9 @@ anotherButton.addEventListener('click', function () {
     footer.classList.toggle('footerAnother');
     background.classList.toggle('backgroundAnother');
 
-    if(press){
+    if (press) {
         anotherButton.classList.remove('press');
-    }else{
+    } else {
         anotherButton.classList.add('press');
     }
 
@@ -170,4 +170,17 @@ anotherButton.addEventListener('click', function () {
     //         toggleButton.classList.remove('close');
     //     }
     // });
+});
+
+const btn = document.getElementById('js-btn');
+
+btn.addEventListener('click', function () {
+    document.body.classList.toggle('bar');
+    $('.background').ripples('destroy'); // 一度破棄
+    $('.background').css('background-image', 'none'); // CSS更新
+    $('.background').ripples({
+        resolution: 512,
+        dropRadius: 20,
+        perturbance: 0.04,
+    }); // 再初期化
 });

@@ -27,6 +27,16 @@
         overflow: hidden;
         animation: wave 5s var(--mh--easing04) infinite both;
 
+        &::after {
+            content: "";
+            background-color: #0080ff42;
+            mix-blend-mode: color-dodge;
+            display: block;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+
 
         &-movie {
             position: absolute;
@@ -48,7 +58,7 @@
         position: relative;
         padding: 64px 0;
 
-        h2{
+        h2 {
             color: $bgColor;
         }
 
@@ -150,6 +160,123 @@
                 &-active {
                     background-color: $mainColor;
                     opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+body {
+    &.bar {
+        .menuSection {
+            &__bg {
+                &::after {
+                    background-color: #c7000070;
+                    mix-blend-mode: hue;
+                }
+            }
+
+            &__contents {
+                h2 {
+                    color: $bgColorBar;
+                }
+
+                h3 {
+                    color: #fff;
+                }
+
+                .swiperFood {
+                    @extend .swiper;
+
+                    @include sp() {
+                        @include swiper-sp;
+                    }
+
+                    .swiper-wrapper {
+                        .swiper-slide {
+                            img {
+                                @extend .swiper__img;
+
+                                @include sp() {
+                                    @include swiper__img-sp;
+                                }
+                            }
+
+                            p {
+                                @extend .swiper__txt;
+
+                                @include sp() {
+                                    @include swiper__txt-sp;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .swiperDrink {
+                    @extend .swiper;
+
+                    @include sp() {
+                        @include swiper-sp;
+                    }
+
+                    .swiper-wrapper {
+                        .swiper-slide {
+                            img {
+                                @extend .swiper__img;
+
+                                @include sp() {
+                                    @include swiper__img-sp;
+                                }
+                            }
+
+                            p {
+                                @extend .swiper__txt;
+
+                                @include sp() {
+                                    @include swiper__txt-sp;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .swiperTakeOut {
+                    @extend .swiper;
+
+                    @include sp() {
+                        @include swiper-sp;
+                    }
+
+                    .swiper-wrapper {
+                        .swiper-slide {
+                            img {
+                                @extend .swiper__img;
+
+                                @include sp() {
+                                    @include swiper__img-sp;
+                                }
+                            }
+
+                            p {
+                                @extend .swiper__txt;
+
+                                @include sp() {
+                                    @include swiper__txt-sp;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .swiper-pagination {
+                    &-bullet {
+                        background-color: #fff;
+
+                        &-active {
+                            background-color: $mainColorBar;
+                        }
+                    }
                 }
             }
         }
