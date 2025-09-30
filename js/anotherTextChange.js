@@ -1,4 +1,4 @@
-const anotherText = document.querySelector('.footerButton');
+const anotherText = document.querySelector('.footer__btn');
 anotherText.addEventListener('click', function () {
     let iscapAnotherApplied;
     const capText = document.querySelector('.capText');

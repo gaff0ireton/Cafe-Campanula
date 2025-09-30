@@ -62,7 +62,7 @@ let anotherPrint02 = propaganda[
 
 
 
-const anotherNews = document.querySelector('.footerButton');
+const anotherNews = document.querySelector('.footer__btn');
 anotherNews.addEventListener('click', function () {
     const propaganda01 = document.querySelector('#newsText01');
     const propaganda02 = document.querySelector('#newsText02');

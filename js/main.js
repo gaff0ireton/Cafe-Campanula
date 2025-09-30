@@ -1,4 +1,4 @@
-const anotherButton = document.querySelector('.footerButton');
+const anotherButton = document.querySelector('.footer__btn');
 anotherButton.addEventListener('click', function () {
     const wrap = document.querySelector('.wrap');
     const header = document.querySelector('.header');

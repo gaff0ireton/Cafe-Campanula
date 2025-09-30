@@ -52,7 +52,7 @@ const photoClases = document.querySelectorAll('.photo');
 
 // console.log(isPhotoAnotherApplied);
 
-const anotherPhotoButton = document.querySelector('.footerButton');
+const anotherPhotoButton = document.querySelector('.footer__btn');
 anotherPhotoButton.addEventListener('click', function () {
     let isPhotoAnotherApplied;
 

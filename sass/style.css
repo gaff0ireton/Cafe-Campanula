@@ -1198,7 +1198,7 @@
     width: 100%;
   }
 }
-.footer .footerItem02 .footerButton {
+.footer .footerItem02 .footer__btn {
   min-width: 259px;
   background-color: white;
   color: #0080FF;
@@ -1208,13 +1208,13 @@
   justify-content: center;
 }
 @media (max-width: 800px) {
-  .footer .footerItem02 .footerButton {
+  .footer .footerItem02 .footer__btn {
     width: 50%;
     margin: 0 auto;
   }
 }
 @media (max-width: 375px) {
-  .footer .footerItem02 .footerButton {
+  .footer .footerItem02 .footer__btn {
     width: 100%;
   }
 }

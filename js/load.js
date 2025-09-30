@@ -9,7 +9,7 @@ function loading() {
     }, 6500);
 }
 
-const reload = document.querySelector('.footerButton');
+const reload = document.querySelector('.footer__btn');
 reload.addEventListener('click', function loading () {
     window.scrollTo({
         top: 0,

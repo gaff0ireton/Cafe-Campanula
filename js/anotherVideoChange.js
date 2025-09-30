@@ -12,7 +12,7 @@ const videoPaths = [
 
 const videoClases = document.querySelectorAll('.video');
 
-const anotherVideoButton = document.querySelector('.footerButton');
+const anotherVideoButton = document.querySelector('.footer__btn');
 anotherVideoButton.addEventListener('click', function () {
     let isVideoAnotherApplied;
 
