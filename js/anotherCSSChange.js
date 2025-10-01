@@ -54,21 +54,22 @@ btn.addEventListener('click', function () {
 
 });
 
-function toggleFollowButton() {
+function followObject() {
     const start = document.querySelector('.jsFollowStart');
     const end = document.querySelector('.jsFollowEnd');
     const objectArray = document.querySelectorAll('.js-follow');
 
-    if (!btn) return;
+    if (!start || !end) return;
 
     const startRect = start.getBoundingClientRect();
     const endRect = end.getBoundingClientRect();
 
-    const isObjectInViewport = startRect.bottom < window.innerHeight;
-    const isObjectOutViewport = endRect.top < window.innerHeight;
+    // 画面外判定
+    const isStartOut = startRect.bottom < 0 || startRect.top > window.innerHeight;
+    const isEndOut = endRect.bottom < 0 || endRect.top > window.innerHeight;
 
     objectArray.forEach(object => {
-        if (isObjectInViewport && !isObjectOutViewport) {
+        if (isStartOut && isEndOut) {
             object.classList.add('is-active');
         } else {
             object.classList.remove('is-active');
@@ -76,6 +77,6 @@ function toggleFollowButton() {
     });
 }
 
-window.addEventListener("scroll", toggleFollowButton);
-window.addEventListener("resize", toggleFollowButton);
-toggleFollowButton();
+window.addEventListener("scroll", followObject);
+window.addEventListener("resize", followObject);
+followObject();
