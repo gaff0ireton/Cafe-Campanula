@@ -8,7 +8,7 @@
 
 .spOnly {
     @include pc() {
-        display: none;
+        display: none !important;
     }
 
     @include sp() {
@@ -22,7 +22,7 @@
     }
 
     @include sp() {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -53,11 +53,19 @@
     justify-content: center;
     align-items: center;
     pointer-events: none;
+
+    .is-active{
+        opacity: 1;
+        pointer-events: auto;
+        transition: opacity .3s;
+    }
 }
 
 .left {
     &__logo {
         width: 80%;
+        opacity: 0;
+        transition: opacity .3s;
 
         svg {
             .cls-3 {
@@ -73,6 +81,8 @@
     nav {
         width: fit-content;
         margin: 0 auto;
+        opacity: 0;
+        transition: opacity .3s;
 
         ul {
             li {
@@ -118,13 +128,14 @@
 
 .mainwrap {
     max-width: 500px;
-    padding: 0;
+    padding: 128px 0;
     position: relative;
     z-index: 1;
     background-color: $bgColor;
 
     @include sp() {
         max-width: 750px;
+        padding: getVwSp(128) 0;
     }
 }
 

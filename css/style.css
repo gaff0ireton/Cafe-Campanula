@@ -21,7 +21,7 @@
 /* ページ全体のスタイル */
 @media screen and (min-width: 750px) {
   .spOnly {
-    display: none;
+    display: none !important;
   }
 }
 @media screen and (max-width: 750px) {
@@ -37,7 +37,7 @@
 }
 @media screen and (max-width: 750px) {
   .pcOnly {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -68,9 +68,17 @@
   align-items: center;
   pointer-events: none;
 }
+.left .is-active,
+.right .is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.3s;
+}
 
 .left__logo {
   width: 80%;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 .left__logo svg .cls-3 {
   fill: #0080FF;
@@ -82,6 +90,8 @@
 .right nav {
   width: fit-content;
   margin: 0 auto;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 .right nav ul li {
   opacity: 0.5;
@@ -117,7 +127,7 @@
 
 .mainwrap {
   max-width: 500px;
-  padding: 0;
+  padding: 128px 0;
   position: relative;
   z-index: 1;
   background-color: #FFFFCC;
@@ -125,6 +135,7 @@
 @media screen and (max-width: 750px) {
   .mainwrap {
     max-width: 750px;
+    padding: 25.6vw 0;
   }
 }
 
@@ -395,10 +406,6 @@ body.bar .load__animation .svg-elem-8 {
   display: none;
 }
 
-body.bar .header__logo svg .cls-1 {
-  fill: #000;
-}
-
 .mainvisualSection {
   position: relative;
   z-index: 1;
@@ -447,8 +454,16 @@ body.bar .header__logo svg .cls-1 {
   object-fit: cover;
 }
 
+.captionSection h2 {
+  padding-top: 0;
+}
 .captionSection p {
   padding: 0 25px;
+}
+@media screen and (max-width: 750px) {
+  .captionSection p {
+    padding: 0 5vw;
+  }
 }
 
 .newsSection h3, .newsSection p {

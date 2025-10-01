@@ -46,13 +46,6 @@
 body {
     &.bar {
         .header {
-            &__logo {
-                svg {
-                    .cls-1 {
-                        fill: #000;
-                    }
-                }
-            }
         }
     }
 }

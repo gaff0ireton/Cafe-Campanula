@@ -5,7 +5,15 @@
 @use "../common" as *;
 
 .captionSection{
+    h2{
+        padding-top: 0;
+    }
+    
     p{
         padding: 0 25px;
+
+        @include sp() {
+            padding: 0 getVwSp(25);
+        }
     }
 }
