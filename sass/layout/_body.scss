@@ -176,12 +176,14 @@ h3 {
 
 p,
 li,
-a {
+a,
+figcaption {
     font-family: "nitalago-rera", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
     color: $txtColor;
+    text-transform: uppercase;
 
     @include sp() {
         font-size: getVwSp(16);
@@ -337,7 +339,8 @@ body {
 
         p,
         li,
-        a {
+        a,
+        figcaption {
             font-family: "ta-kakugo-gf-01","ta-kakugo-gf-02","ta-kakugo-gf-03", sans-serif;
             color: $txtColorBar;
         }

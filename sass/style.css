@@ -578,24 +578,24 @@
   }
 }
 
-#caption .capBox h3 {
+#concept .capBox h3 {
   text-align: center;
 }
-#caption .capBox p {
+#concept .capBox p {
   line-height: 1.5rem;
   padding: 1rem 0;
 }
-#caption .capBox .capPhoto {
+#concept .capBox .capPhoto {
   max-width: 100%;
   height: auto;
   aspect-ratio: 91/61;
 }
 @media (max-width: 375px) {
-  #caption .capBox .capPhoto {
+  #concept .capBox .capPhoto {
     height: 250px;
   }
 }
-#caption .capBox .capPhoto img {
+#concept .capBox .capPhoto img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;

@@ -4,16 +4,18 @@
 // common/_index.scss を読み込む（mixin が使える）
 @use "../common" as *;
 
-.captionSection{
+.conceptSection{
     h2{
         padding-top: 0;
     }
     
     p{
-        padding: 0 25px;
+        padding: 0 25px 20px;
+        text-align: center;
+        line-height: 1.5;
 
         @include sp() {
-            padding: 0 getVwSp(25);
+            padding: 0 getVwSp(25) getVwSp(20);
         }
     }
 }

@@ -12,7 +12,7 @@
   display: block;
 }
 
-.swiper__txt, .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide p, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide p, .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide p, body.bar .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide p, body.bar .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide p, body.bar .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide p, .newsSection .swiper-wrapper .swiper-slide p {
+.swiper__txt, .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide figcaption, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide figcaption, .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide figcaption, body.bar .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide p, body.bar .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide p, body.bar .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide p, .newsSection .swiper-wrapper .swiper-slide p {
   width: 400px;
   margin: 0 auto;
   padding: 20px 10px;
@@ -178,17 +178,20 @@ h3 {
 
 p,
 li,
-a {
+a,
+figcaption {
   font-family: "nitalago-rera", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
   color: #646464;
+  text-transform: uppercase;
 }
 @media screen and (max-width: 750px) {
   p,
   li,
-  a {
+  a,
+  figcaption {
     font-size: 3.2vw;
   }
 }
@@ -309,7 +312,8 @@ body.bar h3 {
 }
 body.bar p,
 body.bar li,
-body.bar a {
+body.bar a,
+body.bar figcaption {
   font-family: "ta-kakugo-gf-01", "ta-kakugo-gf-02", "ta-kakugo-gf-03", sans-serif;
   color: #fff;
 }
@@ -402,6 +406,9 @@ body.bar .load__animation .svg-elem-8 {
 .header__logo svg .cls-1 {
   fill: #fff;
 }
+.header__logo svg .js-over {
+  fill: #0080FF;
+}
 .header__nav {
   display: none;
 }
@@ -410,6 +417,7 @@ body.bar .load__animation .svg-elem-8 {
   position: relative;
   z-index: 1;
   height: 100vh;
+  transform: opacity 0.8s ease;
 }
 .mainvisualSection__deco {
   position: absolute;
@@ -454,15 +462,17 @@ body.bar .load__animation .svg-elem-8 {
   object-fit: cover;
 }
 
-.captionSection h2 {
+.conceptSection h2 {
   padding-top: 0;
 }
-.captionSection p {
-  padding: 0 25px;
+.conceptSection p {
+  padding: 0 25px 20px;
+  text-align: center;
+  line-height: 1.5;
 }
 @media screen and (max-width: 750px) {
-  .captionSection p {
-    padding: 0 5vw;
+  .conceptSection p {
+    padding: 0 5vw 4vw;
   }
 }
 
@@ -491,7 +501,8 @@ body.bar .load__animation .svg-elem-8 {
   z-index: 1;
   margin-top: 64px;
 }
-.menuSection p {
+.menuSection p,
+.menuSection figcaption {
   color: #fff;
 }
 .menuSection__bg {
@@ -551,7 +562,7 @@ body.bar .load__animation .svg-elem-8 {
   }
 }
 @media screen and (max-width: 750px) {
-  .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide p {
+  .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide figcaption {
     width: 80vw;
   }
 }
@@ -566,7 +577,7 @@ body.bar .load__animation .svg-elem-8 {
   }
 }
 @media screen and (max-width: 750px) {
-  .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide p {
+  .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide figcaption {
     width: 80vw;
   }
 }
@@ -581,7 +592,7 @@ body.bar .load__animation .svg-elem-8 {
   }
 }
 @media screen and (max-width: 750px) {
-  .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide p {
+  .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide figcaption {
     width: 80vw;
   }
 }

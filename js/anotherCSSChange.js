@@ -58,13 +58,15 @@ function followObject() {
     const start = document.querySelector('.jsFollowStart');
     const end = document.querySelector('.jsFollowEnd');
     const objectArray = document.querySelectorAll('.js-follow');
+    const header = document.getElementById('header');
+    const headerLogo = document.querySelector('.header__logo a svg');
 
     if (!start || !end) return;
 
     const startRect = start.getBoundingClientRect();
     const endRect = end.getBoundingClientRect();
 
-    // 画面外判定
+    // start が画面外かどうか
     const isStartOut = startRect.bottom < 0 || startRect.top > window.innerHeight;
     const isEndOut = endRect.bottom < 0 || endRect.top > window.innerHeight;
 
@@ -75,6 +77,20 @@ function followObject() {
             object.classList.remove('is-active');
         }
     });
+
+    if(isStartOut){
+        headerLogo.classList.add('js-over');
+    }
+}
+
+function header(){
+    const header = document.getElementById('header');
+    const headerLogo = document.querySelector('.header__logo a svg');
+    const mainVisual = document.querySelector('.mainVisual');
+
+    const headerRect = header.getBoundingClientRect();
+    const headerLogoRect = headerLogo.getBoundingClientRect();
+    const mainVisualRect = mainVisual.getBoundingClientRect();
 }
 
 window.addEventListener("scroll", followObject);

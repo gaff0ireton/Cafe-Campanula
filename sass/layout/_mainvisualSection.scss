@@ -8,6 +8,7 @@
     position: relative;
     z-index: 1;
     height: 100vh;
+    transform: opacity 0.8s ease;
 
     &__deco {
         position: absolute;
@@ -53,5 +54,4 @@
         height: 100%;
         object-fit: cover;
     }
-
 }
