@@ -713,6 +713,22 @@ body.bar .accessSection__bg {
   background-color: #000;
 }
 
+.shareSection__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+.shareSection__icon {
+  color: #0080FF;
+  font-size: 48px;
+}
+@media screen and (max-width: 750px) {
+  .shareSection__icon {
+    font-size: 9.6vw;
+  }
+}
+
 .footer {
   background-color: #0080FF;
   z-index: 0;
