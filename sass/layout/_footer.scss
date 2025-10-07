@@ -8,6 +8,7 @@
     background-color: $mainColor;
     z-index: 0;
     display: flex;
+    padding: 64px;
 
     p,
     li,
@@ -40,9 +41,7 @@
         background-color: white;
         padding: 1.5rem 0.5rem;
         border-radius: 25px;
-        display: flex;
-        justify-content: center;
-        
+        margin: 0 auto;
     }
 }
 
