@@ -743,6 +743,16 @@ body.bar .accessSection__bg {
   }
 }
 
+body.bar .shareSection h2 {
+  background-image: linear-gradient(#000 0%, #000 100%);
+}
+body.bar .shareSection__box {
+  border: 2px solid #c70000;
+}
+body.bar .shareSection__icon {
+  color: #c70000;
+}
+
 .footer {
   background-color: #0080FF;
   z-index: 0;

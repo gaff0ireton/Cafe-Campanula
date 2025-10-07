@@ -34,6 +34,23 @@
         @include sp() {
             font-size: getVwSp(48);
         }
+    }
+}
 
+body {
+    &.bar {
+        .shareSection {
+            h2 {
+                background-image: linear-gradient($bgColorBar 0%, $bgColorBar 100%);
+            }
+
+            &__box {
+                border: 2px solid $mainColorBar;
+            }
+
+            &__icon {
+                color: $mainColorBar;
+            }
+        }
     }
 }
