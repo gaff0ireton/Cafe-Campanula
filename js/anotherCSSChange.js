@@ -59,7 +59,7 @@ function followObject() {
     const end = document.querySelector('.jsFollowEnd');
     const objectArray = document.querySelectorAll('.js-follow');
     const header = document.getElementById('header');
-    const headerLogo = document.querySelector('.header__logo a svg');
+    const LogoArray = document.querySelectorAll('.header__logo a svg g g path');
 
     if (!start || !end) return;
 
@@ -78,12 +78,16 @@ function followObject() {
         }
     });
 
-    if(isStartOut){
-        headerLogo.classList.add('js-over');
-    }
+    LogoArray.forEach(logo => {
+        if (isStartOut) {
+            logo.classList.add('js-over');
+        } else {
+            logo.classList.remove('js-over');
+        }
+    });
 }
 
-function header(){
+function header() {
     const header = document.getElementById('header');
     const headerLogo = document.querySelector('.header__logo a svg');
     const mainVisual = document.querySelector('.mainVisual');

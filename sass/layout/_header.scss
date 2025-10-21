@@ -34,6 +34,7 @@
 
             .cls-1 {
                 fill: #fff;
+                transition: fill .3s;
             }
 
             .js-over{
@@ -50,6 +51,13 @@
 body {
     &.bar {
         .header {
+            &__logo{
+                svg{
+                    .js-over{
+                        fill: $mainColorBar
+                    }
+                }
+            }
         }
     }
 }
