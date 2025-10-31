@@ -47,16 +47,12 @@
             border-collapse: collapse;
             text-align: center;
 
-            th,td{
-                border: 1px solid $txtColor;
-                padding: 23px 0;
-                color: $txtColor;
-            }
-
-            .is-disabled{
-                color: lighten($txtColor,40%) !important;
-            }
             td{
+                border: 1px solid $txtColor;
+                padding: 21px 0;
+                color: $txtColor;
+                width: calc(100%/ 7);
+
                 &:first-child{
                     color: $sundayColor;
                 }
@@ -64,6 +60,10 @@
                 &:last-child {
                     color: $saturdayColor;
                 }
+            }
+
+            .is-disabled{
+                color: lighten($txtColor,40%) !important;
             }
         }
     }

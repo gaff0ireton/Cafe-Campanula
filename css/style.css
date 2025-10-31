@@ -179,7 +179,8 @@ h3 {
 p,
 li,
 a,
-figcaption {
+figcaption,
+td {
   font-family: "nitalago-rera", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -191,7 +192,8 @@ figcaption {
   p,
   li,
   a,
-  figcaption {
+  figcaption,
+  td {
     font-size: 3.2vw;
   }
 }
@@ -313,7 +315,8 @@ body.bar h3 {
 body.bar p,
 body.bar li,
 body.bar a,
-body.bar figcaption {
+body.bar figcaption,
+body.bar td {
   font-family: "ta-kakugo-gf-01", "ta-kakugo-gf-02", "ta-kakugo-gf-03", sans-serif;
   color: #fff;
 }
@@ -509,19 +512,20 @@ body.bar .header__logo svg .js-over {
   border-collapse: collapse;
   text-align: center;
 }
-.newsSection__calendar table th, .newsSection__calendar table td {
+.newsSection__calendar table td {
   border: 1px solid #646464;
-  padding: 23px 0;
+  padding: 21px 0;
   color: #646464;
-}
-.newsSection__calendar table .is-disabled {
-  color: #cacaca !important;
+  width: 14.2857142857%;
 }
 .newsSection__calendar table td:first-child {
   color: #ff0000;
 }
 .newsSection__calendar table td:last-child {
   color: #4169e1;
+}
+.newsSection__calendar table .is-disabled {
+  color: #cacaca !important;
 }
 
 .menuSection {

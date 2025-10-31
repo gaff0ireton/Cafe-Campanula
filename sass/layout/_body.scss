@@ -177,7 +177,8 @@ h3 {
 p,
 li,
 a,
-figcaption {
+figcaption,
+td {
     font-family: "nitalago-rera", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -340,7 +341,8 @@ body {
         p,
         li,
         a,
-        figcaption {
+        figcaption,
+        td {
             font-family: "ta-kakugo-gf-01","ta-kakugo-gf-02","ta-kakugo-gf-03", sans-serif;
             color: $txtColorBar;
         }
