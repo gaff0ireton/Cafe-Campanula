@@ -500,6 +500,29 @@ body.bar .header__logo svg .js-over {
     width: 80vw;
   }
 }
+.newsSection__calendar {
+  width: 100%;
+  padding: 0px 25px;
+}
+.newsSection__calendar table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+.newsSection__calendar table th, .newsSection__calendar table td {
+  border: 1px solid #646464;
+  padding: 23px 0;
+  color: #646464;
+}
+.newsSection__calendar table .is-disabled {
+  color: #cacaca !important;
+}
+.newsSection__calendar table td:first-child {
+  color: #ff0000;
+}
+.newsSection__calendar table td:last-child {
+  color: #4169e1;
+}
 
 .menuSection {
   position: relative;

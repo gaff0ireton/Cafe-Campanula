@@ -37,4 +37,34 @@
             }
         }
     }
+
+    &__calendar{
+        width: 100%;
+        padding: 0px 25px;
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+
+            th,td{
+                border: 1px solid $txtColor;
+                padding: 23px 0;
+                color: $txtColor;
+            }
+
+            .is-disabled{
+                color: lighten($txtColor,40%) !important;
+            }
+            td{
+                &:first-child{
+                    color: $sundayColor;
+                }
+
+                &:last-child {
+                    color: $saturdayColor;
+                }
+            }
+        }
+    }
 }
