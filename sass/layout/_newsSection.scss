@@ -27,7 +27,7 @@
                     }
                 }
 
-                p{
+                figcaption{
                     @extend .swiper__txt;
 
                     @include sp() {
