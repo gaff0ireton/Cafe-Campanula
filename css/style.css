@@ -495,6 +495,11 @@ body.bar .header__logo svg .js-over {
   padding: 0 20px;
 }
 @media screen and (max-width: 750px) {
+  .newsSection h3, .newsSection p {
+    padding: 0 4vw;
+  }
+}
+@media screen and (max-width: 750px) {
   .newsSection .swiper {
     padding: 0px 5vw 4vw;
   }
@@ -510,20 +515,31 @@ body.bar .header__logo svg .js-over {
   }
 }
 .newsSection__calendar {
-  width: 100%;
-  padding: 0px 25px;
+  width: 450px;
+  margin: 0 auto;
+  aspect-ratio: 1/1;
+}
+@media screen and (max-width: 750px) {
+  .newsSection__calendar {
+    width: 90vw;
+  }
 }
 .newsSection__calendar table {
   width: 100%;
+  height: 100%;
   border-collapse: collapse;
   text-align: center;
-  aspect-ratio: 1/1;
 }
 .newsSection__calendar table td {
   border: 1px solid #646464;
   padding: 21px 0;
   color: #646464;
   width: 14.2857142857%;
+}
+@media screen and (max-width: 750px) {
+  .newsSection__calendar table td {
+    padding: 4.2vw 0;
+  }
 }
 .newsSection__calendar table td:first-child {
   color: #ff0000;
