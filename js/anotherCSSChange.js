@@ -104,16 +104,13 @@ window.addEventListener('load', function () {
     let dayCount = 1
     let calendarHtml = ''
 
-    // calendarHtml += '<h4>' + year + '/' + month + '</h4>'
     calendarHtml += '<table>'
-
     for (let i = 0; i < weeks.length; i++) {
         calendarHtml += '<td>' + weeks[i] + '</td>'
     }
 
-    for (let w = 0; w < 5; w++) {
+    for (let w = 0; w < 6; w++) { // 6週にしておくと安全
         calendarHtml += '<tr>'
-
         for (let d = 0; d < 7; d++) {
             if (w == 0 && d < startDay) {
                 let num = lastMonthendDayCount - startDay + d + 1
@@ -123,7 +120,12 @@ window.addEventListener('load', function () {
                 calendarHtml += '<td class="is-disabled">' + num + '</td>'
                 dayCount++
             } else {
-                calendarHtml += '<td>' + dayCount + '</td>'
+                // 🦈 イベントデー
+                let specialClass = ''
+                if ((month === 11 && dayCount === 27) || (month === 6 && dayCount === 26) || (month === 10 && dayCount === 30) || (month === 8 && dayCount === 30) || (month === 7 && dayCount === 14)) {
+                    specialClass = 'shark-day'
+                }
+                calendarHtml += `<td class="${specialClass}">${dayCount}</td>`
                 dayCount++
             }
         }
@@ -132,5 +134,6 @@ window.addEventListener('load', function () {
     calendarHtml += '</table>'
 
     document.querySelector('.newsSection__calendar').innerHTML = calendarHtml
+
 
 });

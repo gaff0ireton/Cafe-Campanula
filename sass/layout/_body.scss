@@ -236,6 +236,11 @@ td {
         svg {
             width: 300px;
             height: 300px;
+
+            @include sp(){
+                width: getVwSp(300);
+                height: getVwSp(300);
+            }
         }
 
         .svg-elem-1 {

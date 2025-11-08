@@ -244,6 +244,12 @@ td {
   width: 300px;
   height: 300px;
 }
+@media screen and (max-width: 750px) {
+  .load__animation svg {
+    width: 60vw;
+    height: 60vw;
+  }
+}
 .load__animation .svg-elem-1 {
   animation: animate-svg-stroke-1 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
 }
@@ -511,6 +517,7 @@ body.bar .header__logo svg .js-over {
   width: 100%;
   border-collapse: collapse;
   text-align: center;
+  aspect-ratio: 1/1;
 }
 .newsSection__calendar table td {
   border: 1px solid #646464;
@@ -526,6 +533,17 @@ body.bar .header__logo svg .js-over {
 }
 .newsSection__calendar table .is-disabled {
   color: #cacaca !important;
+}
+.newsSection__calendar table .shark-day {
+  position: relative;
+}
+.newsSection__calendar table .shark-day:before {
+  content: "🦈";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .menuSection {
@@ -754,6 +772,11 @@ body.bar .accessSection__bg {
   padding: 32px 4px;
   background-image: linear-gradient(#FFFFCC 0%, #FFFFCC 100%);
 }
+@media screen and (max-width: 750px) {
+  .shareSection h2 {
+    padding: 6.4vw 0.8vw;
+  }
+}
 .shareSection__box {
   display: flex;
   justify-content: center;
@@ -764,6 +787,12 @@ body.bar .accessSection__bg {
   margin: -52px auto;
   padding: 64px 32px 32px;
   border-radius: 25px;
+}
+@media screen and (max-width: 750px) {
+  .shareSection__box {
+    padding: 12.8vw 6.4vw 6.4vw;
+    margin: -10.4vw auto;
+  }
 }
 .shareSection__icon {
   color: #0080FF;

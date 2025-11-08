@@ -46,6 +46,7 @@
             width: 100%;
             border-collapse: collapse;
             text-align: center;
+            aspect-ratio: 1 / 1;
 
             td{
                 border: 1px solid $txtColor;
@@ -64,6 +65,19 @@
 
             .is-disabled{
                 color: lighten($txtColor,40%) !important;
+            }
+
+            .shark-day{
+                position: relative;
+
+                &:before{
+                    content: "🦈";
+                    position: absolute;
+                    top: 2px;
+                    right: 2px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
             }
         }
     }
