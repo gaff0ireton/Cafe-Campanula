@@ -58,14 +58,10 @@
             text-align: center;
 
             td{
-                border: 1px solid $txtColor;
-                padding: 21px 0;
-                color: $txtColor;
                 width: calc(100%/ 7);
-
-                @include sp(){
-                    padding: getVwSp(21) 0;
-                }
+                color: $txtColor;
+                border: 1px solid $txtColor;
+                vertical-align: middle;
 
                 &:first-child{
                     color: $sundayColor;

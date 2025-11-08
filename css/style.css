@@ -531,15 +531,10 @@ body.bar .header__logo svg .js-over {
   text-align: center;
 }
 .newsSection__calendar table td {
-  border: 1px solid #646464;
-  padding: 21px 0;
-  color: #646464;
   width: 14.2857142857%;
-}
-@media screen and (max-width: 750px) {
-  .newsSection__calendar table td {
-    padding: 4.2vw 0;
-  }
+  color: #646464;
+  border: 1px solid #646464;
+  vertical-align: middle;
 }
 .newsSection__calendar table td:first-child {
   color: #ff0000;
