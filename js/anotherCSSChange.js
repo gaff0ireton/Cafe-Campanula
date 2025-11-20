@@ -152,7 +152,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 const offset = window.scrollY;
 
                 // 767px以下の場合のみヘッダーの高さを考慮
-                const gap = window.innerWidth <= 767 && header ? header.offsetHeight : 0;
+                const gap = window.innerWidth <= 750 && header ? header.offsetHeight : 0;
+
+                
+                console.log(gap);
+                
 
                 const target = rect + offset - gap;
 

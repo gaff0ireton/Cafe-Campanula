@@ -12,10 +12,21 @@
   display: block;
 }
 
-.swiper__txt, .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide figcaption, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide figcaption, .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide figcaption, body.bar .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide p, body.bar .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide p, body.bar .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide p, .newsSection .swiper-wrapper .swiper-slide figcaption {
+.swiper__txt, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide figcaption, .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide figcaption, body.bar .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide p, body.bar .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide p, body.bar .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide p, .newsSection .swiper-wrapper .swiper-slide figcaption {
   width: 400px;
   margin: 0 auto;
   padding: 20px 10px;
+}
+
+.menuSection__contents .swiperFood .swiper-wrapper .swiper-slide figcaption {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px 10px;
+}
+@media screen and (max-width: 750px) {
+  .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide figcaption {
+    width: 80vw;
+  }
 }
 
 /* ページ全体のスタイル */

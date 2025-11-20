@@ -1,3 +1,4 @@
+@charset "UTF-8";
 // math モジュール
 @use "sass:math";
 
@@ -21,6 +22,15 @@
     width: 400px;
     margin: 0 auto;
     padding: 20px 10px;
+}
+
+%swiper__txt {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px 10px;
+    @include sp() {
+        width: getVwSp(400);
+    }
 }
 
 @mixin swiper-sp {

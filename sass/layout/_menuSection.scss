@@ -85,7 +85,7 @@
                     }
 
                     figcaption {
-                        @extend .swiper__txt;
+                        @extend %swiper__txt;
 
                         @include sp() {
                             @include swiper__txt-sp;
