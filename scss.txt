@@ -1,0 +1,316 @@
+{
+	// Place your snippets for scss here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"comment": {
+		"prefix": "cmt",
+		"body": [
+			"/* ===============================================",
+			"# $1",
+			"=============================================== */",
+		],
+		"description": "comment out"
+	},
+	"backGroundImage": {
+		"prefix": "bgi",
+		"body": [
+			"background: url($1) no-repeat center center/cover;",
+		],
+		"description": "set background-image"
+	},
+	"before": {
+		"prefix": "bfr",
+		"body": [
+			"&::before {",
+			"\tcontent: '';",
+			"\t$1",
+			"}"
+		],
+		"description": "create before class"
+	},
+	"after": {
+		"prefix": "aft",
+		"body": [
+			"&::after {",
+			"\tcontent: '';",
+			"\t$1",
+			"}"
+		],
+		"description": "create after class"
+	},
+	"last-child": {
+		"prefix": "lst",
+		"body": [
+			"&:last-child {",
+			"\t$1",
+			"}"
+		],
+		"description": "create last-child"
+	},
+	"first-child": {
+		"prefix": "fst",
+		"body": [
+			"&:first-child {",
+			"\t$1",
+			"}"
+		],
+		"description": "create first-child"
+	},
+	"nth-child": {
+		"prefix": "nth",
+		"body": [
+			"&:nth-child($1) {",
+			"\t$2",
+			"}"
+		],
+		"description": "create nth-child"
+	},
+	"flexCenter": {
+		"prefix": "flx-c",
+		"body": [
+			"display: flex;",
+			"flex-wrap: wrap;",
+			"justify-content: center;",
+			"align-items: center;",
+		],
+		"description": "flexbox with center center"
+	},
+	"flexAround": {
+		"prefix": "flx-ard",
+		"body": [
+			"display: flex;",
+			"flex-wrap: wrap;",
+			"justify-content: space-around;",
+			"align-items: center;",
+		],
+		"description": "flexbox with space-around center"
+	},
+	"flexBetween": {
+		"prefix": "flx-bwn",
+		"body": [
+			"display: flex;",
+			"flex-wrap: wrap;",
+			"justify-content: space-between;",
+			"align-items: center;",
+		],
+		"description": "flexbox with spaec-between center"
+	},
+	"grid": {
+		"prefix": "grd",
+		"body": [
+			"display: grid;",
+			"grid-template-columns: ${1:40px 1fr};",
+			"grid-template-rows: ${2:150px 1fr};"
+		],
+		"description": "grid template"
+	},
+	"gridItem": {
+		"prefix": "grditem",
+		"body": [
+			"grid-column: ${1:1} / ${2:2};",
+			"grid-row: ${3:1} / ${4:2};",
+		],
+		"description": "grid item template"
+	},
+	"absolute-Center": {
+		"prefix": "abso-c",
+		"body": [
+			"position: absolute;",
+			"top: 50%;",
+			"left: 50%;",
+			"transform: translate(-50%, -50%);",
+		]
+	},
+	"absolute-VerticalCenter": {
+		"prefix": "abso-vc",
+		"body": [
+			"position: absolute;",
+			"top: 50%;",
+			"left: $1;",
+			"transform: translateY(-50%);",
+		]
+	},
+	"absolute-HorizontalCenter": {
+		"prefix": "abso-hc",
+		"body": [
+			"position: absolute;",
+			"top: $1;",
+			"left: 50%;",
+			"transform: translateX(-50%);",
+		]
+	},
+	"selectMediaQuery": {
+		"prefix": "@media",
+		"body": [
+			"@media(${1|min,max|}-width:${2|1024,768,480,378|}px){",
+			"$3",
+			"};"
+		],
+		"description": "メディアクエリの指定"
+	},
+	"importVarMixin": {
+		"prefix": "@use",
+		"body": [
+			"@use \"_variable\";",
+			"@use \"_mixin\";"
+		],
+		"description": "変数とmixinのファイルをインポート"
+	},
+	"varFontFamiry": {
+		"prefix": "\\$fontfamiry",
+		"body": [
+			"\\$fontFamilyYuGo: \"游ゴシック体\", \"YuGothic\", \"游ゴシック\", \"Yu Gothic\", \"ヒラギノ角ゴ Pro W3\", \"Hiragino Kaku Gothic Pro\", \"メイリオ\", \"Meiryo\", sans-serif;",
+			"\\$fontFamilyHiraGo: \"ヒラギノ角ゴ Pro W3\", \"Hiragino Kaku Gothic Pro\", \"メイリオ\", \"Meiryo\", sans-serif;",
+			"\\$fontFamilyYuMin: \"游明朝\", \"YuMincho\", \"ヒラギノ明朝 Pro W3\", \"Hiragino Mincho Pro\", \"ＭＳ Ｐ明朝\", \"MS PMincho\", serif;",
+			"\\$fontFamilyHiraMin: \"ヒラギノ明朝 Pro W3\", \"Hiragino Mincho Pro\", \"ＭＳ Ｐ明朝\", \"MS PMincho\", serif;",
+			"\\$fontFamilyMeiryo: \"メイリオ\", \"Meiryo\", \"ヒラギノ角ゴ Pro W3\", \"Hiragino Kaku Gothic Pro\", \"ＭＳ Ｐゴシック\", sans-serif;",
+			"\\$fontFamilyArial: Arial,Helvetica,Verdana,Hiragino Kaku Gothic ProN,-apple-system,BlinkMacSystemFont,メイリオ,MS PGothic,sans-serif;"
+		],
+		"description": "よく使うfont-familyの変数"
+	},
+	"notFirstChildMarginTop": {
+		"prefix": "owlMargin",
+		"body": [
+			"* + *{",
+			"margin-top: ${1:10px};",
+			"}"
+		],
+		"description": "*+*にmargin-top"
+	},
+	"owlSelector": {
+		"prefix": "owl",
+		"body": [
+			"* + *{",
+			"}"
+		],
+		"description": "*+*"
+	},
+
+	"sp": {
+		"prefix": "sp",
+		"body": [
+			"@include mq() {$1",
+			"}"
+		],
+		"description": "メディアクエリSP版"
+	},
+	"tab": {
+		"prefix": "tab",
+		"body": [
+			"@include mq(large) {$1",
+			"}"
+		],
+		"description": "メディアクエリTAB版"
+	},
+	"pcFrom": {
+		"prefix": "pc",
+		"body": [
+			"@include mqFrom() {$1",
+			"}"
+		],
+		"description": "メディアクエリPC版"
+	},
+	"background": {
+		"prefix": "bg",
+		"body": [
+			"background-image: url(\"$1\");",
+			"background-position: center;",
+			"background-size: $2;",
+			"background-repeat: no-repeat;"
+		],
+	},
+	"getVw": {
+		"prefix": "vw",
+		"body": [
+			"getVw($1)",
+		],
+	},
+	"getPw": {
+		"prefix": "pw",
+		"body": [
+			"getPw($1)",
+		],
+	},
+	"geVh": {
+		"prefix": "vh",
+		"body": [
+			"getVh($1)",
+		],
+	},
+	"getPh": {
+		"prefix": "ph",
+		"body": [
+			"getPh($1)",
+		],
+	},
+	"getRatio": {
+		"prefix": "ra",
+		"body": [
+			"getRatio($1)",
+		],
+	},
+	"fontSizeVw": {
+		"prefix": "fvw",
+		"body": [
+			"fontSizeVw($1)",
+		],
+	},
+	"min()": {
+		"prefix": "min",
+		"body": [
+			"min(getVw($1, $2), $1px)",
+		],
+	},
+	"minVwOnly()": {
+		"prefix": "minVwOnl",
+		"body": [
+			"min(getVw($1), $1px)",
+		],
+	},
+	"minsVw()": {
+		"prefix": "minsVw",
+		"body": [
+			"min(getVw($1), sVw($1))",
+		],
+	},
+	"maxsVw()": {
+		"prefix": "maxsVw",
+		"body": [
+			"max(getVw(-$1), sVw(-$1))",
+		],
+	},
+	"minVwPw()": {
+		"prefix": "minVwPw",
+		"body": [
+			"min(getVw($1, \\$pcWidth), $1px)",
+		],
+	},
+	"maxVwPw()": {
+		"prefix": "maxVwPw",
+		"body": [
+			"max(getVw(-$1, \\$pcWidth), -$1px)",
+		],
+	},
+	"max()": {
+		"prefix": "max",
+		"body": [
+			"max($1px, getVw($1, $2))",
+		],
+	},
+	"lineHeight()": {
+		"prefix": "lh",
+		"body": [
+			"@include lineHeight($1, $2);",
+		],
+	},
+}
