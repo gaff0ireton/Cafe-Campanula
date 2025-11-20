@@ -134,6 +134,33 @@ window.addEventListener('load', function () {
     calendarHtml += '</table>'
 
     document.querySelector('.newsSection__calendar').innerHTML = calendarHtml
+});
 
+document.addEventListener('DOMContentLoaded', () => {
+    const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
+    const header = document.querySelector('.header');
 
+    for (let i = 0; i < smoothScrollTrigger.length; i++) {
+        smoothScrollTrigger[i].addEventListener('click', (e) => {
+            e.preventDefault();
+
+            let href = smoothScrollTrigger[i].getAttribute('href');
+            let targetElement = document.getElementById(href.replace('#', ''));
+
+            if (targetElement) {
+                const rect = targetElement.getBoundingClientRect().top;
+                const offset = window.scrollY;
+
+                // 767px以下の場合のみヘッダーの高さを考慮
+                const gap = window.innerWidth <= 767 && header ? header.offsetHeight : 0;
+
+                const target = rect + offset - gap;
+
+                window.scrollTo({
+                    top: target,
+                    behavior: 'smooth',
+                });
+            }
+        });
+    }
 });
