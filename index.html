@@ -331,11 +331,13 @@
             <video src="video/mainVisual.mp4" loop muted autoplay playsinline></video>
         </section>
         <div class="mainwrap">
-            <section id="concept" class="conceptSection is-inview">
-                <h2>CONCEPT</h2>
-                <h3>ちょっと怖くて、すごくかわいい。</h3>
-                <p>ちょっぴりユニークで、とびきりかわいい。<br>サメが顔をのぞかせるメニューや、海を感じるインテリアで、日常を忘れて楽しめる時間をお届けします。</p>
-                <div>
+            <section id="concept" class="conceptSection">
+                <div class="is-inview">
+                  <h2>CONCEPT</h2>
+                  <h3>ちょっと怖くて、すごくかわいい。</h3>
+                  <p>ちょっぴりユニークで、とびきりかわいい。<br>サメが顔をのぞかせるメニューや、海を感じるインテリアで、日常を忘れて楽しめる時間をお届けします。</p>
+                </div>
+                <div class="is-inview">
                     <img class="photo" src="img/img_concept.jpg" alt="外観">
                 </div>
             </section>
@@ -490,6 +492,20 @@
                     </p>
                 </div>
             </section>
+            <!-- <div class="test">
+              <a href="/products/gummies-original"><button class="blob-btn blob-btn--secondary ">
+                  <span class="blob-btn__text"> Shop Now</span>
+                  <span class="blob-btn__inner">
+                    <span class="blob-btn__blobs">
+                      <span class="blob-btn__blob"></span>
+                      <span class="blob-btn__blob"></span>
+                      <span class="blob-btn__blob"></span>
+                      <span class="blob-btn__blob"></span>
+                    </span>
+                  </span>
+                </button>
+              </a>
+            </div> -->
             <section class="shareSection is-inview" id="share">
                 <h2>share</h2>
                 <ul class="shareSection__box">
@@ -634,6 +650,16 @@
         includeHTML("header", "include/header.html");
         includeHTML("footer", "include/footer.html");
     </script> -->
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="position: absolute; top:0; left: -999%;">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo">
+          </feColorMatrix>
+          <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+        </filter>
+      </defs>
+    </svg>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/jquery.ripples-min.js"></script>

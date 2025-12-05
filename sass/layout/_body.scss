@@ -7,147 +7,347 @@
 /* ページ全体のスタイル */
 
 .spOnly {
-    @include pc() {
-        display: none !important;
-    }
+  @include pc() {
+    display: none !important;
+  }
 
-    @include sp() {
-        display: block;
-    }
+  @include sp() {
+    display: block;
+  }
 }
 
 .pcOnly {
-    @include pc() {
-        display: block;
-    }
+  @include pc() {
+    display: block;
+  }
 
-    @include sp() {
-        display: none !important;
-    }
+  @include sp() {
+    display: none !important;
+  }
 }
 
 .background {
-    background-image: url(../img/img_bg.jpg) !important;
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-position: center center;
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    bottom: 0;
-    z-index: 0;
+  background-image: url(../img/img_bg.jpg) !important;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  bottom: 0;
+  z-index: 0;
 
-    &::after {
-        display: none;
-    }
+  &::after {
+    display: none;
+  }
 }
 
 .left,
 .right {
-    position: fixed;
-    top: 0;
-    width: calc((100vw - 500px) / 2);
-    height: 100vh;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: calc((100vw - 500px) / 2);
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
 
-    .is-active{
-        opacity: 1;
-        pointer-events: auto;
-        transition: opacity .3s;
-    }
+  .is-active {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity .3s;
+  }
 }
 
 .left {
-    &__logo {
-        width: 80%;
-        opacity: 0;
-        transition: opacity .3s;
+  &__logo {
+    width: 80%;
+    opacity: 0;
+    transition: opacity .3s;
 
-        svg {
-            .cls-3 {
-                fill: $mainColor;
-            }
-        }
+    svg {
+      .cls-3 {
+        fill: $mainColor;
+      }
     }
+  }
 }
 
 .right {
-    right: 0;
+  right: 0;
 
-    nav {
-        width: fit-content;
-        margin: 0 auto;
-        opacity: 0;
+  nav {
+    width: fit-content;
+    margin: 0 auto;
+    opacity: 0;
+    transition: opacity .3s;
+
+    ul {
+      li {
+        opacity: .5;
         transition: opacity .3s;
+        pointer-events: auto;
+        position: relative;
+        padding-left: 36px;
 
-        ul {
-            li {
-                opacity: .5;
-                transition: opacity .3s;
-                pointer-events: auto;
-                position: relative;
-                padding-left: 36px;
+        a {
+          color: $mainColor;
+          font-size: 26px;
 
-                a{
-                    color: $mainColor;
-                    font-size: 26px;
-
-                }
-
-                &::after {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    background-image: url(../img/icn.svg);
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    width: 32px;
-                    height: 32px;
-                }
-
-                &:nth-child(n+2) {
-                    margin-top: 20px;
-                }
-
-                &:hover {
-                    opacity: 1;
-                }
-            }
-
-            .is-current {
-                opacity: 1;
-            }
         }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-image: url(../img/icn.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 32px;
+          height: 32px;
+        }
+
+        &:nth-child(n+2) {
+          margin-top: 20px;
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      .is-current {
+        opacity: 1;
+      }
     }
+  }
 }
 
 .mainwrap {
-    max-width: 500px;
-    padding: 128px 0;
-    position: relative;
-    z-index: 1;
-    background-color: $bgColor;
+  max-width: 500px;
+  padding: 128px 0;
+  position: relative;
+  z-index: 1;
+  background-color: $bgColor;
 
-    @include sp() {
-        max-width: 750px;
-        padding: getVwSp(128) 0;
-    }
+  @include sp() {
+    max-width: 750px;
+    padding: getVwSp(128) 0;
+  }
 }
 
-.is-inview{
-      opacity: 0;
-      translate: 0 16px;
-      transition: 1s ease;
+.is-inview {
+  opacity: 0;
+  translate: 0 16px;
+  transition: 1s ease;
 }
 
 .is-view {
   opacity: 1;
   translate: 0 0;
+}
+
+.test {
+  position: relative;
+
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .blob-btn {
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+  }
+
+  .blob-btn--secondary:before {
+    border-color: #fff;
+  }
+
+  .blob-btn:before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #19478f;
+    border-radius: 30px;
+  }
+
+  .blob-btn__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .blob-btn__inner {
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background: transparent;
+  }
+
+  .blob-btn {
+    z-index: 1;
+    position: relative;
+    padding: 8.5px 55px;
+    min-height: 58px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $mainColor;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: color .5s;
+    cursor: pointer;
+    border-radius: 30px;
+  }
+
+  .blob-btn__blobs {
+    position: relative;
+    display: block;
+    height: 100%;
+    filter: url(#goo);
+  }
+
+  .blob-btn__blob {
+    position: absolute;
+    top: 2px;
+    z-index: 17;
+    width: 25%;
+    height: 100%;
+    background: #19478f;
+    border-radius: 100%;
+    transform: translate3d(0, 150%, 0) scale(1.7);
+    transition: transform .45s;
+  }
+
+  .blob-btn--secondary .blob-btn__blob {
+    background: $mainColor;
+  }
+
+  .blob-btn__blob:nth-child(1) {
+    left: 0%;
+    transition-delay: 0s;
+  }
+
+  .blob-btn__blob:nth-child(2) {
+    left: 30%;
+    transition-delay: .08s;
+  }
+
+  .blob-btn__blob:nth-child(3) {
+    left: 60%;
+    transition-delay: .16s;
+  }
+
+  .blob-btn__blob:nth-child(4) {
+    left: 90%;
+    transition-delay: .24s;
+  }
+
+  @supports (filter: url(#goo)) {
+    .blob-btn__blob {
+      transform: translate3d(0, 150%, 0) scale(1.4);
+    }
+  }
+
+  @supports (filter: url("#goo")) {
+    .blob-btn:hover .blob-btn__blob {
+      transform: translateZ(0) scale(3.2);
+    }
+  }
+
+  .loading-overlay__spinner {
+    width: 1.8rem;
+    display: inline-block;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  .spinner {
+    animation: rotator 1.4s linear infinite;
+  }
+
+  .path {
+    stroke-dasharray: 280;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    stroke: $mainColor;
+    animation: dash 1.4s ease-in-out infinite;
+  }
+
+  .blob-btn:after {
+    content: "";
+    z-index: -2;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 100%;
+    height: 100%;
+    transition: all .3s .2s;
+    border-radius: 30px;
+  }
+
+  .blob-btn--secondary:hover {
+    color: #19478f;
+  }
+
+  .blob-btn:hover {
+    color: #19478f;
+    border-radius: 30px;
+  }
+
+  .blob-btn:hover:after {
+    transition: all 0.3s;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+  }
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 280;
+  }
+
+  50% {
+    stroke-dashoffset: 75;
+    transform: rotate(135deg);
+  }
+
+  100% {
+    stroke-dashoffset: 280;
+    transform: rotate(450deg);
+  }
 }
 
 h1,
@@ -156,33 +356,33 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "nitalago-rera", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    text-align: center;
-    text-transform: uppercase;
+  font-family: "nitalago-rera", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 h2 {
-    color: $mainColor;
-    font-size: 32px;
-    padding-bottom: 32px;
+  color: $mainColor;
+  font-size: 32px;
+  padding-bottom: 32px;
 
-    @include sp() {
-        font-size: getVwSp(32);
-        padding-bottom: getVwSp(32);
-    }
+  @include sp() {
+    font-size: getVwSp(32);
+    padding-bottom: getVwSp(32);
+  }
 }
 
 h3 {
-    color: $subColor;
-    font-size: 24px;
-    padding-bottom: 24px;
+  color: $subColor;
+  font-size: 24px;
+  padding-bottom: 24px;
 
-    @include sp() {
-        font-size: getVwSp(24);
-        padding-bottom: getVwSp(24);
-    }
+  @include sp() {
+    font-size: getVwSp(24);
+    padding-bottom: getVwSp(24);
+  }
 }
 
 p,
@@ -190,247 +390,247 @@ li,
 a,
 figcaption,
 td {
-    font-family: "nitalago-rera", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 16px;
-    color: $txtColor;
-    text-transform: uppercase;
+  font-family: "nitalago-rera", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: $txtColor;
+  text-transform: uppercase;
 
-    @include sp() {
-        font-size: getVwSp(16);
-    }
+  @include sp() {
+    font-size: getVwSp(16);
+  }
 }
 
 .swiper-pagination {
-    position: relative;
+  position: relative;
 
-    &-bullet {
-        width: 10px;
-        height: 10px;
-        background-color: $txtColor;
-        opacity: .5;
+  &-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: $txtColor;
+    opacity: .5;
 
-        @include sp() {
-            width: getVwSp(10);
-            height: getVwSp(10);
-        }
-
-        &-active {
-            background-color: $mainColor;
-            opacity: 1;
-        }
+    @include sp() {
+      width: getVwSp(10);
+      height: getVwSp(10);
     }
+
+    &-active {
+      background-color: $mainColor;
+      opacity: 1;
+    }
+  }
 }
 
 .load {
-    background-image: url(../img/img_load_pc.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    width: 100vw;
-    height: 100vh;
+  background-image: url(../img/img_load_pc.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
 
-    @include sp() {
-        background-image: url(../img/img_load_sp.jpg);
+  @include sp() {
+    background-image: url(../img/img_load_sp.jpg);
+  }
+
+  &__animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    svg {
+      width: 300px;
+      height: 300px;
+
+      @include sp() {
+        width: getVwSp(300);
+        height: getVwSp(300);
+      }
     }
 
-    &__animation {
+    .svg-elem-1 {
+      animation: animate-svg-stroke-1 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+    }
+
+    .svg-elem-2 {
+      animation: animate-svg-stroke-2 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+    }
+
+    .svg-elem-3 {
+      animation: animate-svg-stroke-3 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+    }
+
+    .svg-elem-4 {
+      animation: animate-svg-stroke-4 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+    }
+
+    .svg-elem-5 {
+      animation: animate-svg-stroke-5 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+    }
+
+    .svg-elem-6 {
+      animation: animate-svg-stroke-6 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+    }
+
+    .svg-elem-7 {
+      animation: animate-svg-stroke-7 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+    }
+
+    .svg-elem-8 {
+      animation: animate-svg-stroke-8 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+    }
+  }
+}
+
+body {
+  &.bar {
+    .background {
+      background-image: url(../img/img_bg_bar.jpg) !important;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .left {
+      &__logo {
+        width: 80%;
+
+        svg {
+          .cls-3 {
+            fill: $mainColorBar;
+          }
+        }
+      }
+    }
+
+    .right {
+      right: 0;
+
+      nav {
+        width: fit-content;
+        margin: 0 auto;
+
+        ul {
+          li {
+            a {
+              color: $mainColorBar;
+            }
+
+            &::after {
+              background-image: url(../img/icn_bar.svg);
+            }
+          }
+        }
+      }
+    }
+
+    .mainwrap {
+      background-color: $bgColorBar;
+
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "ta-kakugo-gf-01", "ta-kakugo-gf-02", "ta-kakugo-gf-03", sans-serif;
+      letter-spacing: .035em;
+    }
+
+    h2 {
+      color: $mainColorBar;
+    }
+
+    h3 {
+      color: $subColorBar;
+    }
+
+    p,
+    li,
+    a,
+    figcaption,
+    td {
+      font-family: "ta-kakugo-gf-01", "ta-kakugo-gf-02", "ta-kakugo-gf-03", sans-serif;
+      color: $txtColorBar;
+    }
+
+    .swiper-pagination {
+      &-bullet {
+        background-color: $txtColorBar;
+
+        &-active {
+          background-color: $mainColorBar;
+        }
+      }
+    }
+
+    .load {
+      background-image: url(../img/img_load_pc.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 100vw;
+      height: 100vh;
+
+      @include sp() {
+        background-image: url(../img/img_load_sp.jpg);
+      }
+
+      &__animation {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
 
         svg {
-            width: 300px;
-            height: 300px;
-
-            @include sp(){
-                width: getVwSp(300);
-                height: getVwSp(300);
-            }
+          width: 300px;
+          height: 300px;
         }
 
         .svg-elem-1 {
-            animation: animate-svg-stroke-1 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+          animation: animate-svg-stroke-1 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
         }
 
         .svg-elem-2 {
-            animation: animate-svg-stroke-2 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+          animation: animate-svg-stroke-2 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
         }
 
         .svg-elem-3 {
-            animation: animate-svg-stroke-3 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+          animation: animate-svg-stroke-3 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
         }
 
         .svg-elem-4 {
-            animation: animate-svg-stroke-4 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+          animation: animate-svg-stroke-4 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
         }
 
         .svg-elem-5 {
-            animation: animate-svg-stroke-5 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+          animation: animate-svg-stroke-5 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
         }
 
         .svg-elem-6 {
-            animation: animate-svg-stroke-6 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+          animation: animate-svg-stroke-6 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
         }
 
         .svg-elem-7 {
-            animation: animate-svg-stroke-7 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+          animation: animate-svg-stroke-7 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
         }
 
         .svg-elem-8 {
-            animation: animate-svg-stroke-8 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+          animation: animate-svg-stroke-8 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
         }
+      }
     }
-}
-
-body {
-    &.bar {
-        .background {
-            background-image: url(../img/img_bg_bar.jpg) !important;
-
-            &::after {
-                display: none;
-            }
-        }
-
-        .left {
-            &__logo {
-                width: 80%;
-
-                svg {
-                    .cls-3 {
-                        fill: $mainColorBar;
-                    }
-                }
-            }
-        }
-
-        .right {
-            right: 0;
-
-            nav {
-                width: fit-content;
-                margin: 0 auto;
-
-                ul {
-                    li {
-                        a{
-                            color: $mainColorBar;
-                        }
-
-                        &::after {
-                            background-image: url(../img/icn_bar.svg);
-                        }
-                    }
-                }
-            }
-        }
-
-        .mainwrap {
-            background-color: $bgColorBar;
-
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: "ta-kakugo-gf-01","ta-kakugo-gf-02","ta-kakugo-gf-03", sans-serif;
-            letter-spacing: .035em;
-        }
-
-        h2 {
-            color: $mainColorBar;
-        }
-
-        h3 {
-            color: $subColorBar;
-        }
-
-        p,
-        li,
-        a,
-        figcaption,
-        td {
-            font-family: "ta-kakugo-gf-01","ta-kakugo-gf-02","ta-kakugo-gf-03", sans-serif;
-            color: $txtColorBar;
-        }
-
-        .swiper-pagination {
-            &-bullet {
-                background-color: $txtColorBar;
-
-                &-active {
-                    background-color: $mainColorBar;
-                }
-            }
-        }
-
-        .load {
-            background-image: url(../img/img_load_pc.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 10;
-            width: 100vw;
-            height: 100vh;
-
-            @include sp() {
-                background-image: url(../img/img_load_sp.jpg);
-            }
-
-            &__animation {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-
-                svg {
-                    width: 300px;
-                    height: 300px;
-                }
-
-                .svg-elem-1 {
-                    animation: animate-svg-stroke-1 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
-                }
-
-                .svg-elem-2 {
-                    animation: animate-svg-stroke-2 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
-                }
-
-                .svg-elem-3 {
-                    animation: animate-svg-stroke-3 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
-                }
-
-                .svg-elem-4 {
-                    animation: animate-svg-stroke-4 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
-                }
-
-                .svg-elem-5 {
-                    animation: animate-svg-stroke-5 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
-                }
-
-                .svg-elem-6 {
-                    animation: animate-svg-stroke-6 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
-                }
-
-                .svg-elem-7 {
-                    animation: animate-svg-stroke-7 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
-                }
-
-                .svg-elem-8 {
-                    animation: animate-svg-stroke-8 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
-                }
-            }
-        }
-    }
+  }
 }

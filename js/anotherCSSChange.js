@@ -1,3 +1,69 @@
+/* スクロールでin-viewクラス付与
+----------------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+  const targets = document.querySelectorAll('.is-inview');
+
+  if (!targets.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+
+  targets.forEach(el => observer.observe(el));
+
+  const weeks = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+  const date = new Date()
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const startDate = new Date(year, month - 1, 1)
+  const endDate = new Date(year, month, 0)
+  const endDayCount = endDate.getDate()
+  const lastMonthEndDate = new Date(year, month - 1, 0)
+  const lastMonthendDayCount = lastMonthEndDate.getDate()
+  const startDay = startDate.getDay()
+  let dayCount = 1
+  let calendarHtml = ''
+
+  calendarHtml += '<table>'
+  for (let i = 0; i < weeks.length; i++) {
+    calendarHtml += '<td>' + weeks[i] + '</td>'
+  }
+
+  for (let w = 0; w < 6; w++) { // 6週にしておくと安全
+    calendarHtml += '<tr>'
+    for (let d = 0; d < 7; d++) {
+      if (w == 0 && d < startDay) {
+        let num = lastMonthendDayCount - startDay + d + 1
+        calendarHtml += '<td class="is-disabled">' + num + '</td>'
+      } else if (dayCount > endDayCount) {
+        let num = dayCount - endDayCount
+        calendarHtml += '<td class="is-disabled">' + num + '</td>'
+        dayCount++
+      } else {
+        // 🦈 イベントデー
+        let specialClass = ''
+        if ((month === 11 && dayCount === 27) || (month === 6 && dayCount === 26) || (month === 10 && dayCount === 30) || (month === 8 && dayCount === 30) || (month === 7 && dayCount === 14)) {
+          specialClass = 'shark-day'
+        }
+        calendarHtml += `<td class="${specialClass}">${dayCount}</td>`
+        dayCount++
+      }
+    }
+    calendarHtml += '</tr>'
+  }
+  calendarHtml += '</table>'
+
+  document.querySelector('.newsSection__calendar').innerHTML = calendarHtml
+
+});
+
 window.addEventListener('load', function () {
 
   const btn = document.getElementById('js-btn');
@@ -91,49 +157,6 @@ window.addEventListener('load', function () {
   window.addEventListener("resize", followObject);
   followObject();
 
-  const weeks = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-  const date = new Date()
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const startDate = new Date(year, month - 1, 1)
-  const endDate = new Date(year, month, 0)
-  const endDayCount = endDate.getDate()
-  const lastMonthEndDate = new Date(year, month - 1, 0)
-  const lastMonthendDayCount = lastMonthEndDate.getDate()
-  const startDay = startDate.getDay()
-  let dayCount = 1
-  let calendarHtml = ''
-
-  calendarHtml += '<table>'
-  for (let i = 0; i < weeks.length; i++) {
-    calendarHtml += '<td>' + weeks[i] + '</td>'
-  }
-
-  for (let w = 0; w < 6; w++) { // 6週にしておくと安全
-    calendarHtml += '<tr>'
-    for (let d = 0; d < 7; d++) {
-      if (w == 0 && d < startDay) {
-        let num = lastMonthendDayCount - startDay + d + 1
-        calendarHtml += '<td class="is-disabled">' + num + '</td>'
-      } else if (dayCount > endDayCount) {
-        let num = dayCount - endDayCount
-        calendarHtml += '<td class="is-disabled">' + num + '</td>'
-        dayCount++
-      } else {
-        // 🦈 イベントデー
-        let specialClass = ''
-        if ((month === 11 && dayCount === 27) || (month === 6 && dayCount === 26) || (month === 10 && dayCount === 30) || (month === 8 && dayCount === 30) || (month === 7 && dayCount === 14)) {
-          specialClass = 'shark-day'
-        }
-        calendarHtml += `<td class="${specialClass}">${dayCount}</td>`
-        dayCount++
-      }
-    }
-    calendarHtml += '</tr>'
-  }
-  calendarHtml += '</table>'
-
-  document.querySelector('.newsSection__calendar').innerHTML = calendarHtml
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -221,25 +244,4 @@ document.addEventListener('DOMContentLoaded', () => {
       content.style.height = expanded ? content.scrollHeight + "px" : "0px";
     });
   });
-});
-
-/* スクロールでin-viewクラス付与
------------------------------------ */
-document.addEventListener('DOMContentLoaded', () => {
-  const targets = document.querySelectorAll('.is-inview');
-
-  if (!targets.length) return;
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-view');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.5
-  });
-
-  targets.forEach(el => observer.observe(el));
 });
