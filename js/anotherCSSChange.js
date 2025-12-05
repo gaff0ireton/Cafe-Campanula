@@ -226,17 +226,19 @@ document.addEventListener('DOMContentLoaded', () => {
 /* スクロールでin-viewクラス付与
 ----------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
-  const targets = document.querySelectorAll('.js-inview');
+  const targets = document.querySelectorAll('.is-inview');
 
   if (!targets.length) return;
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
+        entry.target.classList.add('is-view');
         observer.unobserve(entry.target);
       }
     });
+  }, {
+    threshold: 0.5
   });
 
   targets.forEach(el => observer.observe(el));

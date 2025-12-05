@@ -150,6 +150,17 @@
   }
 }
 
+.is-inview {
+  opacity: 0;
+  translate: 0 16px;
+  transition: 1s ease;
+}
+
+.is-view {
+  opacity: 1;
+  translate: 0 0;
+}
+
 h1,
 h2,
 h3,
