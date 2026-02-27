@@ -1,31 +1,37 @@
 @charset "UTF-8";
-.swiper, .menuSection__contents .swiperFood, .menuSection__contents .swiperDrink, .menuSection__contents .swiperTakeOut, body.bar .menuSection__contents .swiperFood, body.bar .menuSection__contents .swiperDrink, body.bar .menuSection__contents .swiperTakeOut, .newsSection .swiper {
+.menuSection__contents .swiperFood, .menuSection__contents .swiperDrink, .menuSection__contents .swiperTakeOut, .newsSection .swiper {
   padding: 0px 25px 20px;
   overflow: hidden;
 }
+@media screen and (max-width: 750px) {
+  .menuSection__contents .swiperFood, .menuSection__contents .swiperDrink, .menuSection__contents .swiperTakeOut, .newsSection .swiper {
+    padding: 0px 5vw 4vw;
+  }
+}
 
-.swiper__img, .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide img, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide img, .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide img, body.bar .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide img, body.bar .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide img, body.bar .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide img, .newsSection .swiper-wrapper .swiper-slide img {
+.menuSection__contents .swiperFood .swiper-wrapper .swiper-slide img, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide img, .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide img, .newsSection .swiper-wrapper .swiper-slide img {
   width: 400px;
   border-radius: 50px;
   overflow: hidden;
   margin: 0 auto;
   display: block;
 }
-
-.swiper__txt, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide figcaption, .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide figcaption, body.bar .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide p, body.bar .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide p, body.bar .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide p, .newsSection .swiper-wrapper .swiper-slide figcaption {
-  width: 400px;
-  margin: 0 auto;
-  padding: 20px 10px;
+@media screen and (max-width: 750px) {
+  .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide img, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide img, .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide img, .newsSection .swiper-wrapper .swiper-slide img {
+    width: 80vw;
+    border-radius: 10vw;
+  }
 }
 
-.menuSection__contents .swiperFood .swiper-wrapper .swiper-slide figcaption {
+.menuSection__contents .swiperFood .swiper-wrapper .swiper-slide figcaption, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide figcaption, .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide figcaption, .newsSection .swiper-wrapper .swiper-slide figcaption {
   width: 400px;
   margin: 0 auto;
   padding: 20px 10px;
 }
 @media screen and (max-width: 750px) {
-  .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide figcaption {
+  .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide figcaption, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide figcaption, .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide figcaption, .newsSection .swiper-wrapper .swiper-slide figcaption {
     width: 80vw;
+    padding: 4vw 2vw;
   }
 }
 
@@ -391,6 +397,11 @@ td {
   }
 }
 
+p {
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+}
+
 .swiper-pagination {
   position: relative;
 }
@@ -692,21 +703,6 @@ body.bar .header__logo svg .js-over {
     padding: 0 4vw;
   }
 }
-@media screen and (max-width: 750px) {
-  .newsSection .swiper {
-    padding: 0px 5vw 4vw;
-  }
-}
-@media screen and (max-width: 750px) {
-  .newsSection .swiper-wrapper .swiper-slide img {
-    width: 80vw;
-  }
-}
-@media screen and (max-width: 750px) {
-  .newsSection .swiper-wrapper .swiper-slide figcaption {
-    width: 80vw;
-  }
-}
 .newsSection__calendar {
   width: 450px;
   margin: 0 auto;
@@ -772,6 +768,9 @@ body.bar .header__logo svg .js-over {
   mask-repeat: repeat-x;
   overflow: hidden;
   animation: wave 5s var(--mh--easing04) infinite both;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
 }
 .menuSection__bg::after {
   content: "";
@@ -788,6 +787,8 @@ body.bar .header__logo svg .js-over {
   bottom: 0;
   left: 0;
   right: 0;
+  width: 100%;
+  min-height: 100vh;
 }
 .menuSection__bg-movie video {
   display: block;
@@ -804,51 +805,6 @@ body.bar .header__logo svg .js-over {
 }
 .menuSection__contents h3 {
   color: #fff;
-}
-@media screen and (max-width: 750px) {
-  .menuSection__contents .swiperFood {
-    padding: 0px 5vw 4vw;
-  }
-}
-@media screen and (max-width: 750px) {
-  .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide img {
-    width: 80vw;
-  }
-}
-@media screen and (max-width: 750px) {
-  .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide figcaption {
-    width: 80vw;
-  }
-}
-@media screen and (max-width: 750px) {
-  .menuSection__contents .swiperDrink {
-    padding: 0px 5vw 4vw;
-  }
-}
-@media screen and (max-width: 750px) {
-  .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide img {
-    width: 80vw;
-  }
-}
-@media screen and (max-width: 750px) {
-  .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide figcaption {
-    width: 80vw;
-  }
-}
-@media screen and (max-width: 750px) {
-  .menuSection__contents .swiperTakeOut {
-    padding: 0px 5vw 4vw;
-  }
-}
-@media screen and (max-width: 750px) {
-  .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide img {
-    width: 80vw;
-  }
-}
-@media screen and (max-width: 750px) {
-  .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide figcaption {
-    width: 80vw;
-  }
 }
 .menuSection__contents .swiper-pagination {
   position: relative;
@@ -871,51 +827,6 @@ body.bar .menuSection__contents h2 {
 }
 body.bar .menuSection__contents h3 {
   color: #fff;
-}
-@media screen and (max-width: 750px) {
-  body.bar .menuSection__contents .swiperFood {
-    padding: 0px 5vw 4vw;
-  }
-}
-@media screen and (max-width: 750px) {
-  body.bar .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide img {
-    width: 80vw;
-  }
-}
-@media screen and (max-width: 750px) {
-  body.bar .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide p {
-    width: 80vw;
-  }
-}
-@media screen and (max-width: 750px) {
-  body.bar .menuSection__contents .swiperDrink {
-    padding: 0px 5vw 4vw;
-  }
-}
-@media screen and (max-width: 750px) {
-  body.bar .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide img {
-    width: 80vw;
-  }
-}
-@media screen and (max-width: 750px) {
-  body.bar .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide p {
-    width: 80vw;
-  }
-}
-@media screen and (max-width: 750px) {
-  body.bar .menuSection__contents .swiperTakeOut {
-    padding: 0px 5vw 4vw;
-  }
-}
-@media screen and (max-width: 750px) {
-  body.bar .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide img {
-    width: 80vw;
-  }
-}
-@media screen and (max-width: 750px) {
-  body.bar .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide p {
-    width: 80vw;
-  }
 }
 body.bar .menuSection__contents .swiper-pagination-bullet {
   background-color: #fff;

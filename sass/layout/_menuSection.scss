@@ -27,6 +27,9 @@
         mask-repeat: repeat-x;
         overflow: hidden;
         animation: wave 5s var(--mh--easing04) infinite both;
+				width: 100%;
+				height: 100%;
+				min-height: 100vh;
 
         &::after {
             content: "";
@@ -45,6 +48,8 @@
             bottom: 0;
             left: 0;
             right: 0;
+						width: 100%;
+						min-height: 100vh;
 
             video {
                 display: block;
@@ -68,84 +73,48 @@
         }
 
         .swiperFood {
-            @extend .swiper;
-
-            @include sp() {
-                @include swiper-sp;
-            }
+            @extend %swiper;
 
             .swiper-wrapper {
                 .swiper-slide {
                     img {
-                        @extend .swiper__img;
-
-                        @include sp() {
-                            @include swiper__img-sp;
-                        }
+                        @extend %swiper__img;
                     }
 
                     figcaption {
                         @extend %swiper__txt;
-
-                        @include sp() {
-                            @include swiper__txt-sp;
-                        }
                     }
                 }
             }
         }
 
         .swiperDrink {
-            @extend .swiper;
-
-            @include sp() {
-                @include swiper-sp;
-            }
+            @extend %swiper;
 
             .swiper-wrapper {
                 .swiper-slide {
                     img {
-                        @extend .swiper__img;
-
-                        @include sp() {
-                            @include swiper__img-sp;
-                        }
+                        @extend %swiper__img;
                     }
 
                     figcaption {
-                        @extend .swiper__txt;
-
-                        @include sp() {
-                            @include swiper__txt-sp;
-                        }
+                        @extend %swiper__txt;
                     }
                 }
             }
         }
 
         .swiperTakeOut {
-            @extend .swiper;
-
-            @include sp() {
-                @include swiper-sp;
-            }
+            @extend %swiper;
 
             .swiper-wrapper {
                 .swiper-slide {
                     img {
-                        @extend .swiper__img;
-
-                        @include sp() {
-                            @include swiper__img-sp;
-                        }
+                        @extend %swiper__img;
                     }
 
                     figcaption {
-                        @extend .swiper__txt;
-
-                        @include sp() {
-                            @include swiper__txt-sp;
-                        }
+                        @extend %swiper__txt;
                     }
                 }
             }
@@ -184,90 +153,6 @@ body {
 
                 h3 {
                     color: #fff;
-                }
-
-                .swiperFood {
-                    @extend .swiper;
-
-                    @include sp() {
-                        @include swiper-sp;
-                    }
-
-                    .swiper-wrapper {
-                        .swiper-slide {
-                            img {
-                                @extend .swiper__img;
-
-                                @include sp() {
-                                    @include swiper__img-sp;
-                                }
-                            }
-
-                            p {
-                                @extend .swiper__txt;
-
-                                @include sp() {
-                                    @include swiper__txt-sp;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .swiperDrink {
-                    @extend .swiper;
-
-                    @include sp() {
-                        @include swiper-sp;
-                    }
-
-                    .swiper-wrapper {
-                        .swiper-slide {
-                            img {
-                                @extend .swiper__img;
-
-                                @include sp() {
-                                    @include swiper__img-sp;
-                                }
-                            }
-
-                            p {
-                                @extend .swiper__txt;
-
-                                @include sp() {
-                                    @include swiper__txt-sp;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .swiperTakeOut {
-                    @extend .swiper;
-
-                    @include sp() {
-                        @include swiper-sp;
-                    }
-
-                    .swiper-wrapper {
-                        .swiper-slide {
-                            img {
-                                @extend .swiper__img;
-
-                                @include sp() {
-                                    @include swiper__img-sp;
-                                }
-                            }
-
-                            p {
-                                @extend .swiper__txt;
-
-                                @include sp() {
-                                    @include swiper__txt-sp;
-                                }
-                            }
-                        }
-                    }
                 }
 
                 .swiper-pagination {

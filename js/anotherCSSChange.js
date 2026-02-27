@@ -1,22 +1,40 @@
 /* スクロールでin-viewクラス付与
 ----------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
-  const targets = document.querySelectorAll('.is-inview');
+	// 1. 通常の要素用（50%で発火）
+	const standardObserver = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('is-view');
+				standardObserver.unobserve(entry.target);
+			}
+		});
+	}, { threshold: 0.5 });
 
-  if (!targets.length) return;
+	// 2. 背景などの大きい要素用（0% = 1pxでも入ったら発火）
+	const bgObserver = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('is-view');
+				bgObserver.unobserve(entry.target);
+			}
+		});
+	}, { threshold: 0.25 });
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-view');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.5
-  });
+	// 3. 振り分け処理
+	const targets = document.querySelectorAll('.is-inview');
+	targets.forEach(target => {
+		if (target.classList.contains('menuSection')) {
+			// 背景クラスを持っていれば 0% 用で監視
+			bgObserver.observe(target);
+		} else {
+			// それ以外は 50% 用で監視
+			standardObserver.observe(target);
+		}
+	});
 
-  targets.forEach(el => observer.observe(el));
+	const rect = document.querySelector('.menuSection_bg').getBoundingClientRect();
+	console.log(rect);
 
   const weeks = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   const date = new Date()

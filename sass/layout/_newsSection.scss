@@ -13,30 +13,18 @@
             padding: 0 getVwSp(20);
         }
     }
-    
+
     .swiper{
-        @extend .swiper;
-        
-        @include sp() {
-            @include swiper-sp;
-        }
+        @extend %swiper;
 
         &-wrapper{
             .swiper-slide{
                 img{
-                    @extend .swiper__img;
-
-                    @include sp() {
-                        @include swiper__img-sp;
-                    }
+                    @extend %swiper__img;
                 }
 
                 figcaption{
-                    @extend .swiper__txt;
-
-                    @include sp() {
-                        @include swiper__txt-sp;
-                    }
+                    @extend %swiper__txt;
                 }
             }
         }

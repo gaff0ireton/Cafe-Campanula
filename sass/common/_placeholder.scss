@@ -5,42 +5,34 @@
 // common/_index.scss を読み込む（mixin が使える）
 @use 'mixin' as *;
 
-.swiper {
-    padding: 0px 25px 20px;
-    overflow: hidden;
+%swiper {
+	padding: 0px 25px 20px;
+	overflow: hidden;
+	@include sp() {
+		padding: 0px getVwSp(25) getVwSp(20);
+	}
 }
 
-.swiper__img {
-    width: 400px;
-    border-radius: 50px;
-    overflow: hidden;
-    margin: 0 auto;
-    display: block;
-}
+%swiper__img {
+	width: 400px;
+	border-radius: 50px;
+	overflow: hidden;
+	margin: 0 auto;
+	display: block;
 
-.swiper__txt {
-    width: 400px;
-    margin: 0 auto;
-    padding: 20px 10px;
+	@include sp() {
+		width: getVwSp(400);
+		border-radius: getVwSp(50);
+	}
 }
 
 %swiper__txt {
-    width: 400px;
-    margin: 0 auto;
-    padding: 20px 10px;
-    @include sp() {
-        width: getVwSp(400);
-    }
-}
+	width: 400px;
+	margin: 0 auto;
+	padding: 20px 10px;
 
-@mixin swiper-sp {
-    padding: 0px getVwSp(25) getVwSp(20);
-}
-
-@mixin swiper__img-sp {
-    width: getVwSp(400);
-}
-
-@mixin swiper__txt-sp {
-    width: getVwSp(400);
+	@include sp() {
+		width: getVwSp(400);
+		padding: getVwSp(20) getVwSp(10);
+	}
 }
