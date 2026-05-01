@@ -6,7 +6,7 @@ function loading() {
     setTimeout(function () {
         loadBG.classList.add('active');
         // document.body.style.overflow = '';
-    }, 6500);
+    }, 200);
 }
 
 const reload = document.querySelector('.footer__btn');
