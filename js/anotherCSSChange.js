@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
-	const rect = document.querySelector('.menuSection_bg').getBoundingClientRect();
-	console.log(rect);
+	// const rect = document.querySelector('.menuSection_bg').getBoundingClientRect();
+	// console.log(rect);
 
   const weeks = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   const date = new Date()
