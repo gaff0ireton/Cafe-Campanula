@@ -7,7 +7,7 @@
 .mainvisualSection {
     position: relative;
     z-index: 1;
-    height: 100vh;
+    height: 100svh;
     transform: opacity 0.8s ease;
 
     &__deco {
@@ -36,7 +36,8 @@
     }
 
     &__logo {
-        width: 950px;
+        max-width: 950px;
+        width: 100%;
         position: absolute;
         top: 50%;
         left: 50%;

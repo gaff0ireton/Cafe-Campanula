@@ -144,6 +144,7 @@
 
 .mainwrap {
   max-width: 500px;
+  margin: 0 auto;
   padding: 128px 0;
   position: relative;
   z-index: 1;
@@ -488,7 +489,7 @@ body.bar .header__logo svg .js-over {
 .mainvisualSection {
   position: relative;
   z-index: 1;
-  height: 100vh;
+  height: 100svh;
   transform: opacity 0.8s ease;
 }
 .mainvisualSection__deco {
@@ -515,7 +516,8 @@ body.bar .header__logo svg .js-over {
   opacity: 0;
 }
 .mainvisualSection__logo {
-  width: 950px;
+  max-width: 950px;
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -727,6 +729,15 @@ body.bar .menuSection__contents .swiper-pagination-bullet-active {
   height: 100%;
   border: none;
 }
+.accessSection__txt {
+  width: 450px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 750px) {
+  .accessSection__txt {
+    width: 90vw;
+  }
+}
 
 body.bar .accessSection__bg {
   background-color: #000;
@@ -738,12 +749,12 @@ body.bar .accessSection__bg {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  padding: 32px 4px;
+  padding: 0 4px 32px;
   background-image: linear-gradient(#FFFFCC 0%, #FFFFCC 100%);
 }
 @media screen and (max-width: 750px) {
   .shareSection h2 {
-    padding: 6.4vw 0.8vw;
+    padding: 0 0.8vw 6.4vw;
   }
 }
 .shareSection__box {
@@ -787,7 +798,7 @@ body.bar .shareSection__icon {
   background-color: #0080FF;
   z-index: 0;
   margin: 0 auto;
-  padding: 64px;
+  padding: 64px 192px;
   position: relative;
 }
 .footer p,
@@ -797,28 +808,50 @@ body.bar .shareSection__icon {
 }
 .footer__inner {
   display: flex;
-  width: 1280px;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 750px) {
+  .footer__inner {
+    flex-direction: column;
+    gap: 3.2vw;
+  }
 }
 .footer__inner > * {
-  width: 50%;
+  width: 620px;
 }
-.footer__inner:first-child {
+@media screen and (max-width: 750px) {
+  .footer__inner > * {
+    width: 100%;
+  }
+}
+.footer__box:first-child {
   margin: 0 auto;
   text-align: center;
 }
-.footer__inner:first-child nav ul {
+.footer__box:first-child nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 16px;
+}
+.footer__box:first-child nav ul iconify-icon {
+  font-size: 36px;
+}
+.footer__logo {
+  display: block;
+  width: 620px;
 }
 .footer__sns {
   display: flex;
 }
 .footer__btn {
-  width: 100%;
+  width: 620px;
   padding: 1.5rem 0.5rem;
   border-radius: 25px;
-  margin: 0 auto;
+  margin: 0 auto 16px;
   z-index: 1;
   position: relative;
   text-align: center;
@@ -843,6 +876,11 @@ body.bar .shareSection__icon {
   height: 100%;
   border: 2px solid #fff;
   border-radius: 30px;
+}
+.footer__map {
+  width: 100%;
+  border: none;
+  margin: 0 auto;
 }
 .footer a {
   display: flex;
@@ -938,6 +976,43 @@ body.bar .shareSection__icon {
 
 body.bar .footer {
   background-color: #000;
+}
+body.bar .footer__btn {
+  color: #000;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #c70000;
+  outline: none;
+  border: none;
+  transition: color 0.5s;
+  cursor: pointer;
+}
+body.bar .footer__btn:before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #000;
+}
+body.bar .footer .blob-btn--secondary:hover {
+  color: #c70000;
+}
+body.bar .footer .blob-btn:hover {
+  color: #c70000;
+}
+body.bar .footer .blob-btn__blob {
+  position: absolute;
+  top: 2px;
+  z-index: 17;
+  width: 25%;
+  height: 100%;
+  background: #000;
+  border-radius: 100%;
+  transform: translate3d(0, 150%, 0) scale(1.7);
+  transition: transform 0.45s;
 }
 
 @keyframes wave {

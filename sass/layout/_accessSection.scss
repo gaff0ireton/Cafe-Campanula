@@ -45,6 +45,15 @@
             border: none;
         }
     }
+
+    &__txt{
+        width: 450px;
+        margin: 0 auto;
+        
+        @include sp(){
+            width: getVwSp(450);
+        }
+    }
 }
 
 body {
