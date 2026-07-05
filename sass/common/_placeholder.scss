@@ -9,7 +9,7 @@
 	padding: 0px 25px 20px;
 	overflow: hidden;
 	@include sp() {
-		padding: 0px getVwSp(25) getVwSp(20);
+		padding: 0px vw-sp(25) vw-sp(20);
 	}
 }
 
@@ -21,8 +21,8 @@
 	display: block;
 
 	@include sp() {
-		width: getVwSp(400);
-		border-radius: getVwSp(50);
+		width: vw-sp(400);
+		border-radius: vw-sp(50);
 	}
 }
 
@@ -32,7 +32,7 @@
 	padding: 20px 10px;
 
 	@include sp() {
-		width: getVwSp(400);
-		padding: getVwSp(20) getVwSp(10);
+		width: vw-sp(400);
+		padding: vw-sp(20) vw-sp(10);
 	}
 }

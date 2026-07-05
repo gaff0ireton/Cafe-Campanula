@@ -142,7 +142,7 @@ body {
             &__bg {
                 &::after {
                     background-color: #c7000070;
-                    mix-blend-mode: hue;
+                    mix-blend-mode: revert-rule;
                 }
             }
 

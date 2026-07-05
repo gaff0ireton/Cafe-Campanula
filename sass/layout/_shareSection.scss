@@ -15,7 +15,7 @@
         background-image: linear-gradient($bgColor 0%, $bgColor 100%);
 
         @include sp(){
-            padding: 0 getVwSp(4) getVwSp(32);
+            padding: 0 vw-sp(4) vw-sp(32);
         }
     }
 
@@ -26,13 +26,13 @@
         gap: 0.5em;
         border: 2px solid $mainColor;
         width: fit-content;
-        margin: -52px auto;
+        margin: -52px auto 0;
         padding: 64px 32px 32px;
         border-radius: 25px;
 
         @include sp(){
-            padding: getVwSp(64) getVwSp(32) getVwSp(32);
-            margin: getVwSp(-52) auto;
+            padding: vw-sp(64) vw-sp(32) vw-sp(32);
+            margin: vw-sp(-52) auto 0;
         }
     }
 
@@ -41,7 +41,7 @@
         font-size: 48px;
 
         @include sp() {
-            font-size: getVwSp(48);
+            font-size: vw-sp(48);
         }
     }
 }

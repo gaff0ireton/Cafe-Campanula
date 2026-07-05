@@ -1,27 +1,33 @@
 @use "sass:math";
 
-@function getVwSp($fontsize, $viewport: 750) {
-  $rate: 100 / $viewport * 1.5;
-  @return $rate * $fontsize * 1vw;
+// 設計値をまとめて管理
+$breakpoint: 750px;
+$design-sp: 750;
+$design-pc: 1920;
+
+// px → vw 変換の本体
+@function vw($px, $design, $scale: 1) {
+  @return math.div($px, $design) * $scale * 100vw;
 }
 
-@function getVwPc($fontsize, $viewport: 1920) {
-  $rate: 100 / $viewport;
-  @return $rate * $fontsize * 1vw;
+// SP / PC 用のショートハンド
+@function vw-sp($px, $design: $design-sp) {
+  @return vw($px, $design, 1.5); // 元コードの *1.5 を維持
 }
 
-@mixin vw($fontsize) {
-  font-size: getVwPc($fontsize);
+@function vw-pc($px, $design: $design-pc) {
+  @return vw($px, $design);
 }
 
-@mixin sp(){
-  @media screen and (max-width: 750px) {
+// メディアクエリ
+@mixin sp {
+  @media screen and (max-width: $breakpoint) {
     @content;
   }
 }
 
-@mixin pc(){
-  @media screen and (min-width: 750px) {
+@mixin pc {
+  @media screen and (min-width: $breakpoint + 1) {
     @content;
   }
 }

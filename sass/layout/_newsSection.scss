@@ -4,54 +4,65 @@
 // common/_index.scss を読み込む（mixin が使える）
 @use "../common" as *;
 
-.newsSection{
-    h3,p{
+.newsSection {
+
+    h3,
+    p {
         text-align: left;
         padding: 0 20px;
 
-        @include sp(){
-            padding: 0 getVwSp(20);
+        @include sp() {
+            padding: 0 vw-sp(20);
         }
     }
 
-    .swiper{
+    .swiper {
         @extend %swiper;
 
-        &-wrapper{
-            .swiper-slide{
-                img{
+        &-wrapper {
+            .swiper-slide {
+                img {
                     @extend %swiper__img;
                 }
 
-                figcaption{
+                figcaption {
                     @extend %swiper__txt;
                 }
             }
         }
     }
 
-    &__calendar{
+    &__calendar {
         width: 450px;
         margin: 0 auto;
         aspect-ratio: 1 / 1;
 
-        @include sp(){
-            width: getVwSp(450);
+        @include sp() {
+            width: vw-sp(450);
         }
 
-        table{
+        table {
             width: 100%;
             height: 100%;
-            border-collapse: collapse;
-            text-align: center;
+            border-collapse: separate;
+            border-spacing: 5px;
+            border: none;
 
-            td{
+            td {
                 width: calc(100%/ 7);
                 color: $txtColor;
-                border: 1px solid $txtColor;
+                border: none;
+                border-radius: 10px;
+                background-color: #ffffff;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
                 vertical-align: middle;
+                text-align: center;
+                
+                @include sp(){
+                    box-shadow: 0 vw-sp(2) vw-sp(5) rgba(0, 0, 0, 0.05);
+                }
 
-                &:first-child{
+                &:first-child {
                     color: $sundayColor;
                 }
 
@@ -60,20 +71,23 @@
                 }
             }
 
-            .is-disabled{
-                color: lighten($txtColor,40%) !important;
+            .is-disabled {
+                color: lighten($txtColor, 40%) !important;
             }
 
-            .shark-day{
+            .shark-day {
                 position: relative;
+                background-color: #e0f7fa;
 
-                &:before{
+                &:before {
                     content: "🦈";
                     position: absolute;
                     top: 2px;
                     right: 2px;
                     background-size: contain;
                     background-repeat: no-repeat;
+                    display: inline-block;
+                    animation: float 2s ease-in-out infinite;
                 }
             }
         }

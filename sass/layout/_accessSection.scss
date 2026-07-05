@@ -35,8 +35,8 @@
         margin-bottom: 16px;
 
         @include sp() {
-            height: getVwSp(300);
-            margin-bottom: getVwSp(16);
+            height: vw-sp(300);
+            margin-bottom: vw-sp(16);
         }
 
         iframe {
@@ -51,7 +51,7 @@
         margin: 0 auto;
         
         @include sp(){
-            width: getVwSp(450);
+            width: vw-sp(450);
         }
     }
 }

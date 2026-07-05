@@ -1,12 +1,15 @@
 window.addEventListener('load', loading);
 const loadBG = document.querySelector('.load');
 function loading() {
+    document.body.classList.add('no-scroll');
     // setTimeout(function(){
-    // document.body.style.overflow = 'hidden';
+    // document.body.style.overflow = 'hidden';2
     setTimeout(function () {
-        loadBG.classList.add('active');
+        loadBG.classList.add('no-active');
+        document.body.classList.remove('no-scroll');
+
         // document.body.style.overflow = '';
-    }, 200);
+    }, 1000);
 }
 
 const reload = document.querySelector('.footer__btn');
@@ -15,9 +18,12 @@ reload.addEventListener('click', function loading () {
         top: 0,
         behavior: 'smooth'
     });
-    loadBG.classList.remove('active');
+    
+    loadBG.classList.remove('no-active');
+    document.body.classList.add('no-scroll');
     setTimeout(function () {
-        loadBG.classList.add('active');
+        loadBG.classList.add('no-active');
+        document.body.classList.remove('no-scroll');
         // document.body.style.overflow = '';
     }, 6500);
 });

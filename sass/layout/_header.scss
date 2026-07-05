@@ -13,7 +13,7 @@
     pointer-events: none;
 
     @include sp() {
-        padding: getVwSp(10);
+        padding: vw-sp(10);
     }
 
     &__logo {
@@ -22,7 +22,7 @@
         pointer-events: auto;
 
         @include sp() {
-            width: getVwSp(200);
+            width: vw-sp(200);
         }
 
         svg {

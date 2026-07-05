@@ -11,9 +11,15 @@
     padding: 64px 192px;
     position: relative;
 
+    @include sp() {
+        padding: vw-sp(64) vw-sp(32);
+    }
+
     p,
     li,
-    a {
+    a,
+    dt,
+    dd {
         color: #fff;
     }
 
@@ -26,7 +32,7 @@
 
         @include sp() {
             flex-direction: column;
-            gap: getVwSp(16);
+            gap: vw-sp(16);
         }
 
         >* {
@@ -63,6 +69,10 @@
     &__logo {
         display: block;
         width: 620px;
+
+        @include sp() {
+            width: 100%;
+        }
     }
 
     &__sns {
@@ -88,6 +98,11 @@
         cursor: pointer;
         border-radius: 30px;
 
+        @include sp() {
+            width: 100%;
+            padding: vw-sp(24) vw-sp(8);
+        }
+
         &:before {
             content: "";
             z-index: 1;
@@ -105,6 +120,14 @@
         width: 100%;
         border: none;
         margin: 0 auto;
+    }
+
+    &__txt {
+        margin-top: 16px;
+
+        @include sp(){
+        margin-top: vw-sp(16);
+        }
     }
 
     a {

@@ -192,14 +192,6 @@
   background-position: 0 0, 1rem 1rem;
 }
 
-.active {
-  transition-property: opacity;
-  transition-delay: 0.9s;
-  transition-duration: 0.3s;
-  opacity: 0;
-  pointer-events: none;
-}
-
 :root {
   --drawerColor: #393f4c;
   /* ドロワーボタンとMENUの色。藍鉄色 */

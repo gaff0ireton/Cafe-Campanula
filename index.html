@@ -334,8 +334,8 @@
             <section id="concept" class="conceptSection">
                 <div class="is-inview">
                     <h2>CONCEPT</h2>
-                    <h3>ちょっと怖くて、すごくかわいい。</h3>
-                    <p>ちょっぴりユニークで、とびきりかわいい。<br>サメが顔をのぞかせるメニューや、海を感じるインテリアで、日常を忘れて楽しめる時間をお届けします。</p>
+                    <h3 data-text="cap">ちょっと怖くて、すごくかわいい。</h3>
+                    <p data-text="cap_txt">ちょっぴりユニークで、とびきりかわいい。<br>サメが顔をのぞかせるメニューや、海を感じるインテリアで、日常を忘れて楽しめる時間をお届けします。</p>
                 </div>
                 <div class="is-inview">
                     <img class="photo" src="img/img_concept.jpg" alt="外観">
@@ -384,7 +384,7 @@
                     <h2 class="is-inview">menu</h2>
                     <div class="is-inview">
                         <h3 class="is-inview">food</h3>
-                        <div class="swiperFood is-inview">
+                        <div class="swiperFood is-inview" data-category="food">
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
@@ -407,7 +407,7 @@
                     </div>
                     <div class="is-inview">
                         <h3 class="is-inview">drink</h3>
-                        <div class="swiperDrink is-inview">
+                        <div class="swiperDrink is-inview" data-category="drink">
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
@@ -436,7 +436,7 @@
                     </div>
                     <div class="is-inview">
                         <h3 class="is-inview">take out</h3>
-                        <div class="swiperTakeOut is-inview">
+                        <div class="swiperTakeOut is-inview" data-category="takeOut">
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
@@ -477,19 +477,22 @@
                             style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
-                    <p class="accessSection__txt">
-                        ADDRESS : 650-0002 兵庫県神戸市中央区北野町1-1-3
-                        <br>
-                        TELL : **-****-****
-                        <br>
-                        MAIL : ****@live.jp
-                        <br>
-                        ACCESS : **** **** 徒歩**分
-                        <br>
-                        OPEN : 11:00 - 20:00
-                        <br>
-                        CLOSE : 不定休
-                    </p>
+                    <dl class="accessSection__txt">
+                        <dt>ADDRESS :</dt>
+                        <dd>650-0002 兵庫県神戸市中央区北野町1-1-3</dd>
+                        <dt>OPEN :</dt>
+                        <dd>10:00 - 18:00 (L.O. 17:30)</dd>
+                        <dt>CLOSE：</dt>
+                        <dd>毎週火曜日・第3水曜日</dd>
+                        <dt>TELL :</dt>
+                        <dd>**-****-****</dd>
+                        <dt>MAIL :</dt>
+                        <dd>sameShark@saashale.jp</dd>
+                        <dt>STATION :</dt>
+                        <dd>〇〇駅より徒歩5分</dd>
+                        <dt>PARKING :</dt>
+                        <dd>なし（お近くのコインパーキングをご利用ください）</dd>
+                    </dl>
                 </div>
             </section>
             <section class="shareSection is-inview" id="share">
@@ -599,11 +602,7 @@
                         </li>
                     </ul>
                 </nav>
-                <p>
-                    <small>
-                        &copy; Cafe Campanula
-                    </small>
-                </p>
+                <p><small>&copy; 2024 Cafe Campanula All Rights Reserved.</small></p>
             </div>
             <div class="footer__box">
                 <a id="js-btn"><button class="blob-btn blob-btn--secondary footer__btn">
@@ -619,19 +618,25 @@
                     </button>
                 </a>
                 <iframe class="footer__map"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.2313272281676!2d135.19049577574432!3d34.699344872920086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60008ee71dee802f%3A0xca14a9adc4e242db!2z44CSNjUwLTAwMDIg5YW15bqr55yM56We5oi45biC5Lit5aSu5Yy65YyX6YeO55S677yR5LiB55uu77yR4oiS77yTIO-8rO-8pe-8peODu--8qO-8pe-8qe-8rQ!5e0!3m2!1sja!2sjp!4v1700197002899!5m2!1sja!2sjp"
-                        style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.2313272281676!2d135.19049577574432!3d34.699344872920086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60008ee71dee802f%3A0xca14a9adc4e242db!2z44CSNjUwLTAwMDIg5YW15bqr55yM56We5oi45biC5Lit5aSu5Yy65YyX6YeO55S677yR5LiB55uu77yR4oiS77yTIO-8rO-8pe-8peODu--8qO-8pe-8qe-8rQ!5e0!3m2!1sja!2sjp!4v1700197002899!5m2!1sja!2sjp"
+                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
-                <p class="footerAccText">
-                        ADDRESS : 650-0002 兵庫県神戸市中央区北野町1-1-3
-                        <br>
-                        OPEN : 11:00 - 20:00
-                        <br>
-                        CLOSE : 不定休
-                        <br>
-                        ■クレジットカード・・・可(Visa、Master、JCB)
-                    </p>
+                <dl class="footer__txt">
+                        <dt>ADDRESS :</dt>
+                        <dd>650-0002 兵庫県神戸市中央区北野町1-1-3</dd>
+                        <dt>OPEN :</dt>
+                        <dd>10:00 - 18:00 (L.O. 17:30)</dd>
+                        <dt>CLOSE：</dt>
+                        <dd>毎週火曜日・第3水曜日</dd>
+                        <dt>TELL :</dt>
+                        <dd>**-****-****</dd>
+                        <dt>MAIL :</dt>
+                        <dd>sameShark@saashale.jp</dd>
+                        <dt>STATION :</dt>
+                        <dd>〇〇駅より徒歩5分</dd>
+                        <dt>PARKING :</dt>
+                        <dd>なし（お近くのコインパーキングをご利用ください）</dd>
+                    </dl>
             </div>
         </div>
     </footer>

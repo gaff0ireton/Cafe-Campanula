@@ -229,10 +229,10 @@
 			"background-repeat: no-repeat;"
 		],
 	},
-	"getVw": {
+	"vw": {
 		"prefix": "vw",
 		"body": [
-			"getVw($1)",
+			"vw($1)",
 		],
 	},
 	"getPw": {
@@ -268,43 +268,43 @@
 	"min()": {
 		"prefix": "min",
 		"body": [
-			"min(getVw($1, $2), $1px)",
+			"min(vw($1, $2), $1px)",
 		],
 	},
 	"minVwOnly()": {
 		"prefix": "minVwOnl",
 		"body": [
-			"min(getVw($1), $1px)",
+			"min(vw($1), $1px)",
 		],
 	},
 	"minsVw()": {
 		"prefix": "minsVw",
 		"body": [
-			"min(getVw($1), sVw($1))",
+			"min(vw($1), sVw($1))",
 		],
 	},
 	"maxsVw()": {
 		"prefix": "maxsVw",
 		"body": [
-			"max(getVw(-$1), sVw(-$1))",
+			"max(vw(-$1), sVw(-$1))",
 		],
 	},
 	"minVwPw()": {
 		"prefix": "minVwPw",
 		"body": [
-			"min(getVw($1, \\$pcWidth), $1px)",
+			"min(vw($1, \\$pcWidth), $1px)",
 		],
 	},
 	"maxVwPw()": {
 		"prefix": "maxVwPw",
 		"body": [
-			"max(getVw(-$1, \\$pcWidth), -$1px)",
+			"max(vw(-$1, \\$pcWidth), -$1px)",
 		],
 	},
 	"max()": {
 		"prefix": "max",
 		"body": [
-			"max($1px, getVw($1, $2))",
+			"max($1px, vw($1, $2))",
 		],
 	},
 	"lineHeight()": {

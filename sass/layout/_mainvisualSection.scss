@@ -46,7 +46,7 @@
         pointer-events: none;
 
         @include sp() {
-            width: getVwSp(450);
+            width: vw-sp(450);
         }
     }
 

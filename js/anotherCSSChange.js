@@ -1,40 +1,40 @@
 /* スクロールでin-viewクラス付与
 ----------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
-	// 1. 通常の要素用（50%で発火）
-	const standardObserver = new IntersectionObserver((entries) => {
-		entries.forEach(entry => {
-			if (entry.isIntersecting) {
-				entry.target.classList.add('is-view');
-				standardObserver.unobserve(entry.target);
-			}
-		});
-	}, { threshold: 0.5 });
+  // 1. 通常の要素用（50%で発火）
+  const standardObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-view');
+        standardObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
 
-	// 2. 背景などの大きい要素用（0% = 1pxでも入ったら発火）
-	const bgObserver = new IntersectionObserver((entries) => {
-		entries.forEach(entry => {
-			if (entry.isIntersecting) {
-				entry.target.classList.add('is-view');
-				bgObserver.unobserve(entry.target);
-			}
-		});
-	}, { threshold: 0.25 });
+  // 2. 背景などの大きい要素用（0% = 1pxでも入ったら発火）
+  const bgObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-view');
+        bgObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.25 });
 
-	// 3. 振り分け処理
-	const targets = document.querySelectorAll('.is-inview');
-	targets.forEach(target => {
-		if (target.classList.contains('menuSection')) {
-			// 背景クラスを持っていれば 0% 用で監視
-			bgObserver.observe(target);
-		} else {
-			// それ以外は 50% 用で監視
-			standardObserver.observe(target);
-		}
-	});
+  // 3. 振り分け処理
+  const targets = document.querySelectorAll('.is-inview');
+  targets.forEach(target => {
+    if (target.classList.contains('menuSection')) {
+      // 背景クラスを持っていれば 0% 用で監視
+      bgObserver.observe(target);
+    } else {
+      // それ以外は 50% 用で監視
+      standardObserver.observe(target);
+    }
+  });
 
-	// const rect = document.querySelector('.menuSection_bg').getBoundingClientRect();
-	// console.log(rect);
+  // const rect = document.querySelector('.menuSection_bg').getBoundingClientRect();
+  // console.log(rect);
 
   const weeks = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   const date = new Date()
@@ -86,9 +86,153 @@ window.addEventListener('load', function () {
 
   const btn = document.getElementById('js-btn');
 
+  let currentTheme = "normal";
+  let currentSlideIndex = 0;
+
+    const themes = {
+    normal: {
+      title: "Coffee Shop",
+      cap: "ちょっと怖くて、すごくかわいい。",
+      cap_txt: "ちょっぴりユニークで、とびきりかわいい。\nサメが顔をのぞかせるメニューや、海を感じるインテリアで、日常を忘れて楽しめる時間をお届けします。",
+      button: "More",
+      sliderFood: [
+        {
+          ttl: "サメちゃんサンデー"
+        },
+        {
+          ttl: "サメちゃんショートケーキ"
+        },
+        {
+          ttl: "サメちゃんワッフル"
+        },
+        {
+          ttl: "サメちゃんパンケーキ"
+        }
+      ],
+      sliderDrink: [
+        {
+          ttl: "サメちゃんメロンフロート"
+        },
+        {
+          ttl: "サメちゃんディープブルー"
+        },
+        {
+          ttl: "サメちゃんベリーフラッペ"
+        },
+        {
+          ttl: "サメちゃんロストバケーション"
+        },
+        {
+          ttl: "サメちゃんアイスフロート"
+        },
+        {
+          ttl: "サメちゃんネード"
+        }
+      ],
+      swiperTakeOut: [
+        {
+          ttl: "サメちゃんドーナツ"
+        },
+        {
+          ttl: "サメちゃんマカロン"
+        },
+        {
+          ttl: "サメちゃんマフィン"
+        },
+        {
+          ttl: "サメちゃんクッキー"
+        },
+        {
+          ttl: "サメちゃんアイス"
+        },
+        {
+          ttl: "サメちゃんチョコレート"
+        }
+      ]
+    },
+    bar: {
+      title: "Bar",
+      cap: "静かな海ほど、深く酔える。",
+      cap_txt: "海の底を思わせる薄暗い空間。\nゆっくりと泳ぐサメを眺めながら、\n日常を忘れる一杯を。",
+      button: "Drink",
+      food: [
+        {
+          ttl: "サメちゃんサンデー"
+        },
+        {
+          ttl: "サメちゃんショートケーキ"
+        },
+        {
+          ttl: "サメちゃんワッフル"
+        },
+        {
+          ttl: "サメちゃんパンケーキ"
+        }
+      ],
+      drink: [
+        {
+          ttl: "ブラッティーマリー"
+        },
+        {
+          ttl: "ロングアイランドアイスティー"
+        },
+        {
+          ttl: "サメちゃんベリーフラッペ"
+        },
+        {
+          ttl: "サメちゃんロストバケーション"
+        },
+        {
+          ttl: "サメちゃんアイスフロート"
+        },
+        {
+          ttl: "サメちゃんネード"
+        }
+      ],
+      takeOut: [
+        {
+          ttl: "サメちゃんドーナツ"
+        },
+        {
+          ttl: "サメちゃんマカロン"
+        },
+        {
+          ttl: "サメちゃんマフィン"
+        },
+        {
+          ttl: "サメちゃんクッキー"
+        },
+        {
+          ttl: "サメちゃんアイス"
+        },
+        {
+          ttl: "サメちゃんチョコレート"
+        }
+      ]
+    }
+  };
+
+  function applyTheme() {
+    const theme = themes[currentTheme];
+    console.log(theme);
+
+    document.querySelectorAll("[data-text]").forEach(el => {
+      const key = el.dataset.text;
+      el.textContent = theme[key];
+    });
+
+  }
+
   btn.addEventListener('click', function () {
+
+    //txt
+    currentTheme = currentTheme === "normal" ? "bar" : "normal";
+    currentSlideIndex = 0;
+    applyTheme();
+
     // CSS
     document.body.classList.toggle('bar');
+
 
     // ripples.js初期化
     $('.background').ripples('destroy'); // 一度破棄
@@ -142,10 +286,11 @@ window.addEventListener('load', function () {
     const endRect = end.getBoundingClientRect();
 
     const isStartOut = startRect.bottom < 0 || startRect.top > window.innerHeight;
-    const isEndOut = endRect.bottom < 0 || endRect.top > window.innerHeight;
+    const isStartPassed = startRect.bottom <= 0;
+    const isEndReached = endRect.bottom <= window.innerHeight;
 
     objectArray.forEach(object => {
-      if (isStartOut && isEndOut) {
+      if (isStartPassed && !isEndReached) {
         object.classList.add('is-active');
       } else {
         object.classList.remove('is-active');
@@ -174,8 +319,14 @@ window.addEventListener('load', function () {
   window.addEventListener("scroll", followObject);
   window.addEventListener("resize", followObject);
   followObject();
+  const observer = new ResizeObserver(() => {
+    followObject();
+  });
+
+  observer.observe(document.body);
 
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
