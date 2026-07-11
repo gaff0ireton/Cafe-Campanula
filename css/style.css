@@ -283,6 +283,20 @@ p {
   white-space: pre-wrap;
 }
 
+picture {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+}
+picture img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 .swiper-pagination {
   position: relative;
 }
@@ -794,6 +808,14 @@ body.bar .menuSection__contents .swiper-pagination-bullet-active {
   height: 100%;
   border: none;
 }
+.accessSection picture {
+  margin-bottom: 16px;
+}
+@media screen and (max-width: 750px) {
+  .accessSection picture {
+    margin-bottom: 3.2vw;
+  }
+}
 .accessSection__txt {
   width: 450px;
   margin: 0 auto;
@@ -892,7 +914,7 @@ body.bar .shareSection__icon {
   }
 }
 .footer__inner > * {
-  width: 620px;
+  width: 500px;
 }
 @media screen and (max-width: 750px) {
   .footer__inner > * {
@@ -900,7 +922,6 @@ body.bar .shareSection__icon {
   }
 }
 .footer__box:first-child {
-  margin: 0 auto;
   text-align: center;
 }
 .footer__box:first-child nav ul {
@@ -908,13 +929,25 @@ body.bar .shareSection__icon {
   justify-content: center;
   align-items: center;
   gap: 16px;
+  margin-top: 16px;
+}
+@media screen and (max-width: 750px) {
+  .footer__box:first-child nav ul {
+    gap: 3.2vw;
+    margin-top: 3.2vw;
+  }
 }
 .footer__box:first-child nav ul iconify-icon {
   font-size: 36px;
 }
+@media screen and (max-width: 750px) {
+  .footer__box:first-child nav ul iconify-icon {
+    font-size: 7.2vw;
+  }
+}
 .footer__logo {
   display: block;
-  width: 620px;
+  width: 500px;
 }
 @media screen and (max-width: 750px) {
   .footer__logo {
@@ -925,7 +958,7 @@ body.bar .shareSection__icon {
   display: flex;
 }
 .footer__btn {
-  width: 620px;
+  width: 500px;
   padding: 1.5rem 0.5rem;
   border-radius: 25px;
   margin: 0 auto 16px;
@@ -947,6 +980,7 @@ body.bar .shareSection__icon {
   .footer__btn {
     width: 100%;
     padding: 4.8vw 1.6vw;
+    font-size: 3.2vw;
   }
 }
 .footer__btn:before {
@@ -981,11 +1015,6 @@ body.bar .shareSection__icon {
 }
 .footer .blob-btn--secondary:before {
   border-color: #fff;
-}
-.footer .blob-btn__text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .footer .blob-btn__inner {
   z-index: -1;
@@ -1070,22 +1099,9 @@ body.bar .footer {
 }
 body.bar .footer__btn {
   color: #000;
-  font-size: 16px;
-  font-weight: 700;
   background-color: #c70000;
-  outline: none;
-  border: none;
-  transition: color 0.5s;
-  cursor: pointer;
 }
 body.bar .footer__btn:before {
-  content: "";
-  z-index: 1;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
   border: 2px solid #000;
 }
 body.bar .footer .blob-btn--secondary:hover {

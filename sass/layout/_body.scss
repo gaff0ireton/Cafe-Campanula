@@ -261,6 +261,21 @@ p {
   white-space: pre-wrap;
 }
 
+picture {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
 .swiper-pagination {
   position: relative;
 

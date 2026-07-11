@@ -46,6 +46,14 @@
         }
     }
 
+    picture{
+        margin-bottom: 16px;
+
+        @include sp(){
+            margin-bottom: vw-sp(16);
+        }
+    }
+
     &__txt{
         width: 450px;
         margin: 0 auto;
