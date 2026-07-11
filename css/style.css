@@ -1008,10 +1008,24 @@ body.bar .shareSection__icon {
   }
 }
 .footer a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
+  padding-bottom: 2px;
+  position: relative;
+}
+.footer a:before {
+  background: #fff;
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform-origin: right top;
+  transform: scale(0, 1);
+  transition: transform 0.3s;
+}
+.footer a:hover:before {
+  transform-origin: left top;
+  transform: scale(1, 1);
 }
 .footer .blob-btn--secondary:before {
   border-color: #fff;
