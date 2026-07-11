@@ -221,7 +221,8 @@ li,
 a,
 figcaption,
 td,
-dd {
+dd,
+dt {
   font-family: "nitalago-rera", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -246,7 +247,6 @@ dl {
 
     dt {
       font-size: 14px;
-      font-weight: 400;
       color: $txtColor;
       border: 1px solid $txtColor;
       width: 100%;
