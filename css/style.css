@@ -345,8 +345,8 @@ picture img {
 }
 @media screen and (max-width: 750px) {
   .load__animation svg {
-    width: 60vw;
-    height: 60vw;
+    width: 30vw;
+    height: 30vw;
   }
 }
 .load__animation .svg-elem-1 {
