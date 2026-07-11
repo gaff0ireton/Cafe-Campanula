@@ -306,7 +306,7 @@ picture {
   left: 0;
   z-index: 10;
   width: 100vw;
-  height: 100vh;
+  height: 100svh;
 
   @include sp() {
     background-image: url(../img/img_load_sp.jpg);
