@@ -235,7 +235,6 @@ li,
 a,
 figcaption,
 td,
-dt,
 dd {
   font-family: "nitalago-rera", sans-serif;
   font-weight: 400;
@@ -250,31 +249,41 @@ dd {
   a,
   figcaption,
   td,
-  dt,
   dd {
     font-size: 3.2vw;
   }
 }
 
 dl {
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  /* 左(dt)は文字幅に合わせ、右(dd)は残りの幅をすべて使う */
-  column-gap: 10px;
-  /* dtとddの間の余白 */
-  row-gap: 5px;
-  /* 行と行の間の余白 */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+dl div {
+  align-items: flex-start;
+  gap: 16px;
+  display: flex;
+}
+dl div dt {
+  font-size: 14px;
+  font-weight: 400;
+  color: #646464;
+  border: 1px solid #646464;
+  width: 100%;
+  max-width: 95px;
+  text-align: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 100px;
+  line-height: 1;
 }
 @media screen and (max-width: 750px) {
-  dl {
-    column-gap: 2vw;
-    row-gap: 1vw;
+  dl div dt {
+    font-size: 2.8vw;
   }
 }
-
-dd {
+dl div dd {
+  line-height: 1.4;
   margin: 0;
-  /* ブラウザが標準でつけるddの左余白をリセット（必須） */
 }
 
 p {
@@ -885,7 +894,7 @@ body.bar .shareSection__icon {
   background-color: #0080FF;
   z-index: 0;
   margin: 0 auto;
-  padding: 64px 192px;
+  padding: 64px 128px;
   position: relative;
 }
 @media screen and (max-width: 750px) {
@@ -899,6 +908,9 @@ body.bar .shareSection__icon {
 .footer dt,
 .footer dd {
   color: #fff;
+}
+.footer dt {
+  border: 1px solid #fff;
 }
 .footer__inner {
   display: flex;

@@ -8,7 +8,7 @@
     background-color: $mainColor;
     z-index: 0;
     margin: 0 auto;
-    padding: 64px 192px;
+    padding: 64px 128px;
     position: relative;
 
     @include sp() {
@@ -21,6 +21,10 @@
     dt,
     dd {
         color: #fff;
+    }
+
+    dt{
+        border: 1px solid #fff;
     }
 
     &__inner {
