@@ -14,7 +14,7 @@
         padding: 0 4px 32px;
         background-image: linear-gradient($bgColor 0%, $bgColor 100%);
 
-        @include sp(){
+        @include sp() {
             padding: 0 vw-sp(4) vw-sp(32);
         }
     }
@@ -30,18 +30,27 @@
         padding: 64px 32px 32px;
         border-radius: 25px;
 
-        @include sp(){
+        @include sp() {
             padding: vw-sp(64) vw-sp(32) vw-sp(32);
             margin: vw-sp(-52) auto 0;
         }
     }
 
-    &__icon {
-        color: $mainColor;
-        font-size: 48px;
+    ul {
+        li {
+            iconify-icon {
+                color: $mainColor;
+                font-size: 48px;
+                transition: opacity ease 0.3s;
 
-        @include sp() {
-            font-size: vw-sp(48);
+                &:hover {
+                    opacity: .5;
+                }
+
+                @include sp() {
+                    font-size: vw-sp(48);
+                }
+            }
         }
     }
 }
@@ -57,8 +66,22 @@ body {
                 border: 2px solid $mainColorBar;
             }
 
-            &__icon {
-                color: $mainColorBar;
+            ul {
+                li {
+                    iconify-icon {
+                        color: $mainColorBar;
+                        font-size: 48px;
+                        transition: opacity ease 0.3s;
+
+                        &:hover {
+                            opacity: .5;
+                        }
+
+                        @include sp() {
+                            font-size: vw-sp(48);
+                        }
+                    }
+                }
             }
         }
     }

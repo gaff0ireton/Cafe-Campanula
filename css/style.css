@@ -332,7 +332,7 @@ picture img {
   background-image: url(../img/img_load_pc.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center bottom;
+  background-position: top center;
   position: fixed;
   top: 0;
   left: 0;
@@ -343,6 +343,7 @@ picture img {
 @media screen and (max-width: 750px) {
   .load {
     background-image: url(../img/img_load_sp.jpg);
+    background-position: bottom center;
   }
 }
 .load__animation {
@@ -888,12 +889,16 @@ body.bar .accessSection__bg {
     margin: -10.4vw auto 0;
   }
 }
-.shareSection__icon {
+.shareSection ul li iconify-icon {
   color: #0080FF;
   font-size: 48px;
+  transition: opacity ease 0.3s;
+}
+.shareSection ul li iconify-icon:hover {
+  opacity: 0.5;
 }
 @media screen and (max-width: 750px) {
-  .shareSection__icon {
+  .shareSection ul li iconify-icon {
     font-size: 9.6vw;
   }
 }
@@ -904,8 +909,18 @@ body.bar .shareSection h2 {
 body.bar .shareSection__box {
   border: 2px solid #c70000;
 }
-body.bar .shareSection__icon {
+body.bar .shareSection ul li iconify-icon {
   color: #c70000;
+  font-size: 48px;
+  transition: opacity ease 0.3s;
+}
+body.bar .shareSection ul li iconify-icon:hover {
+  opacity: 0.5;
+}
+@media screen and (max-width: 750px) {
+  body.bar .shareSection ul li iconify-icon {
+    font-size: 9.6vw;
+  }
 }
 
 .footer {
@@ -1141,6 +1156,9 @@ body.bar .shareSection__icon {
 
 body.bar .footer {
   background-color: #000;
+}
+body.bar .footer__media a:hover {
+  color: #829AA8;
 }
 body.bar .footer__btn {
   color: #000;

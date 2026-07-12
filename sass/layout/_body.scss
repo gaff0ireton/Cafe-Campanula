@@ -315,7 +315,7 @@ picture {
   background-image: url(../img/img_load_pc.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center bottom;
+  background-position: top center;
   position: fixed;
   top: 0;
   left: 0;
@@ -325,6 +325,7 @@ picture {
 
   @include sp() {
     background-image: url(../img/img_load_sp.jpg);
+    background-position: bottom center;
   }
 
   &__animation {

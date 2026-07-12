@@ -282,6 +282,14 @@ body {
         .footer {
             background-color: $bgColorBar;
 
+            &__media {
+                a {
+                    &:hover {
+                        color: $subColorBar;
+                    }
+                }
+            }
+
             &__btn {
                 color: #000;
                 background-color: $mainColorBar;
