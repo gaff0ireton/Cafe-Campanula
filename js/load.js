@@ -6,6 +6,7 @@ function loading() {
     // document.body.style.overflow = 'hidden';2
     setTimeout(function () {
         loadBG.classList.add('no-active');
+        document.documentElement.classList.remove('no-scroll');
         document.body.classList.remove('no-scroll');
 
         // document.body.style.overflow = '';
@@ -23,6 +24,7 @@ reload.addEventListener('click', function loading () {
     document.body.classList.add('no-scroll');
     setTimeout(function () {
         loadBG.classList.add('no-active');
+        document.documentElement.classList.remove('no-scroll');
         document.body.classList.remove('no-scroll');
         // document.body.style.overflow = '';
     }, 6500);
