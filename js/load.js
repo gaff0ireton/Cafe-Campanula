@@ -10,7 +10,7 @@ function loading() {
         document.body.classList.remove('no-scroll');
 
         // document.body.style.overflow = '';
-    }, 1000);
+    }, 7000);
 }
 
 const reload = document.querySelector('.footer__btn');
@@ -27,7 +27,7 @@ reload.addEventListener('click', function loading () {
         document.documentElement.classList.remove('no-scroll');
         document.body.classList.remove('no-scroll');
         // document.body.style.overflow = '';
-    }, 6500);
+    }, 7000);
 });
 
 $('.load').ripples({

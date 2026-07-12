@@ -33,6 +33,16 @@
     }
 }
 
+@keyframes dot-blink {
+    0%,to {
+        opacity: 0
+    }
+
+    30%,70% {
+        opacity: 1
+    }
+}
+
 @keyframes animate-svg-stroke-1 {
     0% {
         stroke-dashoffset: 933.7100830078px;
@@ -43,10 +53,6 @@
         stroke-dashoffset: 0;
         stroke-dasharray: 933.7100830078px;
     }
-}
-
-.loading_bg .svg-elem-1 {
-    animation: animate-svg-stroke-1 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
 }
 
 @keyframes animate-svg-stroke-2 {
@@ -61,10 +67,6 @@
     }
 }
 
-.loading_bg .svg-elem-2 {
-    animation: animate-svg-stroke-2 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
-}
-
 @keyframes animate-svg-stroke-3 {
     0% {
         stroke-dashoffset: 61.0493621826px;
@@ -75,10 +77,6 @@
         stroke-dashoffset: 0;
         stroke-dasharray: 61.0493621826px;
     }
-}
-
-.loading_bg .svg-elem-3 {
-    animation: animate-svg-stroke-3 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
 }
 
 @keyframes animate-svg-stroke-4 {
@@ -93,10 +91,6 @@
     }
 }
 
-.loading_bg .svg-elem-4 {
-    animation: animate-svg-stroke-4 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
-}
-
 @keyframes animate-svg-stroke-5 {
     0% {
         stroke-dashoffset: 61.0499000549px;
@@ -107,10 +101,6 @@
         stroke-dashoffset: 0;
         stroke-dasharray: 61.0499000549px;
     }
-}
-
-.loading_bg .svg-elem-5 {
-    animation: animate-svg-stroke-5 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
 }
 
 @keyframes animate-svg-stroke-6 {
@@ -125,10 +115,6 @@
     }
 }
 
-.loading_bg .svg-elem-6 {
-    animation: animate-svg-stroke-6 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
-}
-
 @keyframes animate-svg-stroke-7 {
     0% {
         stroke-dashoffset: 61.0615196228px;
@@ -141,10 +127,6 @@
     }
 }
 
-.loading_bg .svg-elem-7 {
-    animation: animate-svg-stroke-7 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
-}
-
 @keyframes animate-svg-stroke-8 {
     0% {
         stroke-dashoffset: 61.069568634px;
@@ -155,10 +137,6 @@
         stroke-dashoffset: 0;
         stroke-dasharray: 61.069568634px;
     }
-}
-
-.loading_bg .svg-elem-8 {
-    animation: animate-svg-stroke-8 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
 }
 
 :root {

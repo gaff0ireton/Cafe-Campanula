@@ -257,7 +257,7 @@ dl {
       border-radius: 100px;
       line-height: 1;
 
-      @include sp(){
+      @include sp() {
         font-size: vw-sp(14);
       }
     }
@@ -323,6 +323,20 @@ picture {
   width: 100vw;
   height: 100svh;
 
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    background-color: rgba(0, 128, 255, 0.3);
+    mix-blend-mode: saturation;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
   @include sp() {
     background-image: url(../img/img_load_sp.jpg);
     background-position: bottom center;
@@ -332,6 +346,7 @@ picture {
     position: absolute;
     top: 50%;
     left: 50%;
+    z-index: 12;
     transform: translate(-50%, -50%);
 
     svg {
@@ -344,19 +359,14 @@ picture {
       }
     }
 
-    p{
+    p {
       font-size: 32px;
       font-weight: 700;
       color: #fff;
       text-align: center;
 
-      @include sp(){
+      @include sp() {
         font-size: vw-sp(32);
-      }
-
-      span{
-        display: inline-block;
-        height: fit-content;
       }
     }
 
@@ -390,6 +400,28 @@ picture {
 
     .svg-elem-8 {
       animation: animate-svg-stroke-8 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
+    }
+  }
+
+  &__dots {
+    display: inline-flex;
+  }
+
+  &__dot {
+    opacity: 0;
+    animation: 1.2s ease-in-out infinite dot-blink;
+
+    &:first-child {
+      margin-left: 5px;
+      animation-delay: 0s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: .4s;
+    }
+
+    &:last-child {
+      animation-delay: .8s;
     }
   }
 }
@@ -498,6 +530,14 @@ body {
       color: $txtColorBar;
     }
 
+    dl {
+      dt {
+        font-size: 14px;
+        font-weight: 500;
+        border: 1px solid $txtColorBar;
+      }
+    }
+
     .swiper-pagination {
       &-bullet {
         background-color: $txtColorBar;
@@ -509,62 +549,9 @@ body {
     }
 
     .load {
-      background-image: url(../img/img_load_pc.jpg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 10;
-      width: 100vw;
-      height: 100vh;
-
-      @include sp() {
-        background-image: url(../img/img_load_sp.jpg);
-      }
-
-      &__animation {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        svg {
-          width: 300px;
-          height: 300px;
-        }
-
-        .svg-elem-1 {
-          animation: animate-svg-stroke-1 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
-        }
-
-        .svg-elem-2 {
-          animation: animate-svg-stroke-2 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
-        }
-
-        .svg-elem-3 {
-          animation: animate-svg-stroke-3 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
-        }
-
-        .svg-elem-4 {
-          animation: animate-svg-stroke-4 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
-        }
-
-        .svg-elem-5 {
-          animation: animate-svg-stroke-5 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
-        }
-
-        .svg-elem-6 {
-          animation: animate-svg-stroke-6 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
-        }
-
-        .svg-elem-7 {
-          animation: animate-svg-stroke-7 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
-        }
-
-        .svg-elem-8 {
-          animation: animate-svg-stroke-8 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
-        }
+      &:before {
+        background-color: $mainColorBar;
+        mix-blend-mode: difference;
       }
     }
   }
