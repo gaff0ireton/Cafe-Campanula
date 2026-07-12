@@ -332,6 +332,7 @@ picture img {
   background-image: url(../img/img_load_pc.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: top center;
   position: fixed;
   top: 0;
   left: 0;
@@ -359,6 +360,21 @@ picture img {
     width: 30vw;
     height: 30vw;
   }
+}
+.load__animation p {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+@media screen and (max-width: 750px) {
+  .load__animation p {
+    font-size: 6.4vw;
+  }
+}
+.load__animation p span {
+  display: inline-block;
+  height: fit-content;
 }
 .load__animation .svg-elem-1 {
   animation: animate-svg-stroke-1 2s cubic-bezier(0.83, 0, 0.17, 1) 0s infinite;
@@ -953,6 +969,7 @@ body.bar .shareSection__icon {
 }
 .footer__box:first-child nav ul iconify-icon {
   font-size: 36px;
+  transition: color 0.3s ease;
 }
 @media screen and (max-width: 750px) {
   .footer__box:first-child nav ul iconify-icon {
@@ -968,8 +985,28 @@ body.bar .shareSection__icon {
     width: 100%;
   }
 }
-.footer__sns {
-  display: flex;
+.footer__media a:hover {
+  color: #FFB300;
+}
+.footer__nav a {
+  padding-bottom: 2px;
+  position: relative;
+}
+.footer__nav a:before {
+  background: #fff;
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform-origin: right top;
+  transform: scale(0, 1);
+  transition: transform 0.3s;
+}
+.footer__nav a:hover:before {
+  transform-origin: left top;
+  transform: scale(1, 1);
 }
 .footer__btn {
   width: 500px;
@@ -1020,26 +1057,6 @@ body.bar .shareSection__icon {
   .footer__txt {
     margin-top: 3.2vw;
   }
-}
-.footer a {
-  padding-bottom: 2px;
-  position: relative;
-}
-.footer a:before {
-  background: #fff;
-  content: "";
-  width: 100%;
-  height: 1px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  transform-origin: right top;
-  transform: scale(0, 1);
-  transition: transform 0.3s;
-}
-.footer a:hover:before {
-  transform-origin: left top;
-  transform: scale(1, 1);
 }
 .footer .blob-btn--secondary:before {
   border-color: #fff;
