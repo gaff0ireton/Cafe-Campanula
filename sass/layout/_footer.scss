@@ -8,11 +8,11 @@
     background-color: $mainColor;
     z-index: 0;
     margin: 0 auto;
-    padding: 64px 128px;
+    padding: 64px 128px 34px;
     position: relative;
 
     @include sp() {
-        padding: vw-sp(64) vw-sp(32);
+        padding: vw-sp(64) vw-sp(32) vw-sp(34);
     }
 
     p,
@@ -127,8 +127,7 @@
     &__btn {
         width: 500px;
         padding: 1.5rem 0.5rem;
-        border-radius: 25px;
-        margin: 0 auto 16px;
+        margin: 16px auto 0;
         z-index: 1;
         position: relative;
         text-align: center;
@@ -146,6 +145,8 @@
         @include sp() {
             width: 100%;
             padding: vw-sp(24) vw-sp(8);
+            border-radius: vw-sp(30);
+            margin-top: vw-sp(16);
             font-size: vw-sp(16);
         }
 
@@ -159,6 +160,10 @@
             height: 100%;
             border: 2px solid #fff;
             border-radius: 30px;
+
+            @include sp(){
+                border-radius: vw-sp(30);
+            }
         }
     }
 
@@ -173,6 +178,15 @@
 
         @include sp() {
             margin-top: vw-sp(16);
+        }
+    }
+
+    &__cl{
+        text-align: center;
+        margin-top: 24px;
+
+        @include sp(){
+            margin-top: vw-sp(24);
         }
     }
 
@@ -258,6 +272,10 @@
         height: 100%;
         transition: all .3s .2s;
         border-radius: 30px;
+
+        @include sp(){
+            border-radius: vw-sp(30);
+        }
     }
 
     .blob-btn--secondary:hover {
@@ -267,6 +285,10 @@
     .blob-btn:hover {
         color: #fff;
         border-radius: 30px;
+
+        @include sp(){
+            border-radius: vw-sp(30);
+        }
     }
 
     .blob-btn:hover:after {
@@ -274,6 +296,10 @@
         left: 0;
         top: 0;
         border-radius: 30px;
+
+        @include sp(){
+            border-radius: vw-sp(30);
+        }
     }
 }
 

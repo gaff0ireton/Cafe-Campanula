@@ -259,6 +259,7 @@ dl {
 
       @include sp() {
         font-size: vw-sp(14);
+        max-width: vw-sp(95);
       }
     }
 
