@@ -373,8 +373,8 @@ picture img {
 }
 @media screen and (max-width: 750px) {
   .load__animation svg {
-    width: 30vw;
-    height: 30vw;
+    width: 40vw;
+    height: 40vw;
   }
 }
 .load__animation p {

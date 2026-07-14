@@ -1,11 +1,18 @@
 window.addEventListener('load', loading);
-const loadBG = document.querySelector('.load');
+const load = document.querySelector('.load');
+const load_anime = document.querySelector('.load__animation svg');
 function loading() {
     document.body.classList.add('no-scroll');
     // setTimeout(function(){
     // document.body.style.overflow = 'hidden';2
     setTimeout(function () {
-        loadBG.classList.add('no-active');
+        load_anime.classList.add('no-active');
+
+        // document.body.style.overflow = '';
+    }, 6000);
+
+    setTimeout(function () {
+        load.classList.add('no-active');
         document.documentElement.classList.remove('no-scroll');
         document.body.classList.remove('no-scroll');
 
@@ -14,16 +21,24 @@ function loading() {
 }
 
 const reload = document.querySelector('.footer__btn');
-reload.addEventListener('click', function loading () {
+reload.addEventListener('click', function loading() {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
     });
-    
-    loadBG.classList.remove('no-active');
+    load.classList.remove('no-active');
+    load_anime.classList.remove('no-active');
     document.body.classList.add('no-scroll');
+
     setTimeout(function () {
-        loadBG.classList.add('no-active');
+        load_anime.classList.add('no-active');
+
+        // document.body.style.overflow = '';
+    }, 6000);
+
+
+    setTimeout(function () {
+        load.classList.add('no-active');
         document.documentElement.classList.remove('no-scroll');
         document.body.classList.remove('no-scroll');
         // document.body.style.overflow = '';

@@ -355,8 +355,8 @@ picture {
       height: 300px;
 
       @include sp() {
-        width: vw-sp(150);
-        height: vw-sp(150);
+        width: vw-sp(200);
+        height: vw-sp(200);
       }
     }
 
