@@ -85,11 +85,14 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', function () {
 
   const btn = document.getElementById('js-btn');
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu_btn = document.querySelector('.header__btn');
+  const btnArray = document.querySelectorAll('.header__btn span');
 
   let currentTheme = "normal";
   let currentSlideIndex = 0;
 
-    const themes = {
+  const themes = {
     normal: {
       title: "Coffee Shop",
       cap: "ちょっと怖くて、すごくかわいい。",
@@ -273,12 +276,33 @@ window.addEventListener('load', function () {
     });
   });
 
+  menu_btn.addEventListener('click', function () {
+    document.body.classList.toggle('no-scroll');
+    btnArray.forEach(btn => {
+      if (btn.classList.contains('js-over')) {
+        btn.classList.toggle('js-click');
+      }
+    });
+  });
+
+  document.querySelectorAll('.header__nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.checked = false;
+      document.body.classList.toggle('no-scroll');
+      btnArray.forEach(btn => {
+        if (btn.classList.contains('js-over')) {
+          btn.classList.toggle('js-click');
+        }
+      });
+    });
+  });
+
   function followObject() {
     const start = document.querySelector('.jsFollowStart');
     const end = document.querySelector('.jsFollowEnd');
     const objectArray = document.querySelectorAll('.js-follow');
     const header = document.getElementById('header');
-    const LogoArray = document.querySelectorAll('.header__logo a svg g g path');
+    const targets = document.querySelectorAll('.header__logo a svg g g path, .header__btn span');
 
     if (!start || !end) return;
 
@@ -297,12 +321,8 @@ window.addEventListener('load', function () {
       }
     });
 
-    LogoArray.forEach(logo => {
-      if (isStartOut) {
-        logo.classList.add('js-over');
-      } else {
-        logo.classList.remove('js-over');
-      }
+    targets.forEach(target => {
+      target.classList.toggle('js-over', isStartOut);
     });
   }
 
@@ -329,6 +349,10 @@ window.addEventListener('load', function () {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+  window.scrollTo({
+    top: target,
+    behavior: 'smooth',
+  });
   const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
   const header = document.querySelector('.header');
 
@@ -351,11 +375,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         const target = rect + offset - gap;
-
-        window.scrollTo({
-          top: target,
-          behavior: 'smooth',
-        });
       }
     });
   };
