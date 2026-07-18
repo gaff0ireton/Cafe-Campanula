@@ -112,14 +112,14 @@
                 </ul>
             </nav>
             <picture class="spOnly">
-                <img src="img/logo.svg" alt="">
+                <img class="no-change" src="img/logo.svg" alt="">
             </picture>
         </div>
     </header>
     <main>
         <div class="background pcOnly"></div>
         <div class="left pcOnly">
-            <div class="left__logo js-follow">
+            <div class="left__logo is-follow">
                 <?xml version="1.0" encoding="UTF-8"?>
                 <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 566 155.52">
                     <g id="_レイヤー_1-2" data-name="レイヤー 1">
@@ -178,7 +178,7 @@
             </div>
         </div>
         <div class="right pcOnly">
-            <nav class="js-follow">
+            <nav class="is-follow">
                 <ul>
                     <li><a href="#concept">concept</a></li>
                     <li><a href="#news">NEWS</a></li>
@@ -319,9 +319,12 @@
         <div class="mainwrap">
             <section id="concept" class="conceptSection">
                 <div class="is-inview">
-                    <h2>CONCEPT</h2>
+                    <h2>CONCEPT<span>コンセプト</span></h2>
                     <h3 data-text="cap">ちょっと怖くて、すごくかわいい。</h3>
                     <p data-text="cap_txt">ちょっぴりユニークで、とびきりかわいい。<br>サメが顔をのぞかせるメニューや、海を感じるインテリアで、日常を忘れて楽しめる時間をお届けします。</p>
+                    <picture>
+                        <img src="img/img_concept.jpg" alt="">
+                    </picture>
                 </div>
             </section>
             <section id="news" class="newsSection">
@@ -331,13 +334,13 @@
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             <!-- Slides -->
-                            <figure class="swiper-slide"><img src="img/img_news_01.jpg" alt="">
+                            <figure class="swiper-slide"><img src="img/img_news_01.jpg" alt="ヨシキリザメちゃんぬいぐるみ">
                                 <figcaption>ヨシキリザメちゃんぬいぐるみ再入荷しました！</figcaption>
                             </figure>
-                            <figure class="swiper-slide"><img src="img/img_news_02.jpg" alt="">
+                            <figure class="swiper-slide"><img src="img/img_news_02.jpg" alt="ジンベエザメちゃんぬいぐるみ">
                                 <figcaption>ジンベエザメちゃんぬいぐるみ再入荷しました！</figcaption>
                             </figure>
-                            <figure class="swiper-slide"><img src="img/img_news_03.jpg" alt="">
+                            <figure class="swiper-slide"><img src="img/img_news_03.jpg" alt="サメちゃんシュラフ">
                                 <figcaption>サメちゃんシュラフ登場！</figcaption>
                             </figure>
                         </div>
@@ -367,17 +370,17 @@
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
-                                <figure class="swiper-slide"><img src="img/img_food_01.jpg" alt="サメちゃんサンデー">
-                                    <figcaption>サメちゃんサンデー</figcaption>
+                                <figure class="swiper-slide"><img  data-category="food" src="img/img_food_01.jpg" alt="サメちゃんサンデー">
+                                    <figcaption data-category="food">サメちゃんサンデー</figcaption>
                                 </figure>
-                                <figure class="swiper-slide"><img src="img/img_food_02.jpg" alt="サメちゃんショートケーキ">
-                                    <figcaption>サメちゃんショートケーキ</figcaption>
+                                <figure class="swiper-slide"><img  data-category="food" src="img/img_food_02.jpg" alt="サメちゃんショートケーキ">
+                                    <figcaption data-category="food">サメちゃんショートケーキ</figcaption>
                                 </figure>
-                                <figure class="swiper-slide"><img src="img/img_food_03.jpg" alt="サメちゃんワッフル">
-                                    <figcaption>サメちゃんワッフル</figcaption>
+                                <figure class="swiper-slide"><img  data-category="food" src="img/img_food_03.jpg" alt="サメちゃんワッフル">
+                                    <figcaption data-category="food">サメちゃんワッフル</figcaption>
                                 </figure>
-                                <figure class="swiper-slide"><img src="img/img_food_04.jpg" alt="サメちゃんパンケーキ">
-                                    <figcaption>サメちゃんパンケーキ</figcaption>
+                                <figure class="swiper-slide"><img  data-category="food" src="img/img_food_04.jpg" alt="サメちゃんパンケーキ">
+                                    <figcaption data-category="food">サメちゃんパンケーキ</figcaption>
                                 </figure>
                             </div>
                             <!-- If we need pagination -->
@@ -390,23 +393,23 @@
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
-                                <figure class="swiper-slide"><img src="img/img_drink_01.jpg" alt="サメちゃんメロンフロート">
-                                    <figcaption>サメちゃんメロンフロート</figcaption>
+                                <figure class="swiper-slide"><img data-category="drink" src="img/img_drink_01.jpg" alt="サメちゃんメロンフロート">
+                                    <figcaption data-category="drink">サメちゃんメロンフロート</figcaption>
                                 </figure>
-                                <figure class="swiper-slide"><img src="img/img_drink_02.jpg" alt="サメちゃんディープブルー">
-                                    <figcaption>サメちゃんディープブルー</figcaption>
+                                <figure class="swiper-slide"><img data-category="drink" src="img/img_drink_02.jpg" alt="サメちゃんディープブルー">
+                                    <figcaption data-category="drink">サメちゃんディープブルー</figcaption>
                                 </figure>
-                                <figure class="swiper-slide"><img src="img/img_drink_03.jpg" alt="サメちゃんベリーフラッペ">
-                                    <figcaption>サメちゃんベリーフラッペ</figcaption>
+                                <figure class="swiper-slide"><img data-category="drink" src="img/img_drink_03.jpg" alt="サメちゃんベリーフラッペ">
+                                    <figcaption data-category="drink">サメちゃんベリーフラッペ</figcaption>
                                 </figure>
-                                <figure class="swiper-slide"><img src="img/img_drink_04.jpg" alt="サメちゃんロストバケーション">
-                                    <figcaption>サメちゃんロストバケーション</figcaption>
+                                <figure class="swiper-slide"><img data-category="drink" src="img/img_drink_04.jpg" alt="サメちゃんロストバケーション">
+                                    <figcaption data-category="drink">サメちゃんロストバケーション</figcaption>
                                 </figure>
-                                <figure class="swiper-slide"><img src="img/img_drink_05.jpg" alt="サメちゃんアイスフロート">
-                                    <figcaption>サメちゃんアイスフロート</figcaption>
+                                <figure class="swiper-slide"><img data-category="drink" src="img/img_drink_05.jpg" alt="サメちゃんアイスフロート">
+                                    <figcaption data-category="drink">サメちゃんアイスフロート</figcaption>
                                 </figure>
-                                <figure class="swiper-slide"><img src="img/img_drink_06.jpg" alt="サメちゃんネード">
-                                    <figcaption>サメちゃんネード</figcaption>
+                                <figure class="swiper-slide"><img data-category="drink" src="img/img_drink_06.jpg" alt="サメちゃんネード">
+                                    <figcaption data-category="drink">サメちゃんネード</figcaption>
                                 </figure>
                             </div>
                             <!-- If we need pagination -->
@@ -419,23 +422,23 @@
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
-                                <figure class="swiper-slide"><img src="img/img_takeout_01.jpg" alt="サメちゃんドーナツ">
-                                    <figcaption>サメちゃんドーナツ</figcaption>
+                                <figure class="swiper-slide"><img data-category="takeout" src="img/img_takeout_01.jpg" alt="サメちゃんドーナツ">
+                                    <figcaption data-category="takeout">サメちゃんドーナツ</figcaption>
                                 </figure>
-                                <figure class="swiper-slide"><img src="img/img_takeout_02.jpg" alt="サメちゃんマカロン">
-                                    <figcaption>サメちゃんマカロン</figcaption>
+                                <figure class="swiper-slide"><img data-category="takeout" src="img/img_takeout_02.jpg" alt="サメちゃんマカロン">
+                                    <figcaption data-category="takeout">サメちゃんマカロン</figcaption>
                                 </figure>
-                                <figure class="swiper-slide"><img src="img/img_takeout_03.jpg" alt="サメちゃんマフィン">
-                                    <figcaption>サメちゃんマフィン</figcaption>
+                                <figure class="swiper-slide"><img data-category="takeout" src="img/img_takeout_03.jpg" alt="サメちゃんマフィン">
+                                    <figcaption data-category="takeout">サメちゃんマフィン</figcaption>
                                 </figure>
-                                <figure class="swiper-slide"><img src="img/img_takeout_04.jpg" alt="サメちゃんクッキー">
-                                    <figcaption>サメちゃんクッキー</figcaption>
+                                <figure class="swiper-slide"><img data-category="takeout" src="img/img_takeout_04.jpg" alt="サメちゃんクッキー">
+                                    <figcaption data-category="takeout">サメちゃんクッキー</figcaption>
                                 </figure>
-                                <figure class="swiper-slide"><img src="img/img_takeout_05.jpg" alt="サメちゃんアイス">
-                                    <figcaption>サメちゃんアイス</figcaption>
+                                <figure class="swiper-slide"><img data-category="takeout" src="img/img_takeout_05.jpg" alt="サメちゃんアイス">
+                                    <figcaption data-category="takeout">サメちゃんアイス</figcaption>
                                 </figure>
-                                <figure class="swiper-slide"><img src="img/img_takeout_06.jpg" alt="サメちゃんチョコレート">
-                                    <figcaption>サメちゃんチョコレート</figcaption>
+                                <figure class="swiper-slide"><img data-category="takeout" src="img/img_takeout_06.jpg" alt="サメちゃんチョコレート">
+                                    <figcaption data-category="takeout">サメちゃんチョコレート</figcaption>
                                 </figure>
                             </div>
                             <!-- If we need pagination -->
@@ -506,10 +509,6 @@
                     <li class="shareSection__icon"><a href=""><iconify-icon
                                 icon="mingcute:threads-line"></iconify-icon></a></li>
                 </ul>
-                <ul>
-                    <li></li>
-                    <li></li>
-                </ul>
             </section>
         </div>
     </main>
@@ -566,7 +565,7 @@
         <div class="footer__inner">
             <div class="footer__box">
                 <picture class="footer__logo">
-                    <img src="img/logo.svg" alt="Cafe Campanula">
+                    <img class="no-change" src="img/logo.svg" alt="Cafe Campanula">
                 </picture>
                 <nav class="footer__media">
                     <ul>
@@ -586,7 +585,7 @@
                         <li><a href="#access">ACCESS</a></li>
                     </ul>
                 </nav>
-                <a id="js-btn"><button class="blob-btn blob-btn--secondary footer__btn">
+                <a id="is-btn"><button class="blob-btn blob-btn--secondary footer__btn">
                         <span class="blob-btn__text" data-text="button">Switch to CAFE</span>
                         <span class="blob-btn__inner">
                             <span class="blob-btn__blobs">

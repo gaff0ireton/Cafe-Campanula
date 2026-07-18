@@ -232,7 +232,8 @@ h3 span,
 h4 span,
 h5 span,
 h6 span {
-  font-size: 0.7em;
+  font-size: 0.5em;
+  display: block;
 }
 
 h2 {
@@ -302,6 +303,7 @@ dl div dt {
   border: 1px solid #646464;
   width: 100%;
   max-width: 95px;
+  min-width: 95px;
   text-align: center;
   padding: 0.25rem 0.5rem;
   border-radius: 100px;
@@ -311,6 +313,7 @@ dl div dt {
   dl div dt {
     font-size: 2.8vw;
     max-width: 19vw;
+    min-width: 19vw;
   }
 }
 
@@ -592,7 +595,7 @@ body.bar .load:before {
   fill: #fff;
   transition: fill 0.3s;
 }
-.header__logo svg .js-over {
+.header__logo svg .is-over {
   fill: #0080FF;
 }
 .header__wrap {
@@ -617,10 +620,10 @@ body.bar .load:before {
   border-radius: 2px;
   transition: 0.4s;
 }
-.header__btn span.js-over {
+.header__btn span.is-over {
   background: #0080FF;
 }
-.header__btn span.js-click {
+.header__btn span.is-click {
   background: #fff;
 }
 .header__nav {
@@ -674,13 +677,13 @@ body.bar .load:before {
   right: 0;
 }
 
-body.bar .header__logo svg .js-over {
+body.bar .header__logo svg .is-over {
   fill: #c70000;
 }
-body.bar .header__btn span.js-over {
+body.bar .header__btn span.is-over {
   background: #c70000;
 }
-body.bar .header__btn span.js-click {
+body.bar .header__btn span.is-click {
   background: #fff;
 }
 body.bar .header__nav {

@@ -37,7 +37,7 @@
                 transition: fill .3s;
             }
 
-            .js-over {
+            .is-over {
                 fill: $mainColor
             }
         }
@@ -66,11 +66,11 @@
             border-radius: 2px;
             transition: 0.4s;
 
-            &.js-over {
+            &.is-over {
                 background: $mainColor;
             }
 
-            &.js-click {
+            &.is-click {
                 background: #fff;
             }
         }
@@ -151,7 +151,7 @@ body {
         .header {
             &__logo {
                 svg {
-                    .js-over {
+                    .is-over {
                         fill: $mainColorBar
                     }
                 }
@@ -159,11 +159,11 @@ body {
 
             &__btn {
                 span {
-                    &.js-over {
+                    &.is-over {
                         background: $mainColorBar;
                     }
 
-                    &.js-click {
+                    &.is-click {
                         background: #fff;
                     }
                 }

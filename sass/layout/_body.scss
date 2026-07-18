@@ -195,7 +195,8 @@ h6 {
   letter-spacing: .02em;
 
   span{
-    font-size: .7em;
+    font-size: .5em;
+    display: block;
   }
 }
 
@@ -257,6 +258,7 @@ dl {
       border: 1px solid $txtColor;
       width: 100%;
       max-width: 95px;
+      min-width: 95px;
       text-align: center;
       padding: .25rem .5rem;
       border-radius: 100px;
@@ -265,6 +267,7 @@ dl {
       @include sp() {
         font-size: vw-sp(14);
         max-width: vw-sp(95);
+        min-width: vw-sp(95);
       }
     }
   }

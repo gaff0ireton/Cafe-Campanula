@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('load', function () {
 
-  const btn = document.getElementById('js-btn');
+  const btn = document.getElementById('is-btn');
   const menuToggle = document.getElementById('menu-toggle');
   const menu_btn = document.querySelector('.header__btn');
   const btnArray = document.querySelectorAll('.header__btn span');
@@ -102,7 +102,7 @@ window.addEventListener('load', function () {
       cap_txt: "ちょっぴりユニークで、とびきりかわいい。\nサメが顔をのぞかせるメニューや、海を感じるインテリアで、日常を忘れて楽しめる時間をお届けします。",
       open_hours: "10:00 - 18:00 (L.O. 17:30)",
       button: "Switch to BAR",
-      sliderFood: [
+      food: [
         {
           ttl: "サメちゃんサンデー"
         },
@@ -116,7 +116,7 @@ window.addEventListener('load', function () {
           ttl: "サメちゃんパンケーキ"
         }
       ],
-      sliderDrink: [
+      drink: [
         {
           ttl: "サメちゃんメロンフロート"
         },
@@ -136,7 +136,7 @@ window.addEventListener('load', function () {
           ttl: "サメちゃんネード"
         }
       ],
-      swiperTakeOut: [
+      takeout: [
         {
           ttl: "サメちゃんドーナツ"
         },
@@ -224,18 +224,42 @@ window.addEventListener('load', function () {
     const theme = themes[currentTheme];
     console.log(theme);
 
+    // 1. 単一テキストの書き換え（既存のコード）
     document.querySelectorAll("[data-text]").forEach(el => {
       const key = el.dataset.text;
       el.textContent = theme[key];
     });
 
+    // 2. メニュー（figcaption）の書き換え（今回追加するコード）
+    document.querySelectorAll("[data-category]").forEach(section => {
+      // HTMLから "food" などのカテゴリ名を取得
+      const category = section.dataset.category;
+      const menuData = theme[category];
+
+      // データ名が統一されたので、そのまま配列を取得できる！
+      const figcaptions = section.querySelectorAll("figcaption");
+      const images = section.querySelectorAll("img"); // ← 【追加】imgも取得
+      console.log(menuData);
+
+      // 万が一データが存在しない場合のエラーを防ぐためのif文
+      figcaptions.forEach((caption, index) => {
+        if (menuData[index]) {
+          // figcaptionのテキストを書き換え
+          caption.textContent = menuData[index].ttl;
+
+          // imgのalt属性も書き換え
+          if (images[index]) {
+            images[index].alt = menuData[index].ttl; // ← 【追加】altを書き換え
+          }
+        }
+      });
+    });
   }
 
   btn.addEventListener('click', function () {
 
     //txt
     currentTheme = currentTheme === "normal" ? "bar" : "normal";
-    currentSlideIndex = 0;
     applyTheme();
 
     // CSS
@@ -268,12 +292,24 @@ window.addEventListener('load', function () {
       let currentSrc = img.getAttribute("src");
       let currentAlt = img.getAttribute("alt");
 
+      if (img.classList.contains("no-change")) {
+        return;
+      }
+
       if (currentSrc.includes("_bar")) {
         currentSrc = currentSrc.replace(/_bar/g, "");
-        currentAlt = currentAlt.replace(/_bar/g, "");
       } else {
-        currentSrc = currentSrc.replace(/(_\d+)(\.\w+)$/, "_bar$1$2");
-        currentAlt = currentAlt.replace(/(_\d+)/, "_bar$1");
+        if (/_\d+(\.\w+)$/.test(currentSrc)) {
+          currentSrc = currentSrc.replace(
+            /(_\d+)(\.\w+)$/,
+            "_bar$1$2"
+          );
+        } else {
+          currentSrc = currentSrc.replace(
+            /(\.\w+)$/,
+            "_bar$1"
+          );
+        }
       }
 
       img.setAttribute("src", currentSrc);
@@ -284,8 +320,8 @@ window.addEventListener('load', function () {
   menu_btn.addEventListener('click', function () {
     document.body.classList.toggle('no-scroll');
     btnArray.forEach(btn => {
-      if (btn.classList.contains('js-over')) {
-        btn.classList.toggle('js-click');
+      if (btn.classList.contains('is-over')) {
+        btn.classList.toggle('is-click');
       }
     });
   });
@@ -295,8 +331,8 @@ window.addEventListener('load', function () {
       menuToggle.checked = false;
       document.body.classList.toggle('no-scroll');
       btnArray.forEach(btn => {
-        if (btn.classList.contains('js-over')) {
-          btn.classList.toggle('js-click');
+        if (btn.classList.contains('is-over')) {
+          btn.classList.toggle('is-click');
         }
       });
     });
@@ -305,7 +341,7 @@ window.addEventListener('load', function () {
   function followObject() {
     const start = document.querySelector('.jsFollowStart');
     const end = document.querySelector('.jsFollowEnd');
-    const objectArray = document.querySelectorAll('.js-follow');
+    const objectArray = document.querySelectorAll('.is-follow');
     const header = document.getElementById('header');
     const targets = document.querySelectorAll('.header__logo a svg g g path, .header__btn span');
 
@@ -327,7 +363,7 @@ window.addEventListener('load', function () {
     });
 
     targets.forEach(target => {
-      target.classList.toggle('js-over', isStartOut);
+      target.classList.toggle('is-over', isStartOut);
     });
   }
 
@@ -382,7 +418,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  const btn = document.querySelector('.js-pagetop');
+  const btn = document.querySelector('.is-pagetop');
 
   if (!btn) return;
 
@@ -424,11 +460,11 @@ document.addEventListener('DOMContentLoaded', () => {
 /* アコーディオン
 ----------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
-  const items = document.querySelectorAll('.js-acc');
+  const items = document.querySelectorAll('.is-acc');
 
   items.forEach(item => {
-    const btn = item.querySelector('.js-acc-btn');
-    const content = item.querySelector('.js-acc-content');
+    const btn = item.querySelector('.is-acc-btn');
+    const content = item.querySelector('.is-acc-content');
 
     btn.addEventListener('click', () => {
       const expanded = item.classList.toggle('is-open');
