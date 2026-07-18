@@ -349,10 +349,6 @@ window.addEventListener('load', function () {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  window.scrollTo({
-    top: target,
-    behavior: 'smooth',
-  });
   const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
   const header = document.querySelector('.header');
 
@@ -375,6 +371,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         const target = rect + offset - gap;
+
+        window.scrollTo({
+          top: target,
+          behavior: 'smooth',
+        });
       }
     });
   };
