@@ -161,7 +161,7 @@
             border: 2px solid #fff;
             border-radius: 30px;
 
-            @include sp(){
+            @include sp() {
                 border-radius: vw-sp(30);
             }
         }
@@ -181,11 +181,11 @@
         }
     }
 
-    &__cl{
+    &__cl {
         text-align: center;
         margin-top: 24px;
 
-        @include sp(){
+        @include sp() {
             margin-top: vw-sp(24);
         }
     }
@@ -273,7 +273,7 @@
         transition: all .3s .2s;
         border-radius: 30px;
 
-        @include sp(){
+        @include sp() {
             border-radius: vw-sp(30);
         }
     }
@@ -286,7 +286,7 @@
         color: #fff;
         border-radius: 30px;
 
-        @include sp(){
+        @include sp() {
             border-radius: vw-sp(30);
         }
     }
@@ -297,7 +297,7 @@
         top: 0;
         border-radius: 30px;
 
-        @include sp(){
+        @include sp() {
             border-radius: vw-sp(30);
         }
     }
@@ -321,9 +321,16 @@ body {
                 background-color: $mainColorBar;
 
                 &:before {
-                    border: 2px solid #000;
-
+                    border: 2px solid $mainColorBar;
                 }
+            }
+
+            .blob-btn--secondary:before {
+                border-color: $mainColorBar;
+            }
+
+            .blob-btn__blob {
+                background: #000;
             }
 
             .blob-btn--secondary:hover {
@@ -332,18 +339,6 @@ body {
 
             .blob-btn:hover {
                 color: $mainColorBar;
-            }
-
-            .blob-btn__blob {
-                position: absolute;
-                top: 2px;
-                z-index: 17;
-                width: 25%;
-                height: 100%;
-                background: #000;
-                border-radius: 100%;
-                transform: translate3d(0, 150%, 0) scale(1.7);
-                transition: transform .45s;
             }
         }
     }

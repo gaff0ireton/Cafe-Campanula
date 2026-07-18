@@ -284,15 +284,23 @@ dl div dt {
     max-width: 19vw;
   }
 }
-dl div dd {
-  line-height: 1.4;
-  margin: 0;
-}
 
 p {
   line-height: 1.7;
   letter-spacing: 0.03em;
   white-space: pre-wrap;
+}
+
+li,
+dt {
+  line-height: 1.4;
+  margin: 0;
+}
+
+small {
+  display: block;
+  padding-left: 2em;
+  text-indent: -1em;
 }
 
 picture {
@@ -639,6 +647,15 @@ body.bar .load:before {
 body.bar .header__logo svg .js-over {
   fill: #c70000;
 }
+body.bar .header__btn span.js-over {
+  background: #c70000;
+}
+body.bar .header__btn span.js-click {
+  background: #fff;
+}
+body.bar .header__nav {
+  background: #c70000;
+}
 
 .mainvisualSection {
   position: relative;
@@ -690,20 +707,36 @@ body.bar .header__logo svg .js-over {
   object-fit: cover;
 }
 
+.conceptSection {
+  padding-top: 64px;
+}
+@media screen and (max-width: 750px) {
+  .conceptSection {
+    padding-top: 12.8vw;
+  }
+}
 .conceptSection h2 {
   padding-top: 0;
 }
 .conceptSection p {
-  padding: 0 25px 20px;
+  padding: 0 25px;
   text-align: center;
   line-height: 1.5;
 }
 @media screen and (max-width: 750px) {
   .conceptSection p {
-    padding: 0 5vw 4vw;
+    padding: 0 5vw;
   }
 }
 
+.newsSection {
+  padding-top: 64px;
+}
+@media screen and (max-width: 750px) {
+  .newsSection {
+    padding-top: 12.8vw;
+  }
+}
 .newsSection h3,
 .newsSection p {
   text-align: left;
@@ -774,7 +807,12 @@ body.bar .header__logo svg .js-over {
 .menuSection {
   position: relative;
   z-index: 1;
-  margin-top: 64px;
+  margin-top: 32px;
+}
+@media screen and (max-width: 750px) {
+  .menuSection {
+    margin-top: 6.4vw;
+  }
 }
 .menuSection p,
 .menuSection figcaption {
@@ -863,7 +901,12 @@ body.bar .menuSection__contents .swiper-pagination-bullet-active {
 .accessSection {
   position: relative;
   z-index: 1;
-  margin-top: -32px;
+  margin-top: -48px;
+}
+@media screen and (max-width: 750px) {
+  .accessSection {
+    margin-top: -9.6vw;
+  }
 }
 .accessSection__bg {
   position: absolute;
@@ -1257,24 +1300,19 @@ body.bar .footer__btn {
   background-color: #c70000;
 }
 body.bar .footer__btn:before {
-  border: 2px solid #000;
+  border: 2px solid #c70000;
+}
+body.bar .footer .blob-btn--secondary:before {
+  border-color: #c70000;
+}
+body.bar .footer .blob-btn__blob {
+  background: #000;
 }
 body.bar .footer .blob-btn--secondary:hover {
   color: #c70000;
 }
 body.bar .footer .blob-btn:hover {
   color: #c70000;
-}
-body.bar .footer .blob-btn__blob {
-  position: absolute;
-  top: 2px;
-  z-index: 17;
-  width: 25%;
-  height: 100%;
-  background: #000;
-  border-radius: 100%;
-  transform: translate3d(0, 150%, 0) scale(1.7);
-  transition: transform 0.45s;
 }
 
 @keyframes wave {

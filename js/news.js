@@ -1,15 +1,3 @@
-const now = new Date();
-const year = now.getFullYear();
-const month = now.getMonth() + 1;
-const date = now.getDate();
-
-const output = year + '-' + month + '-' + date;
-
-console.log(output);
-
-document.getElementById('date').textContent = output;
-
-
 let newsText = [
     '特別企画！ 本日より、サメちゃんのチョコレートがカフェに仲間入り♪ ビター、ホワイト、ミルクの三味展開！',
     '伝説の大人気の等身大ジンベエザメぬいぐるみ再入荷！ 大人気の等身大ジンベエザメぬいぐるみが再び店頭に並びました！ 14mが入る一室のあるクソデカハウスを購入して、ジンベエザメちゃんをお迎えしましょう！',

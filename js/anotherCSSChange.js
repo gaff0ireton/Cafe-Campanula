@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const date = new Date()
   const year = date.getFullYear()
   const month = date.getMonth() + 1
+  const day = date.getDate();
   const startDate = new Date(year, month - 1, 1)
   const endDate = new Date(year, month, 0)
   const endDayCount = endDate.getDate()
@@ -48,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const startDay = startDate.getDay()
   let dayCount = 1
   let calendarHtml = ''
+  const output = year + '-' + month + '-' + day;
 
   calendarHtml += '<table>'
   for (let i = 0; i < weeks.length; i++) {
@@ -78,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   calendarHtml += '</table>'
 
+  document.getElementById('date').textContent = output;
   document.querySelector('.newsSection__calendar').innerHTML = calendarHtml
 
 });
@@ -97,7 +100,8 @@ window.addEventListener('load', function () {
       title: "Coffee Shop",
       cap: "ちょっと怖くて、すごくかわいい。",
       cap_txt: "ちょっぴりユニークで、とびきりかわいい。\nサメが顔をのぞかせるメニューや、海を感じるインテリアで、日常を忘れて楽しめる時間をお届けします。",
-      button: "More",
+      open_hours: "10:00 - 18:00 (L.O. 17:30)",
+      button: "Switch to BAR",
       sliderFood: [
         {
           ttl: "サメちゃんサンデー"
@@ -157,7 +161,8 @@ window.addEventListener('load', function () {
       title: "Bar",
       cap: "静かな海ほど、深く酔える。",
       cap_txt: "海の底を思わせる薄暗い空間。\nゆっくりと泳ぐサメを眺めながら、\n日常を忘れる一杯を。",
-      button: "Drink",
+      open_hours: "19:00 - 25:00 (L.O. 24:30)",
+      button: "Switch to CAFE",
       food: [
         {
           ttl: "サメちゃんサンデー"
@@ -354,6 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   for (let i = 0; i < smoothScrollTrigger.length; i++) {
     smoothScrollTrigger[i].addEventListener('click', (e) => {
+      console.log('クリック');
       e.preventDefault();
 
       let href = smoothScrollTrigger[i].getAttribute('href');
@@ -365,10 +371,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 767px以下の場合のみヘッダーの高さを考慮
         const gap = window.innerWidth <= 750 && header ? header.offsetHeight : 0;
-
-
-        console.log(gap);
-
 
         const target = rect + offset - gap;
 

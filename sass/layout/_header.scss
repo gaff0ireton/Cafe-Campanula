@@ -70,7 +70,7 @@
                 background: $mainColor;
             }
 
-            &.js-click{
+            &.js-click {
                 background: #fff;
             }
         }
@@ -108,7 +108,7 @@
         }
     }
 
-    picture{
+    picture {
         position: fixed;
         right: -100%;
         bottom: 0;
@@ -155,6 +155,22 @@ body {
                         fill: $mainColorBar
                     }
                 }
+            }
+
+            &__btn {
+                span {
+                    &.js-over {
+                        background: $mainColorBar;
+                    }
+
+                    &.js-click {
+                        background: #fff;
+                    }
+                }
+            }
+
+            &__nav {
+                background: $mainColorBar;
             }
         }
     }

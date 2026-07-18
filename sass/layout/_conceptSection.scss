@@ -5,17 +5,22 @@
 @use "../common" as *;
 
 .conceptSection{
+    padding-top: 64px;
+
+    @include sp(){
+        padding-top: vw-sp(64);
+    }
     h2{
         padding-top: 0;
     }
     
     p{
-        padding: 0 25px 20px;
+        padding: 0 25px;
         text-align: center;
         line-height: 1.5;
 
         @include sp() {
-            padding: 0 vw-sp(25) vw-sp(20);
+            padding: 0 vw-sp(25);
         }
     }
 }

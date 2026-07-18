@@ -7,7 +7,11 @@
 .menuSection {
     position: relative;
     z-index: 1;
-    margin-top: 64px;
+    margin-top: 32px;
+    
+    @include sp(){
+        margin-top: vw-sp(32);
+    }
 
     p,
     figcaption {

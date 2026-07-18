@@ -262,11 +262,6 @@ dl {
         max-width: vw-sp(95);
       }
     }
-
-    dd {
-      line-height: 1.4;
-      margin: 0;
-    }
   }
 }
 
@@ -274,6 +269,18 @@ p {
   line-height: 1.7;
   letter-spacing: 0.03em;
   white-space: pre-wrap;
+}
+
+li,
+dt {
+  line-height: 1.4;
+  margin: 0;
+}
+
+small {
+  display: block;
+  padding-left: 2em;
+  text-indent: -1em;
 }
 
 picture {
