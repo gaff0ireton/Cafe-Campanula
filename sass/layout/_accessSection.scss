@@ -27,6 +27,10 @@
         mask-repeat: repeat-x;
         overflow: hidden;
         animation: wave 5s var(--mh--easing04) infinite both;
+
+        @include sp(){
+            mask-size: 200vw 9.3333333333vw, 100% calc(100% - 9.0666666667vw);
+        }
     }
 
     &__contents {
