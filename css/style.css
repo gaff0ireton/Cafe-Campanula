@@ -35,6 +35,26 @@
   }
 }
 
+.accessSection__bg, .menuSection__bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  background-color: #fff;
+  mask-image: url("../img/wave.svg"), linear-gradient(#fff, #fff);
+  mask-size: 1000px 46.6666666667px, 100% calc(100% - 45.3333333333px);
+  mask-repeat: repeat-x;
+  overflow: hidden;
+  animation: wave 5s var(--mh--easing04) infinite both;
+}
+@media screen and (max-width: 750px) {
+  .accessSection__bg, .menuSection__bg {
+    mask-size: 200vw 9.3333333333vw, 100% calc(100% - 9.0666666667vw);
+  }
+}
+
 /* ページ全体のスタイル */
 @media screen and (min-width: 751px) {
   .spOnly {
@@ -204,6 +224,15 @@ h6 {
   font-style: normal;
   text-align: center;
   text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+h1 span,
+h2 span,
+h3 span,
+h4 span,
+h5 span,
+h6 span {
+  font-size: 0.7em;
 }
 
 h2 {
@@ -495,6 +524,7 @@ body.bar h4,
 body.bar h5,
 body.bar h6 {
   font-family: "ta-kakugo-gf-01", "ta-kakugo-gf-02", "ta-kakugo-gf-03", sans-serif;
+  font-weight: 400;
   letter-spacing: 0.035em;
 }
 body.bar h2 {
@@ -819,26 +849,9 @@ body.bar .header__nav {
   color: #fff;
 }
 .menuSection__bg {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  pointer-events: none;
-  background-color: #fff;
-  mask-image: url("../img/wave.svg"), linear-gradient(#fff, #fff);
-  mask-size: 1000px 46.6666666667px, 100% calc(100% - 45.3333333333px);
-  mask-repeat: repeat-x;
-  overflow: hidden;
-  animation: wave 5s var(--mh--easing04) infinite both;
   width: 100%;
   height: 100%;
   min-height: 100vh;
-}
-@media screen and (max-width: 750px) {
-  .menuSection__bg {
-    mask-size: 200vw 9.3333333333vw, 100% calc(100% - 9.0666666667vw);
-  }
 }
 .menuSection__bg::after {
   content: "";
@@ -887,8 +900,8 @@ body.bar .header__nav {
 }
 
 body.bar .menuSection__bg::after {
-  background-color: rgba(199, 0, 0, 0.4392156863);
-  mix-blend-mode: revert-rule;
+  background-color: rgba(199, 0, 0, 0.3019607843);
+  mix-blend-mode: hue;
 }
 body.bar .menuSection__contents h2 {
   color: #000;
@@ -914,23 +927,7 @@ body.bar .menuSection__contents .swiper-pagination-bullet-active {
   }
 }
 .accessSection__bg {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  pointer-events: none;
   background-color: #FFFFCC;
-  mask-image: url("../img/wave.svg"), linear-gradient(#fff, #fff);
-  mask-size: 1000px 46.6666666667px, 100% calc(100% - 45.3333333333px);
-  mask-repeat: repeat-x;
-  overflow: hidden;
-  animation: wave 5s var(--mh--easing04) infinite both;
-}
-@media screen and (max-width: 750px) {
-  .accessSection__bg {
-    mask-size: 200vw 9.3333333333vw, 100% calc(100% - 9.0666666667vw);
-  }
 }
 .accessSection__contents {
   position: relative;

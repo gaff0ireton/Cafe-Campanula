@@ -8,6 +8,7 @@
 %swiper {
 	padding: 0px 25px 20px;
 	overflow: hidden;
+
 	@include sp() {
 		padding: 0px vw-sp(25) vw-sp(20);
 	}
@@ -34,5 +35,24 @@
 	@include sp() {
 		width: vw-sp(400);
 		padding: vw-sp(20) vw-sp(10);
+	}
+}
+
+%wave__bg {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	pointer-events: none;
+	background-color: #fff;
+	mask-image: url('../img/wave.svg'), linear-gradient(#fff, #fff);
+	mask-size: 1000px 46.6666666667px, 100% calc(100% - 45.3333333333px);
+	mask-repeat: repeat-x;
+	overflow: hidden;
+	animation: wave 5s var(--mh--easing04) infinite both;
+
+	@include sp() {
+		mask-size: 200vw 9.3333333333vw, 100% calc(100% - 9.0666666667vw);
 	}
 }

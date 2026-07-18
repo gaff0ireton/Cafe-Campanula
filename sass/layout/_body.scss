@@ -192,6 +192,11 @@ h6 {
   font-style: normal;
   text-align: center;
   text-transform: uppercase;
+  letter-spacing: .02em;
+
+  span{
+    font-size: .7em;
+  }
 }
 
 h2 {
@@ -516,6 +521,7 @@ body {
     h5,
     h6 {
       font-family: "ta-kakugo-gf-01", "ta-kakugo-gf-02", "ta-kakugo-gf-03", sans-serif;
+      font-weight: 400;
       letter-spacing: .035em;
     }
 
