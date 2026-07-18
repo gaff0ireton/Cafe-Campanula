@@ -197,7 +197,7 @@ window.addEventListener('load', function () {
           ttl: "サメちゃんネード"
         }
       ],
-      takeOut: [
+      takeout: [
         {
           ttl: "サメちゃんドーナツ"
         },
@@ -222,7 +222,6 @@ window.addEventListener('load', function () {
 
   function applyTheme() {
     const theme = themes[currentTheme];
-    console.log(theme);
 
     // 1. 単一テキストの書き換え（既存のコード）
     document.querySelectorAll("[data-text]").forEach(el => {
@@ -239,6 +238,9 @@ window.addEventListener('load', function () {
       // データ名が統一されたので、そのまま配列を取得できる！
       const figcaptions = section.querySelectorAll("figcaption");
       const images = section.querySelectorAll("img"); // ← 【追加】imgも取得
+      console.log(currentTheme);
+      console.log(theme);
+      console.log(category);
       console.log(menuData);
 
       // 万が一データが存在しない場合のエラーを防ぐためのif文
@@ -264,6 +266,8 @@ window.addEventListener('load', function () {
 
     // CSS
     document.body.classList.toggle('bar');
+    console.log(currentTheme);
+    console.log(document.body.classList.contains("bar"));
 
 
     // ripples.js初期化
