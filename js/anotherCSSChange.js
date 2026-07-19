@@ -82,8 +82,74 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('date').textContent = output;
   document.querySelector('.newsSection__calendar').innerHTML = calendarHtml
-
 });
+
+const swiper = new Swiper(".swiper", {
+    // スライダーのオプションを設定
+    loop: true, // スライダーをループさせる
+    speed: 1500, // スライドの切り替え速度（デフォルトは300）
+    autoplay: false, // 最初は自動再生を無効
+    pagination: {
+    el: '.swiper-pagination',
+  },
+});
+
+const swiperFood = new Swiper(".swiperFood", {
+    // スライダーのオプションを設定
+    loop: true, // スライダーをループさせる
+    speed: 1500, // スライドの切り替え速度（デフォルトは300）
+    autoplay: false, // 最初は自動再生を無効
+    pagination: {
+    el: '.swiper-pagination',
+  },
+});
+
+const swiperDrink = new Swiper(".swiperDrink", {
+    // スライダーのオプションを設定
+    loop: true, // スライダーをループさせる
+    speed: 1500, // スライドの切り替え速度（デフォルトは300）
+    autoplay: false, // 最初は自動再生を無効
+    pagination: {
+    el: '.swiper-pagination',
+  },
+});
+
+const swiperTakeOut = new Swiper(".swiperTakeOut", {
+    // スライダーのオプションを設定
+    loop: true, // スライダーをループさせる
+    speed: 1500, // スライドの切り替え速度（デフォルトは300）
+    autoplay: false, // 最初は自動再生を無効
+    pagination: {
+    el: '.swiper-pagination',
+  },
+});
+
+const swipers = [
+  swiper,
+  swiperFood,
+  swiperDrink,
+  swiperTakeOut
+];
+
+
+// // スクロールイベントを検知
+// window.addEventListener("scroll", function () {
+//     // スライダーのコンテナ要素を取得
+//     const sliderContainer = document.querySelector(".swiper");
+//     // スライダーのコンテナの位置情報を取得
+//     const rect = sliderContainer.getBoundingClientRect();
+//     // ウィンドウの高さを取得（クロスブラウザ対応）
+//     const windowHeight =
+//         window.innerHeight || document.documentElement.clientHeight;
+//     if (rect.top < windowHeight && rect.bottom >= 0) {
+//         // スライダーが画面内に入った場合、自動再生を有効にして開始
+//         swiper.params.autoplay.delay = 1000; // 自動再生の遅延設定
+//         swiper.autoplay.start();
+//     } else {
+//         // 画面外に出た場合、自動再生を停止
+//         swiper.autoplay.stop();
+//     }
+// });
 
 window.addEventListener('load', function () {
 
@@ -185,27 +251,27 @@ window.addEventListener('load', function () {
           ttl: "ロングアイランドアイスティー"
         },
         {
-          ttl: "サメちゃんベリーフラッペ"
+          ttl: "アブサン"
         },
         {
-          ttl: "サメちゃんロストバケーション"
+          ttl: "オールドファッションド"
         },
         {
-          ttl: "サメちゃんアイスフロート"
+          ttl: "アビエーション"
         },
         {
-          ttl: "サメちゃんネード"
+          ttl: "ジョーズ"
         }
       ],
       takeout: [
         {
-          ttl: "サメちゃんドーナツ"
+          ttl: "ボトルカクテル"
         },
         {
-          ttl: "サメちゃんマカロン"
+          ttl: "ウイスキーボンボンチョコレート"
         },
         {
-          ttl: "サメちゃんマフィン"
+          ttl: "洋酒入りパウンドケーキ"
         },
         {
           ttl: "サメちゃんクッキー"
@@ -278,6 +344,9 @@ window.addEventListener('load', function () {
       dropRadius: 20,
       perturbance: 0.04,
     }); // 再初期化
+
+    //swiper初期化
+    swipers.forEach(swiper => swiper.slideTo(0));
 
     const video = document.querySelector('video');
     const imgs = document.querySelectorAll('img');

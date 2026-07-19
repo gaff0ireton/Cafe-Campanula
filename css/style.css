@@ -752,13 +752,13 @@ body.bar .header__nav {
   padding-top: 0;
 }
 .conceptSection p {
-  padding: 0 25px;
+  padding: 0 25px 20px;
   text-align: center;
   line-height: 1.5;
 }
 @media screen and (max-width: 750px) {
   .conceptSection p {
-    padding: 0 5vw;
+    padding: 0 5vw 4vw;
   }
 }
 

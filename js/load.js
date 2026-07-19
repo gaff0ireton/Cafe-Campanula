@@ -1,8 +1,11 @@
 window.addEventListener('load', loading);
 const load = document.querySelector('.load');
 const load_anime = document.querySelector('.load__animation svg');
-function loading() {
+document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('no-scroll');
+});
+
+function loading() {
     // setTimeout(function(){
     // document.body.style.overflow = 'hidden';2
     setTimeout(function () {
@@ -32,16 +35,13 @@ reload.addEventListener('click', function loading() {
 
     setTimeout(function () {
         load_anime.classList.add('no-active');
-
-        // document.body.style.overflow = '';
     }, 6000);
-
 
     setTimeout(function () {
         load.classList.add('no-active');
         document.documentElement.classList.remove('no-scroll');
         document.body.classList.remove('no-scroll');
-        // document.body.style.overflow = '';
+
     }, 7000);
 });
 
