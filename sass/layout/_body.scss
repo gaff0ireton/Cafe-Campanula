@@ -1,28 +1,25 @@
-// ① math モジュール
-@use "sass:math";
-
 // ② common/_index.scss を読み込む（mixin が使える）
 @use "../common" as *;
 
 /* ページ全体のスタイル */
 
-.spOnly {
-  @include pc() {
-    display: none !important;
+.sp-only {
+  @include mq() {
+    display: block;
   }
 
-  @include sp() {
-    display: block;
+  @include mq-min(){
+    display: none !important;
   }
 }
 
-.pcOnly {
-  @include pc() {
-    display: block;
+.pc-only {
+  @include mq() {
+    display: none !important;
   }
 
-  @include sp() {
-    display: none !important;
+  @include mq-min(){
+    display: block;
   }
 }
 
@@ -126,6 +123,19 @@
   }
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .mainwrap {
   max-width: 500px;
   margin: 0 auto;
@@ -134,7 +144,7 @@
   z-index: 1;
   background-color: $bgColor;
 
-  @include sp() {
+  @include mq(){
     max-width: 750px;
     padding: vw-sp(128) 0;
   }
@@ -205,7 +215,7 @@ h2 {
   font-size: 32px;
   padding-bottom: 32px;
 
-  @include sp() {
+  @include mq(){
     font-size: vw-sp(32);
     padding-bottom: vw-sp(32);
   }
@@ -216,7 +226,7 @@ h3 {
   font-size: 24px;
   padding-bottom: 24px;
 
-  @include sp() {
+  @include mq(){
     font-size: vw-sp(24);
     padding-bottom: vw-sp(24);
   }
@@ -226,6 +236,7 @@ p,
 li,
 a,
 figcaption,
+th,
 td,
 dd,
 dt {
@@ -236,7 +247,7 @@ dt {
   color: $txtColor;
   text-transform: uppercase;
 
-  @include sp() {
+  @include mq(){
     font-size: vw-sp(16);
   }
 }
@@ -264,7 +275,7 @@ dl {
       border-radius: 100px;
       line-height: 1;
 
-      @include sp() {
+      @include mq(){
         font-size: vw-sp(14);
         max-width: vw-sp(95);
         min-width: vw-sp(95);
@@ -315,7 +326,7 @@ picture {
     background-color: $txtColor;
     opacity: .5;
 
-    @include sp() {
+    @include mq(){
       width: vw-sp(10);
       height: vw-sp(10);
     }
@@ -353,7 +364,7 @@ picture {
     height: 100%;
   }
 
-  @include sp() {
+  @include mq(){
     background-image: url(../img/img_load_sp.jpg);
     background-position: bottom center;
   }
@@ -369,7 +380,7 @@ picture {
       width: 300px;
       height: 300px;
 
-      @include sp() {
+      @include mq(){
         width: vw-sp(200);
         height: vw-sp(200);
       }
@@ -381,7 +392,7 @@ picture {
       color: #fff;
       text-align: center;
 
-      @include sp() {
+      @include mq(){
         font-size: vw-sp(32);
       }
     }
@@ -540,6 +551,7 @@ body {
     li,
     a,
     figcaption,
+    th,
     td,
     dt,
     dd {

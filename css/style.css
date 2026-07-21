@@ -56,25 +56,25 @@
 }
 
 /* ページ全体のスタイル */
-@media screen and (min-width: 751px) {
-  .spOnly {
-    display: none !important;
+@media screen and (max-width: 750px) {
+  .sp-only {
+    display: block;
   }
 }
-@media screen and (max-width: 750px) {
-  .spOnly {
-    display: block;
+@media screen and (min-width: 750px) {
+  .sp-only {
+    display: none !important;
   }
 }
 
-@media screen and (min-width: 751px) {
-  .pcOnly {
-    display: block;
+@media screen and (max-width: 750px) {
+  .pc-only {
+    display: none !important;
   }
 }
-@media screen and (max-width: 750px) {
-  .pcOnly {
-    display: none !important;
+@media screen and (min-width: 750px) {
+  .pc-only {
+    display: block;
   }
 }
 
@@ -160,6 +160,19 @@
 }
 .right nav ul .is-current {
   opacity: 1;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .mainwrap {
@@ -264,6 +277,7 @@ p,
 li,
 a,
 figcaption,
+th,
 td,
 dd,
 dt {
@@ -279,6 +293,7 @@ dt {
   li,
   a,
   figcaption,
+  th,
   td,
   dd,
   dt {
@@ -540,6 +555,7 @@ body.bar p,
 body.bar li,
 body.bar a,
 body.bar figcaption,
+body.bar th,
 body.bar td,
 body.bar dt,
 body.bar dd {
@@ -798,6 +814,7 @@ body.bar .header__nav {
   border-spacing: 5px;
   border: none;
 }
+.newsSection__calendar table th,
 .newsSection__calendar table td {
   width: 14.2857142857%;
   color: #646464;
@@ -809,13 +826,16 @@ body.bar .header__nav {
   text-align: center;
 }
 @media screen and (max-width: 750px) {
+  .newsSection__calendar table th,
   .newsSection__calendar table td {
     box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.05);
   }
 }
+.newsSection__calendar table th:first-child,
 .newsSection__calendar table td:first-child {
   color: #ff0000;
 }
+.newsSection__calendar table th:last-child,
 .newsSection__calendar table td:last-child {
   color: #4169e1;
 }
@@ -824,7 +844,7 @@ body.bar .header__nav {
 }
 .newsSection__calendar table .shark-day {
   position: relative;
-  background-color: #e0f7fa;
+  background-color: #7cedfc;
 }
 .newsSection__calendar table .shark-day:before {
   content: "🦈";
@@ -835,6 +855,13 @@ body.bar .header__nav {
   background-repeat: no-repeat;
   display: inline-block;
   animation: float 2s ease-in-out infinite;
+}
+.newsSection__calendar table .holiday {
+  background-color: #ffce89;
+}
+.newsSection__calendar table .today {
+  background-color: #0080FF;
+  color: #fff;
 }
 
 .menuSection {
@@ -1074,10 +1101,12 @@ body.bar .shareSection ul li iconify-icon:hover {
   }
 }
 .footer__inner > * {
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
 }
 @media screen and (max-width: 750px) {
   .footer__inner > * {
+    max-width: 100%;
     width: 100%;
   }
 }
@@ -1108,10 +1137,12 @@ body.bar .shareSection ul li iconify-icon:hover {
 }
 .footer__logo {
   display: block;
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
 }
 @media screen and (max-width: 750px) {
   .footer__logo {
+    max-width: 100%;
     width: 100%;
   }
 }
@@ -1139,7 +1170,8 @@ body.bar .shareSection ul li iconify-icon:hover {
   transform: scale(1, 1);
 }
 .footer__btn {
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   padding: 1.5rem 0.5rem;
   margin: 16px auto 0;
   z-index: 1;
@@ -1158,6 +1190,7 @@ body.bar .shareSection ul li iconify-icon:hover {
 }
 @media screen and (max-width: 750px) {
   .footer__btn {
+    max-width: 100%;
     width: 100%;
     padding: 4.8vw 1.6vw;
     border-radius: 6vw;
@@ -1182,9 +1215,15 @@ body.bar .shareSection ul li iconify-icon:hover {
   }
 }
 .footer__map {
+  max-width: 500px;
   width: 100%;
   border: none;
   margin: 0 auto;
+}
+@media screen and (max-width: 750px) {
+  .footer__map {
+    max-width: 100%;
+  }
 }
 .footer__txt {
   margin-top: 16px;
@@ -1435,6 +1474,20 @@ body.bar .footer .blob-btn:hover {
   100% {
     stroke-dashoffset: 0;
     stroke-dasharray: 61.069568634px;
+  }
+}
+@keyframes a-ika-jump {
+  0% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(1.15, 0.65);
+  }
+  90% {
+    transform: scale(0.85, 1.15);
+  }
+  100% {
+    transform: scale(0.85, 1.15);
   }
 }
 :root {

@@ -33,93 +33,233 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // const rect = document.querySelector('.menuSection_bg').getBoundingClientRect();
-  // console.log(rect);
+  // ============================================================
+  // カレンダー生成スクリプト（データ構築とレンダリングを分離）
+  // ============================================================
 
-  const weeks = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-  const date = new Date()
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate();
-  const startDate = new Date(year, month - 1, 1)
-  const endDate = new Date(year, month, 0)
-  const endDayCount = endDate.getDate()
-  const lastMonthEndDate = new Date(year, month - 1, 0)
-  const lastMonthendDayCount = lastMonthEndDate.getDate()
-  const startDay = startDate.getDay()
-  let dayCount = 1
-  let calendarHtml = ''
-  const output = year + '-' + month + '-' + day;
+  const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
-  calendarHtml += '<table>'
-  for (let i = 0; i < weeks.length; i++) {
-    calendarHtml += '<td>' + weeks[i] + '</td>'
+  // ------------------------------------------------------------
+  // イベント日（{ month, day }）
+  // ------------------------------------------------------------
+  const EVENTS = [
+    { month: 11, day: 27 },
+    { month: 6, day: 26 },
+    { month: 10, day: 30 },
+    { month: 8, day: 30 },
+    { month: 7, day: 14 },
+  ]
+
+  // ------------------------------------------------------------
+  // 小さなヘルパー
+  // ------------------------------------------------------------
+  const pad = (n) => String(n).padStart(2, '0')
+
+  // イベント日かどうか
+  function isEventDay(month, day) {
+    return EVENTS.some((e) => e.month === month && e.day === day)
   }
 
-  for (let w = 0; w < 6; w++) { // 6週にしておくと安全
-    calendarHtml += '<tr>'
-    for (let d = 0; d < 7; d++) {
-      if (w == 0 && d < startDay) {
-        let num = lastMonthendDayCount - startDay + d + 1
-        calendarHtml += '<td class="is-disabled">' + num + '</td>'
-      } else if (dayCount > endDayCount) {
-        let num = dayCount - endDayCount
-        calendarHtml += '<td class="is-disabled">' + num + '</td>'
-        dayCount++
-      } else {
-        // 🦈 イベントデー
-        let specialClass = ''
-        if ((month === 11 && dayCount === 27) || (month === 6 && dayCount === 26) || (month === 10 && dayCount === 30) || (month === 8 && dayCount === 30) || (month === 7 && dayCount === 14)) {
-          specialClass = 'shark-day'
-        }
-        calendarHtml += `<td class="${specialClass}">${dayCount}</td>`
-        dayCount++
+  // 本来の定休日か（火曜 / 第3水曜）
+  function isRegularHoliday(year, month, day) {
+    const date = new Date(year, month - 1, day)
+    const weekday = date.getDay()
+
+    if (weekday === 2) return true                          // 火曜日
+    if (weekday === 3 && Math.ceil(day / 7) === 3) return true // 第3水曜日
+
+    return false
+  }
+
+  // ------------------------------------------------------------
+  // 休日集合を作る（イベントと重なった定休日は翌営業日へ振替）
+  // 戻り値: Set<number>（その月の「休みになる日」）
+  // ------------------------------------------------------------
+  function buildHolidays(year, month, lastDay) {
+    const holidays = new Set()
+
+    for (let d = 1; d <= lastDay; d++) {
+      if (!isRegularHoliday(year, month, d)) continue
+
+      // イベントと重ならない定休日は、そのまま休み
+      if (!isEventDay(month, d)) {
+        holidays.add(d)
+        continue
+      }
+
+      // イベントと重なったら、次の営業日を探して振替
+      let substitute = d + 1
+      while (
+        substitute <= lastDay &&
+        (isRegularHoliday(year, month, substitute) || isEventDay(month, substitute))
+      ) {
+        substitute++
+      }
+
+      // 月内に振替先が見つかった場合のみ登録
+      // （月末を超える場合は今月は振替なし。翌月へ持ち越したい場合は要拡張）
+      if (substitute <= lastDay) {
+        holidays.add(substitute)
       }
     }
-    calendarHtml += '</tr>'
-  }
-  calendarHtml += '</table>'
 
-  document.getElementById('date').textContent = output;
-  document.querySelector('.newsSection__calendar').innerHTML = calendarHtml
+    return holidays
+  }
+
+  // ------------------------------------------------------------
+  // カレンダーの「データ」を組み立てる
+  // レンダリングには一切依存しない純粋なデータ構造を返す
+  // ------------------------------------------------------------
+  function buildCalendar(baseDate = new Date()) {
+    const year = baseDate.getFullYear()
+    const month = baseDate.getMonth() + 1
+    const today = baseDate.getDate()
+
+    // 表示中の月が「今月」かどうか（today ハイライト用）
+    const now = new Date()
+    const isCurrentMonth =
+      now.getFullYear() === year && now.getMonth() + 1 === month
+
+    const firstDay = new Date(year, month - 1, 1).getDay() // 月初の曜日
+    const lastDay = new Date(year, month, 0).getDate()      // 今月の日数
+    const prevLastDay = new Date(year, month - 1, 0).getDate() // 前月の日数
+
+    const holidays = buildHolidays(year, month, lastDay)
+
+    // 必要な週数だけ確保（6固定にしない）
+    const weekCount = Math.ceil((firstDay + lastDay) / 7)
+
+    const weeks = []
+    let dayCount = 1
+
+    for (let w = 0; w < weekCount; w++) {
+      const week = []
+
+      for (let d = 0; d < 7; d++) {
+        const cellIndex = w * 7 + d
+
+        if (cellIndex < firstDay) {
+          // 前月の日（グレー表示）
+          const num = prevLastDay - firstDay + cellIndex + 1
+          week.push({ day: num, inMonth: false })
+        } else if (dayCount > lastDay) {
+          // 翌月の日（グレー表示）
+          const num = dayCount - lastDay
+          week.push({ day: num, inMonth: false })
+          dayCount++
+        } else {
+          // 今月の日
+          week.push({
+            day: dayCount,
+            inMonth: true,
+            isHoliday: holidays.has(dayCount),
+            isEvent: isEventDay(month, dayCount),
+            isToday: isCurrentMonth && dayCount === today,
+          })
+          dayCount++
+        }
+      }
+
+      weeks.push(week)
+    }
+
+    return { year, month, today, weeks }
+  }
+
+  // ------------------------------------------------------------
+  // データから HTML 文字列を生成する（描画専任）
+  // ------------------------------------------------------------
+  function renderCalendar({ weeks }) {
+    const rows = []
+
+    // ヘッダー行
+    rows.push(
+      '<tr>' +
+      WEEKDAYS.map((w) => `<th scope="col">${w}</th>`).join('') +
+      '</tr>'
+    )
+
+    // 各週
+    for (const week of weeks) {
+      const cells = week.map((cell) => {
+        if (!cell.inMonth) {
+          return `<td class="is-disabled">${cell.day}</td>`
+        }
+
+        const classList = []
+        if (cell.isHoliday) classList.push('holiday')
+        if (cell.isEvent) classList.push('shark-day')
+        if (cell.isToday) classList.push('today')
+
+        const classAttr = classList.length ? ` class="${classList.join(' ')}"` : ''
+        return `<td${classAttr}>${cell.day}</td>`
+      })
+
+      rows.push('<tr>' + cells.join('') + '</tr>')
+    }
+
+    return `<table><caption class="visually-hidden">Calendar</caption>${rows.join('')}</table>`
+  }
+
+  // ------------------------------------------------------------
+  // 実行（DOM への反映）
+  // ------------------------------------------------------------
+  function initCalendar() {
+    const data = buildCalendar()
+
+    const output = `${data.year}-${pad(data.month)}-${pad(data.today)}`
+
+    const dateEl = document.getElementById('date')
+    const calendarEl = document.querySelector('.newsSection__calendar')
+
+    if (dateEl) dateEl.textContent = output
+    if (calendarEl) calendarEl.innerHTML = renderCalendar(data)
+  }
+
+  // DOM 構築後に実行（読み込みタイミングで落ちないように）
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCalendar)
+  } else {
+    initCalendar()
+  }
 });
 
 const swiper = new Swiper(".swiper", {
-    // スライダーのオプションを設定
-    loop: true, // スライダーをループさせる
-    speed: 1500, // スライドの切り替え速度（デフォルトは300）
-    autoplay: false, // 最初は自動再生を無効
-    pagination: {
+  // スライダーのオプションを設定
+  loop: true, // スライダーをループさせる
+  speed: 1500, // スライドの切り替え速度（デフォルトは300）
+  autoplay: false, // 最初は自動再生を無効
+  pagination: {
     el: '.swiper-pagination',
   },
 });
 
 const swiperFood = new Swiper(".swiperFood", {
-    // スライダーのオプションを設定
-    loop: true, // スライダーをループさせる
-    speed: 1500, // スライドの切り替え速度（デフォルトは300）
-    autoplay: false, // 最初は自動再生を無効
-    pagination: {
+  // スライダーのオプションを設定
+  loop: true, // スライダーをループさせる
+  speed: 1500, // スライドの切り替え速度（デフォルトは300）
+  autoplay: false, // 最初は自動再生を無効
+  pagination: {
     el: '.swiper-pagination',
   },
 });
 
 const swiperDrink = new Swiper(".swiperDrink", {
-    // スライダーのオプションを設定
-    loop: true, // スライダーをループさせる
-    speed: 1500, // スライドの切り替え速度（デフォルトは300）
-    autoplay: false, // 最初は自動再生を無効
-    pagination: {
+  // スライダーのオプションを設定
+  loop: true, // スライダーをループさせる
+  speed: 1500, // スライドの切り替え速度（デフォルトは300）
+  autoplay: false, // 最初は自動再生を無効
+  pagination: {
     el: '.swiper-pagination',
   },
 });
 
 const swiperTakeOut = new Swiper(".swiperTakeOut", {
-    // スライダーのオプションを設定
-    loop: true, // スライダーをループさせる
-    speed: 1500, // スライドの切り替え速度（デフォルトは300）
-    autoplay: false, // 最初は自動再生を無効
-    pagination: {
+  // スライダーのオプションを設定
+  loop: true, // スライダーをループさせる
+  speed: 1500, // スライドの切り替え速度（デフォルトは300）
+  autoplay: false, // 最初は自動再生を無効
+  pagination: {
     el: '.swiper-pagination',
   },
 });
@@ -130,26 +270,6 @@ const swipers = [
   swiperDrink,
   swiperTakeOut
 ];
-
-
-// // スクロールイベントを検知
-// window.addEventListener("scroll", function () {
-//     // スライダーのコンテナ要素を取得
-//     const sliderContainer = document.querySelector(".swiper");
-//     // スライダーのコンテナの位置情報を取得
-//     const rect = sliderContainer.getBoundingClientRect();
-//     // ウィンドウの高さを取得（クロスブラウザ対応）
-//     const windowHeight =
-//         window.innerHeight || document.documentElement.clientHeight;
-//     if (rect.top < windowHeight && rect.bottom >= 0) {
-//         // スライダーが画面内に入った場合、自動再生を有効にして開始
-//         swiper.params.autoplay.delay = 1000; // 自動再生の遅延設定
-//         swiper.autoplay.start();
-//     } else {
-//         // 画面外に出た場合、自動再生を停止
-//         swiper.autoplay.stop();
-//     }
-// });
 
 window.addEventListener('load', function () {
 
@@ -304,10 +424,6 @@ window.addEventListener('load', function () {
       // データ名が統一されたので、そのまま配列を取得できる！
       const figcaptions = section.querySelectorAll("figcaption");
       const images = section.querySelectorAll("img"); // ← 【追加】imgも取得
-      console.log(currentTheme);
-      console.log(theme);
-      console.log(category);
-      console.log(menuData);
 
       // 万が一データが存在しない場合のエラーを防ぐためのif文
       figcaptions.forEach((caption, index) => {
@@ -468,7 +584,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   for (let i = 0; i < smoothScrollTrigger.length; i++) {
     smoothScrollTrigger[i].addEventListener('click', (e) => {
-      console.log('クリック');
       e.preventDefault();
 
       let href = smoothScrollTrigger[i].getAttribute('href');

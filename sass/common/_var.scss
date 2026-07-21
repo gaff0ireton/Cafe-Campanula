@@ -12,6 +12,7 @@ $txtColorBar: #fff;
 
 // math モジュール
 @use "sass:math";
+@use "sass:map";
 
 // common/_index.scss を読み込む（mixin が使える）
 @use 'mixin';

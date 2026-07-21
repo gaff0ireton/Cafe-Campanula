@@ -1,15 +1,17 @@
 @charset "UTF-8";
 // math モジュール
 @use "sass:math";
+@use "sass:map";
 
 // common/_index.scss を読み込む（mixin が使える）
 @use 'mixin' as *;
+@use 'var' as *;
 
 %swiper {
 	padding: 0px 25px 20px;
 	overflow: hidden;
 
-	@include sp() {
+	@include mq(){
 		padding: 0px vw-sp(25) vw-sp(20);
 	}
 }
@@ -21,7 +23,7 @@
 	margin: 0 auto;
 	display: block;
 
-	@include sp() {
+	@include mq(){
 		width: vw-sp(400);
 		border-radius: vw-sp(50);
 	}
@@ -32,7 +34,7 @@
 	margin: 0 auto;
 	padding: 20px 10px;
 
-	@include sp() {
+	@include mq(){
 		width: vw-sp(400);
 		padding: vw-sp(20) vw-sp(10);
 	}
@@ -52,7 +54,7 @@
 	overflow: hidden;
 	animation: wave 5s var(--mh--easing04) infinite both;
 
-	@include sp() {
+	@include mq(){
 		mask-size: 200vw 9.3333333333vw, 100% calc(100% - 9.0666666667vw);
 	}
 }

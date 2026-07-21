@@ -1,33 +1,66 @@
 @use "sass:math";
+@use "sass:map";
 
 // 設計値をまとめて管理
-$breakpoint: 750px;
+$breakpoints: (
+  "sp": 750px,
+  "tab": 1024px,
+  "pc": 1280px
+);
 $design-sp: 750;
 $design-pc: 1920;
+$sp-base-width: 500; // この幅(viewport)でSPデザインが原寸表示になる
+
+@function strip-unit($v) {
+  @return math.div($v, ($v * 0 + 1));
+}
 
 // px → vw 変換の本体
 @function vw($px, $design, $scale: 1) {
-  @return math.div($px, $design) * $scale * 100vw;
+  @return math.div(strip-unit($px), strip-unit($design)) * $scale * 100vw;
 }
 
 // SP / PC 用のショートハンド
 @function vw-sp($px, $design: $design-sp) {
-  @return vw($px, $design, 1.5); // 元コードの *1.5 を維持
+  @return vw($px, $design, math.div($design, $sp-base-width)); // = 750/500 = 1.5
 }
 
 @function vw-pc($px, $design: $design-pc) {
   @return vw($px, $design);
 }
 
+@mixin pos-pc($top: null, $right: null, $bottom: null, $left: null) {
+  position: absolute;
+  @if $top    != null { top:    vw-pc($top); }
+  @if $right  != null { right:  vw-pc($right); }
+  @if $bottom != null { bottom: vw-pc($bottom); }
+  @if $left   != null { left:   vw-pc($left); }
+}
+
+@mixin pos-sp($top: null, $right: null, $bottom: null, $left: null) {
+  position: absolute;
+  @if $top    != null { top:    vw-sp($top); }
+  @if $right  != null { right:  vw-sp($right); }
+  @if $bottom != null { bottom: vw-sp($bottom); }
+  @if $left   != null { left:   vw-sp($left); }
+}
+
 // メディアクエリ
-@mixin sp {
-  @media screen and (max-width: $breakpoint) {
+@mixin mq($size: "sp") {
+  @if not map.has-key($breakpoints, $size) {
+    @error "存在しないブレークポイント: #{$size}";
+  }
+  @media screen and (max-width: map.get($breakpoints, $size)) {
     @content;
   }
 }
 
-@mixin pc {
-  @media screen and (min-width: $breakpoint + 1) {
+// min-width版（追加）
+@mixin mq-min($size: "sp") {
+  @if not map.has-key($breakpoints, $size) {
+    @error "存在しないブレークポイント: #{$size}";
+  }
+  @media screen and (min-width: map.get($breakpoints, $size)) {
     @content;
   }
 }

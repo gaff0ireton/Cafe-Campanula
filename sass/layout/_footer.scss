@@ -1,6 +1,3 @@
-// math モジュール
-@use "sass:math";
-
 // common/_index.scss を読み込む（mixin が使える）
 @use "../common" as *;
 
@@ -11,7 +8,7 @@
     padding: 64px 128px 34px;
     position: relative;
 
-    @include sp() {
+    @include mq(){
         padding: vw-sp(64) vw-sp(32) vw-sp(34);
     }
 
@@ -34,15 +31,17 @@
         gap: 32px;
         margin: 0 auto;
 
-        @include sp() {
+        @include mq(){
             flex-direction: column;
             gap: vw-sp(16);
         }
 
         >* {
-            width: 500px;
+            max-width: 500px;
+            width: 100%;
 
-            @include sp() {
+            @include mq(){
+                max-width: 100%;
                 width: 100%;
             }
         }
@@ -60,7 +59,7 @@
                     gap: 16px;
                     margin-top: 16px;
 
-                    @include sp() {
+                    @include mq(){
                         gap: vw-sp(16);
                         margin-top: vw-sp(16);
                     }
@@ -69,7 +68,7 @@
                         font-size: 36px;
                         transition: color 0.3s ease;
 
-                        @include sp() {
+                        @include mq(){
                             font-size: vw-sp(36);
                         }
                     }
@@ -82,9 +81,11 @@
 
     &__logo {
         display: block;
-        width: 500px;
+        max-width: 500px;
+        width: 100%;
 
-        @include sp() {
+        @include mq(){
+            max-width: 100%;
             width: 100%;
         }
     }
@@ -125,7 +126,8 @@
     }
 
     &__btn {
-        width: 500px;
+        max-width: 500px;
+        width: 100%;
         padding: 1.5rem 0.5rem;
         margin: 16px auto 0;
         z-index: 1;
@@ -142,7 +144,8 @@
         cursor: pointer;
         border-radius: 30px;
 
-        @include sp() {
+        @include mq(){
+            max-width: 100%;
             width: 100%;
             padding: vw-sp(24) vw-sp(8);
             border-radius: vw-sp(30);
@@ -161,22 +164,27 @@
             border: 2px solid #fff;
             border-radius: 30px;
 
-            @include sp() {
+            @include mq(){
                 border-radius: vw-sp(30);
             }
         }
     }
 
     &__map {
+        max-width: 500px;
         width: 100%;
         border: none;
         margin: 0 auto;
+        
+        @include mq() {
+            max-width: 100%;
+        }
     }
 
     &__txt {
         margin-top: 16px;
 
-        @include sp() {
+        @include mq(){
             margin-top: vw-sp(16);
         }
     }
@@ -185,7 +193,7 @@
         text-align: center;
         margin-top: 24px;
 
-        @include sp() {
+        @include mq(){
             margin-top: vw-sp(24);
         }
     }
@@ -273,7 +281,7 @@
         transition: all .3s .2s;
         border-radius: 30px;
 
-        @include sp() {
+        @include mq(){
             border-radius: vw-sp(30);
         }
     }
@@ -286,7 +294,7 @@
         color: #fff;
         border-radius: 30px;
 
-        @include sp() {
+        @include mq(){
             border-radius: vw-sp(30);
         }
     }
@@ -297,7 +305,7 @@
         top: 0;
         border-radius: 30px;
 
-        @include sp() {
+        @include mq(){
             border-radius: vw-sp(30);
         }
     }

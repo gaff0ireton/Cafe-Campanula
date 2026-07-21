@@ -1,13 +1,10 @@
-// math モジュール
-@use "sass:math";
-
 // common/_index.scss を読み込む（mixin が使える）
 @use "../common" as *;
 
 .newsSection {
     padding-top: 64px;
 
-    @include sp(){
+    @include mq(){
         padding-top: vw-sp(64);
     }
 
@@ -16,7 +13,7 @@
         text-align: left;
         padding: 0 20px;
 
-        @include sp() {
+        @include mq(){
             padding: 0 vw-sp(20);
         }
     }
@@ -42,7 +39,7 @@
         margin: 0 auto;
         aspect-ratio: 1 / 1;
 
-        @include sp() {
+        @include mq(){
             width: vw-sp(450);
         }
 
@@ -53,6 +50,7 @@
             border-spacing: 5px;
             border: none;
 
+            th,
             td {
                 width: calc(100%/ 7);
                 color: $txtColor;
@@ -63,7 +61,7 @@
                 vertical-align: middle;
                 text-align: center;
 
-                @include sp() {
+                @include mq(){
                     box-shadow: 0 vw-sp(2) vw-sp(5) rgba(0, 0, 0, 0.05);
                 }
 
@@ -82,7 +80,7 @@
 
             .shark-day {
                 position: relative;
-                background-color: #e0f7fa;
+                background-color: #7cedfc;
 
                 &:before {
                     content: "🦈";
@@ -94,6 +92,15 @@
                     display: inline-block;
                     animation: float 2s ease-in-out infinite;
                 }
+            }
+
+            .holiday{
+                background-color: #ffce89;
+            }
+
+            .today{
+                background-color: $mainColor;
+                color: #fff;
             }
         }
     }
