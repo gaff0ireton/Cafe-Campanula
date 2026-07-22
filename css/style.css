@@ -799,12 +799,13 @@ body.bar .header__nav {
 }
 .newsSection__calendar {
   width: 450px;
+  height: 450px;
   margin: 0 auto;
-  aspect-ratio: 1/1;
 }
 @media screen and (max-width: 750px) {
   .newsSection__calendar {
     width: 90vw;
+    height: 90vw;
   }
 }
 .newsSection__calendar table {

@@ -36,11 +36,13 @@
 
     &__calendar {
         width: 450px;
+        height: 450px;
         margin: 0 auto;
-        aspect-ratio: 1 / 1;
+        // aspect-ratio: 1 / 1;
 
         @include mq() {
             width: vw-sp(450);
+            height: vw-sp(450);
         }
 
         table {
