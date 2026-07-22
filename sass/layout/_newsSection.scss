@@ -50,6 +50,11 @@
             border-spacing: 5px;
             border: none;
 
+            thead {
+                display: table-header-group;
+                display: table-row-group;
+            }
+
             th,
             td {
                 width: calc(100% / 7);

@@ -814,6 +814,10 @@ body.bar .header__nav {
   border-spacing: 5px;
   border: none;
 }
+.newsSection__calendar table thead {
+  display: table-header-group;
+  display: table-row-group;
+}
 .newsSection__calendar table th,
 .newsSection__calendar table td {
   width: 14.2857142857%;
