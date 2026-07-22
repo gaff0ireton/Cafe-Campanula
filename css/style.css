@@ -804,7 +804,6 @@ body.bar .header__nav {
 @media screen and (max-width: 750px) {
   .newsSection__calendar {
     width: 90vw;
-    height: 90vw;
   }
 }
 .newsSection__calendar table {
@@ -814,7 +813,8 @@ body.bar .header__nav {
   border-spacing: 5px;
   border: none;
 }
-.newsSection__calendar table thead {
+.newsSection__calendar table thead,
+.newsSection__calendar table tbody {
   display: table-header-group;
   display: table-row-group;
 }
