@@ -814,6 +814,7 @@ body.bar .header__nav {
   border-collapse: separate;
   border-spacing: 5px;
   border: none;
+  background: rgba(0, 38, 255, 0.2);
 }
 .newsSection__calendar table th,
 .newsSection__calendar table td {
