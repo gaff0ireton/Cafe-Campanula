@@ -4,7 +4,7 @@
 .newsSection {
     padding-top: 64px;
 
-    @include mq(){
+    @include mq() {
         padding-top: vw-sp(64);
     }
 
@@ -13,7 +13,7 @@
         text-align: left;
         padding: 0 20px;
 
-        @include mq(){
+        @include mq() {
             padding: 0 vw-sp(20);
         }
     }
@@ -37,35 +37,42 @@
     &__calendar {
         width: 450px;
         margin: 0 auto;
-        background: rgba(red, 0.2);
+        aspect-ratio: 1 / 1;
 
-        @include mq(){
+        @include mq() {
             width: vw-sp(450);
         }
 
         table {
             width: 100%;
+            height: 100%;
+            table-layout: fixed;
             border-collapse: separate;
             border-spacing: 5px;
             border: none;
-            
 
-            tbody{
-                background: rgba(rgb(0, 38, 255), 0.2);
+            thead,
+            tbody {
+                height: auto;
+            }
+
+            tr {
+                height: calc(100% / var(--calendar-rows));
             }
 
             th,
             td {
-                width: calc(100%/ 7);
+                width: calc(100% / 7);
+                height: auto;
                 color: $txtColor;
                 border: none;
                 border-radius: 10px;
-                background-color: #ffffff;
+                background-color: #fff;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
                 vertical-align: middle;
                 text-align: center;
 
-                @include mq(){
+                @include mq() {
                     box-shadow: 0 vw-sp(2) vw-sp(5) rgba(0, 0, 0, 0.05);
                     border-radius: vw-sp(10);
                 }
@@ -99,14 +106,18 @@
                 }
             }
 
-            .holiday{
+            .holiday {
                 background-color: #ffce89;
             }
 
-            .today{
+            .today {
                 background-color: $mainColor;
                 color: #fff;
             }
         }
     }
+}
+
+body {
+    &.bar {}
 }

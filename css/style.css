@@ -800,7 +800,7 @@ body.bar .header__nav {
 .newsSection__calendar {
   width: 450px;
   margin: 0 auto;
-  background: rgba(255, 0, 0, 0.2);
+  aspect-ratio: 1/1;
 }
 @media screen and (max-width: 750px) {
   .newsSection__calendar {
@@ -809,20 +809,27 @@ body.bar .header__nav {
 }
 .newsSection__calendar table {
   width: 100%;
+  height: 100%;
+  table-layout: fixed;
   border-collapse: separate;
   border-spacing: 5px;
   border: none;
 }
+.newsSection__calendar table thead,
 .newsSection__calendar table tbody {
-  background: rgba(0, 38, 255, 0.2);
+  height: auto;
+}
+.newsSection__calendar table tr {
+  height: calc(100% / var(--calendar-rows));
 }
 .newsSection__calendar table th,
 .newsSection__calendar table td {
   width: 14.2857142857%;
+  height: auto;
   color: #646464;
   border: none;
   border-radius: 10px;
-  background-color: #ffffff;
+  background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   vertical-align: middle;
   text-align: center;

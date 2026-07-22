@@ -172,12 +172,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderCalendar({ weeks }) {
     const rows = []
 
-    // ヘッダー行
-    rows.push(
-      '<tr>' +
-      WEEKDAYS.map((w) => `<th scope="col">${w}</th>`).join('') +
-      '</tr>'
-    )
+    // // ヘッダー行
+    // rows.push(
+    //   '<tr>' +
+    //   WEEKDAYS.map((w) => `<th scope="col">${w}</th>`).join('') +
+    //   '</tr>'
+    // )
 
     // 各週
     for (const week of weeks) {
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
       rows.push('<tr>' + cells.join('') + '</tr>')
     }
 
-    return `<table><caption class="visually-hidden">Calendar</caption>${rows.join('')}</table>`
+    return `<table><caption class="visually-hidden">Calendar</caption><thead><tr>${WEEKDAYS.map((w) => `<th scope="col">${w}</th>`).join('')}</tr></thead><tbody>${rows.join('')}</tbody></table>`
   }
 
   // ------------------------------------------------------------
@@ -211,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const dateEl = document.getElementById('date')
     const calendarEl = document.querySelector('.newsSection__calendar')
+    calendarEl.style.setProperty('--calendar-rows', data.weeks.length + 1)
 
     if (dateEl) dateEl.textContent = output
     if (calendarEl) calendarEl.innerHTML = renderCalendar(data)
