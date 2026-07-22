@@ -800,6 +800,7 @@ body.bar .header__nav {
 .newsSection__calendar {
   width: 450px;
   margin: 0 auto;
+  aspect-ratio: 1/1;
 }
 @media screen and (max-width: 750px) {
   .newsSection__calendar {
@@ -808,6 +809,7 @@ body.bar .header__nav {
 }
 .newsSection__calendar table {
   width: 100%;
+  height: 100%;
   border-collapse: separate;
   border-spacing: 5px;
   border: none;
