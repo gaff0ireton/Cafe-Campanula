@@ -37,7 +37,6 @@
     &__calendar {
         width: 450px;
         margin: 0 auto;
-        aspect-ratio: 1 / 1;
         background: rgba(red, 0.2);
 
         @include mq(){
@@ -49,7 +48,11 @@
             border-collapse: separate;
             border-spacing: 5px;
             border: none;
-            background: rgba(rgb(0, 38, 255), 0.2);
+            
+
+            tbody{
+                background: rgba(rgb(0, 38, 255), 0.2);
+            }
 
             th,
             td {
