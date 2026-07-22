@@ -37,7 +37,6 @@
     &__calendar {
         width: 450px;
         margin: 0 auto;
-        aspect-ratio: 1 / 1;
 
         @include mq(){
             width: vw-sp(450);
@@ -63,6 +62,7 @@
 
                 @include mq(){
                     box-shadow: 0 vw-sp(2) vw-sp(5) rgba(0, 0, 0, 0.05);
+                    border-radius: vw-sp(10);
                 }
 
                 &:first-child {
@@ -103,5 +103,11 @@
                 color: #fff;
             }
         }
+    }
+}
+
+body{
+    &.bar{
+        
     }
 }
