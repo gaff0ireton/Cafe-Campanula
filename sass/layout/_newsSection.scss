@@ -38,6 +38,7 @@
         width: 450px;
         margin: 0 auto;
         aspect-ratio: 1 / 1;
+        background: rgba(red, 0.2);
 
         @include mq(){
             width: vw-sp(450);
@@ -104,11 +105,5 @@
                 color: #fff;
             }
         }
-    }
-}
-
-body{
-    &.bar{
-        
     }
 }

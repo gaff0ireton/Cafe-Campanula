@@ -801,6 +801,7 @@ body.bar .header__nav {
   width: 450px;
   margin: 0 auto;
   aspect-ratio: 1/1;
+  background: rgba(255, 0, 0, 0.2);
 }
 @media screen and (max-width: 750px) {
   .newsSection__calendar {
