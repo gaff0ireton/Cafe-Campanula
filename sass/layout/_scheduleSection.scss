@@ -1,11 +1,27 @@
 // common/_index.scss を読み込む（mixin が使える）
 @use "../common" as *;
 
-.newsSection {
-    padding-top: 64px;
+.scheduleSection {
+    padding-top: 32px;
 
     @include mq() {
-        padding-top: vw-sp(64);
+        padding-top: vw-sp(32);
+    }
+
+    h2{
+        padding-bottom: 16px;
+        
+        @include mq() {
+            padding-bottom: vw-sp(16);
+        }
+    }
+
+    h3{
+        padding-bottom: 12px;
+
+        @include mq() {
+            padding-bottom: vw-sp(12);
+        }
     }
 
     p {
@@ -14,33 +30,6 @@
 
         @include mq() {
             padding: 0 vw-sp(20);
-        }
-    }
-
-    .swiper {
-        @extend %swiper;
-        padding-bottom: 0;
-        
-        @include mq() {
-            padding-bottom: 0;
-        }
-
-        &-wrapper {
-            .swiper-slide {
-                img {
-                    @extend %swiper__img;
-                }
-
-                h3 {
-                    @extend %swiper__txt;
-                    font-size: 16px;
-                    color: $txtColor;
-
-                    @include mq() {
-                        font-size: vw-sp(16);
-                    }
-                }
-            }
         }
     }
 

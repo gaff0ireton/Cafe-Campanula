@@ -23,13 +23,13 @@
   }
 }
 
-.menuSection__contents .swiperFood .swiper-wrapper .swiper-slide figcaption, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide figcaption, .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide figcaption, .newsSection .swiper-wrapper .swiper-slide figcaption {
+.menuSection__contents .swiperFood .swiper-wrapper .swiper-slide figcaption, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide figcaption, .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide figcaption, .newsSection .swiper-wrapper .swiper-slide h3 {
   width: 400px;
   margin: 0 auto;
   padding: 20px 10px;
 }
 @media screen and (max-width: 750px) {
-  .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide figcaption, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide figcaption, .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide figcaption, .newsSection .swiper-wrapper .swiper-slide figcaption {
+  .menuSection__contents .swiperFood .swiper-wrapper .swiper-slide figcaption, .menuSection__contents .swiperDrink .swiper-wrapper .swiper-slide figcaption, .menuSection__contents .swiperTakeOut .swiper-wrapper .swiper-slide figcaption, .newsSection .swiper-wrapper .swiper-slide h3 {
     width: 80vw;
     padding: 4vw 2vw;
   }
@@ -79,7 +79,7 @@
 }
 
 .background {
-  background-image: url(../img/img_bg.jpg) !important;
+  background-image: url(../img/img_bg.webp) !important;
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center center;
@@ -178,7 +178,7 @@
 .mainwrap {
   max-width: 500px;
   margin: 0 auto;
-  padding: 128px 0;
+  padding: 64px 0 128px;
   position: relative;
   z-index: 1;
   background-color: #FFFFCC;
@@ -186,7 +186,7 @@
 @media screen and (max-width: 750px) {
   .mainwrap {
     max-width: 750px;
-    padding: 25.6vw 0;
+    padding: 12.8vw 0;
   }
 }
 
@@ -385,7 +385,7 @@ picture img {
 }
 
 .load {
-  background-image: url(../img/img_load_pc.jpg);
+  background-image: url(../img/img_load_pc.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -411,7 +411,7 @@ picture img {
 }
 @media screen and (max-width: 750px) {
   .load {
-    background-image: url(../img/img_load_sp.jpg);
+    background-image: url(../img/img_load_sp.webp);
     background-position: bottom center;
   }
 }
@@ -508,7 +508,7 @@ picture img {
   /* 少しだけ上に浮く */
 }
 body.bar .background {
-  background-image: url(../img/img_bg_bar.jpg) !important;
+  background-image: url(../img/img_bg_bar.webp) !important;
 }
 body.bar .background::after {
   display: none;
@@ -786,15 +786,30 @@ body.bar .header__nav {
     padding-top: 12.8vw;
   }
 }
-.newsSection h3,
 .newsSection p {
   text-align: left;
   padding: 0 20px;
 }
 @media screen and (max-width: 750px) {
-  .newsSection h3,
   .newsSection p {
     padding: 0 4vw;
+  }
+}
+.newsSection .swiper {
+  padding-bottom: 0;
+}
+@media screen and (max-width: 750px) {
+  .newsSection .swiper {
+    padding-bottom: 0;
+  }
+}
+.newsSection .swiper-wrapper .swiper-slide h3 {
+  font-size: 16px;
+  color: #646464;
+}
+@media screen and (max-width: 750px) {
+  .newsSection .swiper-wrapper .swiper-slide h3 {
+    font-size: 3.2vw;
   }
 }
 .newsSection__calendar {
@@ -867,6 +882,113 @@ body.bar .header__nav {
   background-color: #ffce89;
 }
 .newsSection__calendar table .today {
+  background-color: #0080FF;
+  color: #fff;
+}
+
+.scheduleSection {
+  padding-top: 32px;
+}
+@media screen and (max-width: 750px) {
+  .scheduleSection {
+    padding-top: 6.4vw;
+  }
+}
+.scheduleSection h2 {
+  padding-bottom: 16px;
+}
+@media screen and (max-width: 750px) {
+  .scheduleSection h2 {
+    padding-bottom: 3.2vw;
+  }
+}
+.scheduleSection h3 {
+  padding-bottom: 12px;
+}
+@media screen and (max-width: 750px) {
+  .scheduleSection h3 {
+    padding-bottom: 2.4vw;
+  }
+}
+.scheduleSection p {
+  text-align: left;
+  padding: 0 20px;
+}
+@media screen and (max-width: 750px) {
+  .scheduleSection p {
+    padding: 0 4vw;
+  }
+}
+.scheduleSection__calendar {
+  width: 450px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 750px) {
+  .scheduleSection__calendar {
+    width: 90vw;
+  }
+}
+.scheduleSection__calendar table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 5px;
+  border: none;
+}
+.scheduleSection__calendar table thead,
+.scheduleSection__calendar table tbody {
+  display: table-header-group;
+  display: table-row-group;
+}
+.scheduleSection__calendar table th,
+.scheduleSection__calendar table td {
+  width: 14.2857142857%;
+  color: #646464;
+  padding: 20px 0;
+  border: none;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  vertical-align: middle;
+  text-align: center;
+}
+@media screen and (max-width: 750px) {
+  .scheduleSection__calendar table th,
+  .scheduleSection__calendar table td {
+    padding: 4vw 0;
+    box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.05);
+    border-radius: 2vw;
+  }
+}
+.scheduleSection__calendar table th:first-child,
+.scheduleSection__calendar table td:first-child {
+  color: #ff0000;
+}
+.scheduleSection__calendar table th:last-child,
+.scheduleSection__calendar table td:last-child {
+  color: #4169e1;
+}
+.scheduleSection__calendar table .is-disabled {
+  color: #cacaca !important;
+}
+.scheduleSection__calendar table .shark-day {
+  position: relative;
+  background-color: #7cedfc;
+}
+.scheduleSection__calendar table .shark-day:before {
+  content: "🦈";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  animation: float 2s ease-in-out infinite;
+}
+.scheduleSection__calendar table .holiday {
+  background-color: #ffce89;
+}
+.scheduleSection__calendar table .today {
   background-color: #0080FF;
   color: #fff;
 }

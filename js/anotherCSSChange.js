@@ -207,10 +207,10 @@ document.addEventListener('DOMContentLoaded', () => {
   function initCalendar() {
     const data = buildCalendar()
 
-    const output = `${data.year}-${pad(data.month)}-${pad(data.today)}`
+    const output = `本日は${data.year}年${data.month}月${data.today}日です`
 
     const dateEl = document.getElementById('date')
-    const calendarEl = document.querySelector('.newsSection__calendar')
+    const calendarEl = document.querySelector('.scheduleSection__calendar')
     calendarEl.style.setProperty('--calendar-rows', data.weeks.length + 1)
 
     if (dateEl) dateEl.textContent = output

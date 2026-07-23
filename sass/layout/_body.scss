@@ -24,7 +24,7 @@
 }
 
 .background {
-  background-image: url(../img/img_bg.jpg) !important;
+  background-image: url(../img/img_bg.webp) !important;
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center center;
@@ -139,14 +139,14 @@
 .mainwrap {
   max-width: 500px;
   margin: 0 auto;
-  padding: 128px 0;
+  padding: 64px 0 128px;
   position: relative;
   z-index: 1;
   background-color: $bgColor;
 
   @include mq(){
     max-width: 750px;
-    padding: vw-sp(128) 0;
+    padding: vw-sp(64) 0;
   }
 }
 
@@ -339,7 +339,7 @@ picture {
 }
 
 .load {
-  background-image: url(../img/img_load_pc.jpg);
+  background-image: url(../img/img_load_pc.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -365,7 +365,7 @@ picture {
   }
 
   @include mq(){
-    background-image: url(../img/img_load_sp.jpg);
+    background-image: url(../img/img_load_sp.webp);
     background-position: bottom center;
   }
 
@@ -483,7 +483,7 @@ picture {
 body {
   &.bar {
     .background {
-      background-image: url(../img/img_bg_bar.jpg) !important;
+      background-image: url(../img/img_bg_bar.webp) !important;
 
       &::after {
         display: none;
