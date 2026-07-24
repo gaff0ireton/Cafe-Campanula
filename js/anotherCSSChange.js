@@ -265,13 +265,6 @@ const swiperTakeOut = new Swiper(".swiperTakeOut", {
   },
 });
 
-const swipers = [
-  swiper,
-  swiperFood,
-  swiperDrink,
-  swiperTakeOut
-];
-
 window.addEventListener('load', function () {
 
   const btn = document.getElementById('is-btn');
@@ -289,6 +282,17 @@ window.addEventListener('load', function () {
       cap_txt: "ちょっぴりユニークで、とびきりかわいい。\nサメが顔をのぞかせるメニューや、海を感じるインテリアで、日常を忘れて楽しめる時間をお届けします。",
       open_hours: "10:00 - 18:00 (L.O. 17:30)",
       button: "Switch to BAR",
+      news: [
+        {
+          ttl: "ヨシキリザメちゃんぬいぐるみ再入荷しました！"
+        },
+        {
+          ttl: "ジンベエザメちゃんぬいぐるみ再入荷しました！"
+        },
+        {
+          ttl: "サメちゃんシュラフ登場！"
+        }
+      ],
       food: [
         {
           ttl: "サメちゃんサンデー"
@@ -350,6 +354,17 @@ window.addEventListener('load', function () {
       cap_txt: "海の底を思わせる薄暗い空間。\nゆっくりと泳ぐサメを眺めながら、\n日常を忘れる一杯を。",
       open_hours: "19:00 - 25:00 (L.O. 24:30)",
       button: "Switch to CAFE",
+      news: [
+        {
+          ttl: "新作カクテル「ジョーズ」登場"
+        },
+        {
+          ttl: "サメちゃんショートケーキ"
+        },
+        {
+          ttl: "サメちゃんワッフル"
+        }
+      ],
       food: [
         {
           ttl: "サメちゃんサンデー"
@@ -381,7 +396,7 @@ window.addEventListener('load', function () {
           ttl: "アビエーション"
         },
         {
-          ttl: "ジョーズ"
+          ttl: "ブラック・ベルベット"
         }
       ],
       takeout: [
@@ -423,11 +438,15 @@ window.addEventListener('load', function () {
       const menuData = theme[category];
 
       // データ名が統一されたので、そのまま配列を取得できる！
-      const figcaptions = section.querySelectorAll("figcaption");
+      const detail_txts = section.querySelectorAll(".detail-txt");
       const images = section.querySelectorAll("img"); // ← 【追加】imgも取得
+      console.log(currentTheme);
+      console.log(theme);
+      console.log(category);
+      console.log(menuData);
 
       // 万が一データが存在しない場合のエラーを防ぐためのif文
-      figcaptions.forEach((caption, index) => {
+      detail_txts.forEach((caption, index) => {
         if (menuData[index]) {
           // figcaptionのテキストを書き換え
           caption.textContent = menuData[index].ttl;
@@ -462,8 +481,15 @@ window.addEventListener('load', function () {
       perturbance: 0.04,
     }); // 再初期化
 
+    const swipers = [
+      swiper,
+      swiperFood,
+      swiperDrink,
+      swiperTakeOut
+    ];
+
     //swiper初期化
-    swipers.forEach(swiper => swiper.slideTo(0));
+    swipers.forEach(swiper => swiper.slideToLoop(0));
 
     const video = document.querySelector('video');
     const imgs = document.querySelectorAll('img');
