@@ -131,7 +131,7 @@ body {
         .menuSection {
             &__bg {
                 &::after {
-                    background-color: #c700004d;
+                    background-color: $mainColorBar;
                     mix-blend-mode: hue;
                 }
             }

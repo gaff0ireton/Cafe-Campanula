@@ -1059,7 +1059,7 @@ body.bar .header__nav {
 }
 
 body.bar .menuSection__bg::after {
-  background-color: rgba(199, 0, 0, 0.3019607843);
+  background-color: #c70000;
   mix-blend-mode: hue;
 }
 body.bar .menuSection__contents h2 {
